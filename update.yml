@@ -1,0 +1,50 @@
+name: Update store items
+
+# いつ動くか:
+#  - 毎日 06:00(日本時間)に自動実行
+#  - GitHubの Actions 画面から手動実行(Run workflow)も可能
+#  - サイトのコードを更新して push したときも実行
+on:
+  schedule:
+    - cron: "0 21 * * *"   # 21:00 UTC = 06:00 JST
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write   # data.json を書き戻すために必要
+
+concurrency:
+  group: update-store
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch latest eBay listings
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: node scripts/fetch-ebay.mjs
+
+      - name: Commit updated data.json
+        run: |
+          git config user.name  "store-bot"
+          git config user.email "store-bot@users.noreply.github.com"
+          if ! git diff --quiet -- data.json; then
+            git add data.json
+            git commit -m "Auto-update store items ($(date -u +%Y-%m-%d))"
+            git push
+            echo "data.json を更新してpushしました(サイトが自動で再公開されます)。"
+          else
+            echo "変更なし。更新はスキップしました。"
+          fi

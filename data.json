@@ -1,0 +1,9 @@
+{
+  "updatedAt": "",
+  "items": [
+    { "title": "Example item — this will be replaced automatically after setup", "price": "$—", "image": "", "emoji": "📷", "url": "", "isNew": true },
+    { "title": "Example item — your newest eBay listings appear here", "price": "$—", "image": "", "emoji": "👟", "url": "" },
+    { "title": "Example item — updated every day by GitHub Actions", "price": "$—", "image": "", "emoji": "🎮", "url": "" },
+    { "title": "Example item — no manual work needed", "price": "$—", "image": "", "emoji": "⌚", "url": "" }
+  ]
+}

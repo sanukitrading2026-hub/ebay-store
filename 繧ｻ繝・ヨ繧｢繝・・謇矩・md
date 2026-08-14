@@ -1,0 +1,137 @@
+# eBayストア紹介サイト ── 完全自動セットアップ手順
+
+このフォルダ一式で、**あなたのeBayストアを紹介し、新商品が出るたびに自動で掲載して集客する**ウェブサイトが作れます。
+公開もサーバー代も **完全無料**(GitHub Pages)。あなたのeBayログイン情報は一切使わず、公開情報だけを安全に扱います。
+
+かかる時間は最初の一度だけ、**およそ10〜15分**。以降はずっと放置でOKです。
+
+---
+
+## 完成後の動き(仕組み)
+
+```
+毎日 朝6時(日本時間)
+      │
+      ▼
+GitHubが自動でスクリプトを実行
+      │  eBay公式APIで あなたのストアの出品を取得
+      ▼
+新商品を「NEW」バッジ付きでサイトに自動掲載
+      │
+      ▼
+サイトが自動で再公開 → 訪問者はボタンからeBayへ → 購入
+```
+
+あなたのやることは「eBayにいつも通り出品するだけ」。サイトへの反映は全自動です。
+
+---
+
+## 用意するもの
+
+- Googleアカウントなどで作れる **GitHubアカウント**(無料)
+- **eBayのアカウント**(すでにお持ちのもの)
+- あなたの **eBayユーザー名** と **ストアURL**
+
+---
+
+## STEP 1. GitHubにサイトを置く
+
+1. <https://github.com> で無料アカウントを作成(すでにあればログイン)。
+2. 右上「+」→ **New repository**。
+   - Repository name:`ebay-store`(何でもOK)
+   - **Public** を選択(GitHub Pagesの無料公開はPublicが必要)
+   - 「Create repository」
+3. 作成後の画面で **「uploading an existing file」** をクリック。
+4. このフォルダの中身(`index.html` / `config.json` / `data.json` / `scripts` フォルダ / `.github` フォルダ)を **すべてドラッグ&ドロップ** して「Commit changes」。
+   - ※ `.github` フォルダが見えない場合は、フォルダごとドラッグすればOKです。
+
+---
+
+## STEP 2. `config.json` をあなたの情報に書き換える
+
+GitHub上で `config.json` を開き、右上の鉛筆マーク(Edit)で編集します。最低限、次の3つを変更してください。
+
+| 項目 | 変更前 | あなたの値の例 |
+|---|---|---|
+| `sellerUsername` | `YOUR_EBAY_USERNAME` | あなたのeBayユーザー名(例:`tokyo_camera_shop`) |
+| `ebayStoreUrl` | `https://www.ebay.com/str/YOUR-STORE-NAME` | あなたのストアURL |
+| `marketplaceId` | `EBAY_US` | 主に売る市場:ebay.com は `EBAY_US` / ebay.co.uk は `EBAY_GB` / ebay.co.jp は `EBAY_JP` |
+
+店名(`brandName`)・紹介文・カテゴリ・SNSリンクも自由に変えられます。編集したら「Commit changes」。
+
+> 💡 **個人情報は書かないでください。** 本名・自宅住所・電話番号・個人メールは載せない設計です。連絡は全部eBay内でOK。
+
+---
+
+## STEP 3. eBayの無料APIキーを発行する
+
+商品を自動取得するための鍵です。**発行は無料**、審査も基本すぐです。
+
+1. <https://developer.ebay.com> にあなたのeBayアカウントでサインイン → 開発者登録(規約に同意)。
+2. ログイン後、上部メニュー **Hi, 〇〇! → Application Keysets**(または「My Account → Keys」)へ。
+3. **Production**(本番)の欄で **Create a keyset** をクリック。
+4. 表示される次の2つを控えます。
+   - **App ID (Client ID)** … これが `EBAY_CLIENT_ID`
+   - **Cert ID (Client Secret)** … これが `EBAY_CLIENT_SECRET`
+
+> 🔐 この2つは**パスワードと同じ**。人に見せず、SNSやサイトに絶対に貼らないでください。次のSTEPでGitHubの暗号化保管庫にだけ入れます。
+
+---
+
+## STEP 4. キーをGitHubに安全に登録する(Secrets)
+
+1. あなたのリポジトリで **Settings** タブ → 左メニュー **Secrets and variables → Actions**。
+2. **New repository secret** をクリックし、次の2つを登録します。
+   - Name:`EBAY_CLIENT_ID` / Secret:STEP3のApp ID を貼り付け → Add secret
+   - Name:`EBAY_CLIENT_SECRET` / Secret:STEP3のCert ID を貼り付け → Add secret
+
+これでキーは暗号化され、**サイトのコードにも公開ページにも一切出ません**。GitHub Actionsの実行中だけ内部で使われます。
+
+---
+
+## STEP 5. サイトを公開する(GitHub Pages)
+
+1. **Settings** タブ → 左メニュー **Pages**。
+2. **Build and deployment** の Source を **Deploy from a branch**。
+3. Branch を **main** / フォルダは **/(root)** に設定 → **Save**。
+4. 1〜2分待つと、上部に公開URL(例:`https://あなたのユーザー名.github.io/ebay-store/`)が表示されます。これがあなたのサイトです。
+
+---
+
+## STEP 6. 自動更新をオンにして、初回だけ手動実行
+
+1. **Actions** タブを開く。初回は「I understand my workflows, go ahead and enable them」が出たら有効化。
+2. 左の **Update store items** を選び、右の **Run workflow** → **Run workflow** をクリック。
+3. 緑のチェックが付けば成功。`data.json` が本物の商品に更新され、サイトに反映されます(反映に1〜2分)。
+
+以降は **毎日朝6時(日本時間)に自動実行** されます。今すぐ反映したいときは、いつでもこの Run workflow を押せば即更新できます。
+
+---
+
+## これで完成 🎉
+
+- あなたの作業:**eBayにいつも通り出品するだけ**
+- サイト:新商品を自動で「NEW」付き掲載 → ボタンでeBayへ誘導 → 購入
+
+集客をさらに伸ばすなら、このサイトURLを **各SNSのプロフィール**に貼って、「サイト → eBay」の一方向で人を流すのがおすすめです(eBayの出品説明欄に外部リンクを貼るのはポリシー違反になり得るので入れないこと)。
+
+---
+
+## うまくいかないときは
+
+| 症状 | 対処 |
+|---|---|
+| Actionsが赤(失敗) | ログを開いて確認。多くは `sellerUsername` のスペル違い、または Secrets の貼り間違い。 |
+| 商品が0件 | ユーザー名が正しいか、`marketplaceId` が売っている市場と合っているか確認。 |
+| `401 / invalid_client` | STEP3のキーを **Production**(Sandboxではない)で作ったか確認。Secretsを登録し直す。 |
+| サイトが真っ白 | 数分待つ。`index.html` がリポジトリの**一番上の階層**にあるか確認。 |
+
+---
+
+## 安全面のまとめ
+
+- eBayの**ログイン情報・パスワードは一切不要**。使うのは公開情報を読む公式APIキーだけ。
+- APIキーはGitHubの**暗号化Secrets**に保管。コードにも公開ページにも出ない。
+- サイトに**個人情報を載せない**設計。取引・支払いはすべてeBayの安全な仕組み内で完結。
+- eBayを**自動操作しない**(読むだけ)ので、サスペンドの引き金になりません。
+- 誘導は必ず「**サイト → eBay**」の一方向に。

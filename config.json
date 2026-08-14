@@ -1,0 +1,29 @@
+{
+  "_comment": "ここはあなたが自由に編集する設定ファイル(秘密ではない情報のみ)。APIキーはここに書かず、GitHubのSecretsに入れます。",
+
+  "sellerUsername": "YOUR_EBAY_USERNAME",
+  "marketplaceId": "EBAY_US",
+  "ebayStoreUrl": "https://www.ebay.com/str/YOUR-STORE-NAME",
+
+  "brandName": "My eBay Store",
+  "brandEmoji": "🛍️",
+  "heroTitle": "Curated finds, <span class=\"hl\">shipped worldwide</span> from Japan.",
+  "heroLead": "Japanese collectibles, fashion, cameras and more — authenticated, carefully packed, and delivered with tracking to your door.",
+  "aboutText": "We're a Japan-based seller passionate about sending quality items to buyers around the globe. Each order is checked, cleaned and packed with care. Every purchase goes through eBay's secure checkout — your payment and personal details stay protected by eBay and are never handled by us directly.",
+
+  "categories": [
+    { "icon": "📷", "name": "Cameras & Photo",  "desc": "Vintage & modern gear",   "url": "" },
+    { "icon": "👘", "name": "Japanese Fashion", "desc": "Streetwear & vintage",     "url": "" },
+    { "icon": "🎮", "name": "Games & Toys",     "desc": "Retro consoles & figures", "url": "" },
+    { "icon": "⌚", "name": "Watches",          "desc": "Seiko, Citizen & more",    "url": "" },
+    { "icon": "🎴", "name": "Collectibles",     "desc": "Cards, coins & rare items","url": "" },
+    { "icon": "🎧", "name": "Audio & Vinyl",    "desc": "Records & hi-fi",          "url": "" }
+  ],
+
+  "socials": [
+    { "icon": "📸", "label": "Instagram", "url": "" },
+    { "icon": "📌", "label": "Pinterest", "url": "" },
+    { "icon": "▶️", "label": "YouTube",   "url": "" },
+    { "icon": "𝕏",  "label": "X",         "url": "" }
+  ]
+}

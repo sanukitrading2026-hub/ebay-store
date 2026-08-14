@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My eBay Store</title>
+<meta name="description" content="Discover curated items shipped worldwide. Fast tracked shipping and easy returns on eBay.">
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#141924; --panel2:#1b2130; --line:#28303f;
+    --ink:#eef1f6; --muted:#9aa6b8; --brand:#3b82f6; --accent:#f43f5e; --gold:#f5b301; --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,"Hiragino Kaku Gothic ProN",system-ui,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;font-weight:700;
+    padding:13px 24px;border-radius:999px;font-size:15px;transition:transform .15s,box-shadow .15s;box-shadow:0 8px 24px rgba(59,130,246,.35)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(59,130,246,.5)}
+  .btn.ghost{background:transparent;border:1.5px solid var(--line);box-shadow:none;color:var(--ink)}
+  .btn.gold{background:linear-gradient(135deg,#f5b301,#f97316);box-shadow:0 8px 24px rgba(245,179,1,.35)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,14,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px}
+  .brand .logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;font-size:18px}
+  .nav-links{display:flex;gap:22px;align-items:center;font-size:14px;color:var(--muted)}
+  .nav-links a:hover{color:var(--ink)}
+  @media(max-width:720px){.nav-links a:not(.btn){display:none}}
+  .hero{position:relative;overflow:hidden;padding:74px 0 60px}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(60% 60% at 78% 15%,rgba(59,130,246,.25),transparent 60%),
+    radial-gradient(50% 50% at 15% 85%,rgba(244,63,94,.18),transparent 60%);z-index:-1}
+  .hero h1{font-size:clamp(30px,5vw,50px);line-height:1.12;margin:0 0 16px;letter-spacing:-.5px}
+  .hero h1 .hl{background:linear-gradient(120deg,#60a5fa,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(15px,2vw,19px);color:var(--muted);max-width:620px;margin:0 0 26px}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .badges{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:var(--muted);font-size:14px}
+  .badges b{color:var(--ink)}
+  section{padding:56px 0}
+  .eyebrow{color:var(--brand);font-weight:700;letter-spacing:2px;font-size:12px;text-transform:uppercase;margin:0 0 8px}
+  h2.title{font-size:clamp(24px,3.5vw,34px);margin:0 0 10px;letter-spacing:-.3px}
+  .sub{color:var(--muted);max-width:640px;margin:0 0 30px}
+  .updated{font-size:12.5px;color:var(--muted);margin-top:6px}
+  .cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+  .cat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:transform .18s,border-color .18s}
+  .cat:hover{transform:translateY(-4px);border-color:var(--brand)}
+  .cat .ico{font-size:30px;margin-bottom:12px}
+  .cat h3{margin:0 0 4px;font-size:17px}
+  .cat p{margin:0;color:var(--muted);font-size:13.5px}
+  .cat .go{margin-top:12px;font-size:13px;color:var(--brand);font-weight:700}
+  .items{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+  .item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+  .item:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+  .item .thumb{aspect-ratio:1/1;background-size:cover;background-position:center;position:relative}
+  .item .thumb .fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:44px;background:linear-gradient(135deg,var(--panel2),#232b3d)}
+  .item .tag{position:absolute;top:10px;left:10px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 9px;border-radius:6px}
+  .item .body{padding:14px;flex:1;display:flex;flex-direction:column;gap:6px}
+  .item .name{font-size:14px;font-weight:600;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .item .price{font-size:18px;font-weight:800;color:var(--gold);margin-top:auto}
+  .item .view{font-size:13px;color:var(--brand);font-weight:700}
+  .trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .tcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .tcard .ico{font-size:26px;margin-bottom:10px}
+  .tcard h3{margin:0 0 6px;font-size:16px}
+  .tcard p{margin:0;color:var(--muted);font-size:14px}
+  .about{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:36px}
+  .about p{color:var(--muted);font-size:15px}
+  .band{background:linear-gradient(135deg,#1d4ed8,#be123c);border-radius:24px;padding:44px;text-align:center;margin-top:10px}
+  .band h2{margin:0 0 10px;font-size:clamp(22px,3vw,30px)}
+  .band p{margin:0 0 22px;opacity:.92}
+  .socials{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+  .social{width:44px;height:44px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);display:grid;place-items:center;font-size:19px;transition:transform .15s,background .15s}
+  .social:hover{transform:translateY(-3px);background:var(--brand)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px;text-align:center}
+  footer .fl{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+  footer .fl a:hover{color:var(--ink)}
+  .empty{color:var(--muted);text-align:center;padding:30px;border:1px dashed var(--line);border-radius:var(--radius)}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="logo" id="brandEmoji">🛍️</span><span id="brandName">My Store</span></a>
+    <div class="nav-links">
+      <a href="#featured">Featured</a>
+      <a href="#categories">Categories</a>
+      <a href="#why">Why us</a>
+      <a href="#about">About</a>
+      <a class="btn" id="navCta" href="#" target="_blank" rel="noopener">Visit eBay Store →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1 id="heroTitle">Curated finds, <span class="hl">shipped worldwide</span>.</h1>
+    <p class="lead" id="heroLead"></p>
+    <div class="cta">
+      <a class="btn gold" id="heroCta" href="#" target="_blank" rel="noopener">🛒 Shop on eBay</a>
+      <a class="btn ghost" href="#featured">See what's new</a>
+    </div>
+    <div class="badges">
+      <span>🆕 <b id="statCount">Fresh</b> listings</span>
+      <span>🚚 <b>Tracked</b> shipping</span>
+      <span>🌏 <b>Worldwide</b> delivery</span>
+      <span>↩️ <b>30-day</b> returns</span>
+    </div>
+  </div>
+</header>
+
+<section id="featured">
+  <div class="wrap">
+    <p class="eyebrow">Live from our store</p>
+    <h2 class="title">New &amp; featured items</h2>
+    <p class="sub">Updated automatically from our eBay store — tap any item to view and buy on eBay.</p>
+    <div class="items" id="itemGrid"><div class="empty">Loading latest items…</div></div>
+    <p class="updated" id="updatedAt"></p>
+    <div style="text-align:center;margin-top:32px">
+      <a class="btn" id="allItemsCta" href="#" target="_blank" rel="noopener">View all items on eBay →</a>
+    </div>
+  </div>
+</section>
+
+<section id="categories" style="background:var(--panel2)">
+  <div class="wrap">
+    <p class="eyebrow">What we sell</p>
+    <h2 class="title">Browse by category</h2>
+    <p class="sub">Every category links straight to our eBay store.</p>
+    <div class="cats" id="catGrid"></div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <p class="eyebrow">Buy with confidence</p>
+    <h2 class="title">Why shop with us</h2>
+    <div class="trust" style="margin-top:24px">
+      <div class="tcard"><div class="ico">📦</div><h3>Carefully packed</h3><p>Every order is wrapped to arrive safely, anywhere in the world.</p></div>
+      <div class="tcard"><div class="ico">🔎</div><h3>Tracking on every order</h3><p>You always get a tracking number for peace of mind.</p></div>
+      <div class="tcard"><div class="ico">💬</div><h3>Friendly support</h3><p>Questions? Message us any time through eBay — we reply fast.</p></div>
+      <div class="tcard"><div class="ico">🛡️</div><h3>eBay Money Back Guarantee</h3><p>Protected checkout and easy 30-day returns on eBay.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <p class="eyebrow">Our story</p>
+      <h2 class="title" style="margin-bottom:14px">About the store</h2>
+      <p id="aboutText"></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="band">
+      <h2>Ready to find something great?</h2>
+      <p>Buyers worldwide shop our store on eBay. Come take a look.</p>
+      <a class="btn gold" id="bandCta" href="#" target="_blank" rel="noopener" style="font-size:16px">🛒 Visit our eBay Store</a>
+      <div class="socials" id="socialRow"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="#featured">Featured</a>
+      <a href="#categories">Categories</a>
+      <a href="#why">Why us</a>
+      <a id="footCta" href="#" target="_blank" rel="noopener">eBay Store</a>
+    </div>
+    <div id="footText"></div>
+  </div>
+</footer>
+
+<script>
+/* サイトの描画。設定は config.json、商品は data.json から読み込む(どちらも自動生成/自動更新)。 */
+(function(){
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+  Promise.all([
+    fetch("config.json").then(r=>r.json()).catch(()=>({})),
+    fetch("data.json").then(r=>r.json()).catch(()=>({items:[]}))
+  ]).then(([cfg,data])=>{
+    const store = cfg.ebayStoreUrl || "#";
+    const linkOr = u => (u && String(u).trim()) ? u : store;
+
+    $("#brandName").textContent = cfg.brandName || "My eBay Store";
+    $("#brandEmoji").textContent = cfg.brandEmoji || "🛍️";
+    document.title = cfg.brandName || "My eBay Store";
+    if(cfg.heroTitle) $("#heroTitle").innerHTML = cfg.heroTitle;
+    $("#heroLead").textContent = cfg.heroLead || "";
+    $("#aboutText").textContent = cfg.aboutText || "";
+    $("#footText").innerHTML = "© 2026 " + esc(cfg.brandName||"My eBay Store") +
+      " · Independent seller on eBay. Not affiliated with or endorsed by eBay Inc.";
+
+    ["#navCta","#heroCta","#allItemsCta","#bandCta","#footCta"].forEach(id=>{ const el=$(id); if(el) el.href=store; });
+
+    // categories
+    const cats = cfg.categories || [];
+    $("#catGrid").innerHTML = cats.map(c=>`
+      <a class="cat" href="${esc(linkOr(c.url))}" target="_blank" rel="noopener">
+        <div class="ico">${esc(c.icon||"🛍️")}</div>
+        <h3>${esc(c.name)}</h3><p>${esc(c.desc||"")}</p>
+        <div class="go">Shop now →</div>
+      </a>`).join("");
+
+    // items (from data.json, newest first, auto-updated)
+    const items = (data.items||[]);
+    $("#statCount").textContent = items.length ? (items.length + "+") : "Fresh";
+    if(items.length){
+      $("#itemGrid").innerHTML = items.map(it=>`
+        <a class="item" href="${esc(it.url||store)}" target="_blank" rel="noopener">
+          <div class="thumb" style="${it.image?`background-image:url('${esc(it.image)}')`:''}">
+            ${it.image?"":`<div class="fallback">${esc(it.emoji||"🛍️")}</div>`}
+            ${it.isNew?`<span class="tag">NEW</span>`:(it.tag?`<span class="tag">${esc(it.tag)}</span>`:"")}
+          </div>
+          <div class="body">
+            <div class="name">${esc(it.title)}</div>
+            <div class="price">${esc(it.price||"")}</div>
+            <div class="view">View on eBay →</div>
+          </div>
+        </a>`).join("");
+    } else {
+      $("#itemGrid").innerHTML = `<div class="empty">Items will appear here automatically once setup is complete.</div>`;
+    }
+    if(data.updatedAt){
+      const d = new Date(data.updatedAt);
+      $("#updatedAt").textContent = "Last updated: " + (isNaN(d)? data.updatedAt : d.toLocaleString());
+    }
+
+    // socials
+    const socials = (cfg.socials||[]).filter(s=>s.url && String(s.url).trim());
+    $("#socialRow").innerHTML = socials.map(s=>
+      `<a class="social" href="${esc(s.url)}" target="_blank" rel="noopener" title="${esc(s.label||"")}">${esc(s.icon||"🔗")}</a>`).join("");
+  });
+})();
+</script>
+</body>
+</html>
