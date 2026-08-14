@@ -1,9 +1,9 @@
-// fetch-ebay.mjs (SEO + Pinterest feed v2)
+// fetch-ebay.mjs (SEO + Pinterest feed v3 - paginated)
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 
 const CLIENT_ID     = process.env.EBAY_CLIENT_ID;
 const CLIENT_SECRET = process.env.EBAY_CLIENT_SECRET;
-const MAX_ITEMS     = 48;
+const MAX_ITEMS     = 500;
 
 if (!CLIENT_ID || !CLIENT_SECRET) {
   console.error("EBAY_CLIENT_ID / EBAY_CLIENT_SECRET missing");
@@ -39,20 +39,34 @@ async function getToken() {
 }
 
 async function getSellerItems(token) {
-  const url = new URL("https://api.ebay.com/buy/browse/v1/item_summary/search");
-  url.searchParams.set("filter", `sellers:{${seller}}`);
-  url.searchParams.set("category_ids", "0");
-  url.searchParams.set("limit", "50");
-  url.searchParams.set("sort", "newlyListed");
-  const res = await fetch(url, {
-    headers: {
-      "Authorization": `Bearer ${token}`,
-      "X-EBAY-C-MARKETPLACE-ID": marketplace,
-      "Content-Type": "application/json",
-    },
-  });
-  if (!res.ok) throw new Error(`Browse error ${res.status}: ${await res.text()}`);
-  return (await res.json()).itemSummaries || [];
+  const headers = {
+    "Authorization": `Bearer ${token}`,
+    "X-EBAY-C-MARKETPLACE-ID": marketplace,
+    "Content-Type": "application/json",
+  };
+  const all = [], seen = new Set();
+  const LIMIT = 200;
+  for (let offset = 0; offset <= 9800; offset += LIMIT) {
+    const url = new URL("https://api.ebay.com/buy/browse/v1/item_summary/search");
+    url.searchParams.set("filter", `sellers:{${seller}}`);
+    url.searchParams.set("category_ids", "0");
+    url.searchParams.set("limit", String(LIMIT));
+    url.searchParams.set("offset", String(offset));
+    const res = await fetch(url, { headers });
+    if (!res.ok) {
+      if (offset === 0) throw new Error(`Browse error ${res.status}: ${await res.text()}`);
+      break;
+    }
+    const json  = await res.json();
+    const batch = json.itemSummaries || [];
+    for (const it of batch) {
+      if (it.itemId && !seen.has(it.itemId)) { seen.add(it.itemId); all.push(it); }
+    }
+    const total = json.total || 0;
+    console.log(`page offset=${offset}: got ${batch.length}, total reported=${total}, collected=${all.length}`);
+    if (batch.length < LIMIT || all.length >= total || all.length >= MAX_ITEMS) break;
+  }
+  return all;
 }
 
 async function loadPreviousIds() {
