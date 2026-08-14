@@ -1,11 +1,11 @@
 {
   "_comment": "ここはあなたが自由に編集する設定ファイル(秘密ではない情報のみ)。APIキーはここに書かず、GitHubのSecretsに入れます。",
 
-  "sellerUsername": "YOUR_EBAY_USERNAME",
+  "sellerUsername": "sanuki.japan",
   "marketplaceId": "EBAY_US",
-  "ebayStoreUrl": "https://www.ebay.com/str/YOUR-STORE-NAME",
+  "ebayStoreUrl": "https://www.ebay.com/str/sanukitrading",
 
-  "brandName": "My eBay Store",
+  "brandName": "Sanuki Trading",
   "brandEmoji": "🛍️",
   "heroTitle": "Curated finds, <span class=\"hl\">shipped worldwide</span> from Japan.",
   "heroLead": "Japanese collectibles, fashion, cameras and more — authenticated, carefully packed, and delivered with tracking to your door.",
