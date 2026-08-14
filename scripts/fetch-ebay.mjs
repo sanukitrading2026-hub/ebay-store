@@ -1,4 +1,4 @@
-// fetch-ebay.mjs (SEO自動化バージョン)
+// fetch-ebay.mjs (SEO + Pinterest feed)
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 
 const CLIENT_ID     = process.env.EBAY_CLIENT_ID;
@@ -129,6 +129,7 @@ try {
     priceCurrency: it.price?.currency || "USD",
     image:  it.image?.imageUrl || it.thumbnailImages?.[0]?.imageUrl || "",
     url:    it.itemAffiliateWebUrl || it.itemWebUrl || "",
+    condition: it.condition || "",
     isNew:  it.itemId ? !prevIds.has(it.itemId) : false,
   }));
 
@@ -151,7 +152,28 @@ try {
   await writeFile(new URL("../robots.txt", import.meta.url),
     `User-agent: *\nAllow: /\nSitemap: ${SITE_BASE}/sitemap.xml\n`, "utf8");
 
-  console.log(`OK ${items.length} items, ${pageUrls.length} SEO pages, sitemap built.`);
+  const csvEsc = v => `"${String(v == null ? "" : v).replace(/"/g, '""')}"`;
+  const cond   = c => /new/i.test(c || "") ? "new" : (c ? "used" : "new");
+  const header = ["id","title","description","link","image_link","price","availability","condition","brand"];
+  const rows   = [header.join(",")];
+  for (const it of items) {
+    if (!it.itemId || !it.url || !it.image || !it.priceValue) continue;
+    const desc = `${it.title} — authentic Japanese item, shipped worldwide with tracking from ${brand}.`;
+    rows.push([
+      csvEsc(it.itemId),
+      csvEsc(it.title.slice(0, 100)),
+      csvEsc(desc.slice(0, 500)),
+      csvEsc(it.url),
+      csvEsc(it.image),
+      csvEsc(`${it.priceValue} ${it.priceCurrency}`),
+      csvEsc("in stock"),
+      csvEsc(cond(it.condition)),
+      csvEsc(brand),
+    ].join(","));
+  }
+  await writeFile(new URL("../feed.csv", import.meta.url), rows.join("\n") + "\n", "utf8");
+
+  console.log(`OK ${items.length} items, ${pageUrls.length} pages, sitemap + feed.csv built.`);
 } catch (err) {
   console.error("Failed:", err.message);
   process.exit(1);
