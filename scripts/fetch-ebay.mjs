@@ -1,4 +1,4 @@
-// fetch-ebay.mjs (SEO + Pinterest feed)
+// fetch-ebay.mjs (SEO + Pinterest feed v2)
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 
 const CLIENT_ID     = process.env.EBAY_CLIENT_ID;
@@ -163,7 +163,7 @@ try {
       csvEsc(it.itemId),
       csvEsc(it.title.slice(0, 100)),
       csvEsc(desc.slice(0, 500)),
-      csvEsc(it.url),
+      csvEsc(`${SITE_BASE}/items/${slugify(it.itemId)}.html`),
       csvEsc(it.image),
       csvEsc(`${it.priceValue} ${it.priceCurrency}`),
       csvEsc("in stock"),
