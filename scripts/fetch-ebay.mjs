@@ -126,4 +126,81 @@ ${it.image ? `<meta property="og:image" content="${esc(it.image)}">` : ""}
   <a class="btn" href="${esc(it.url || storeUrl)}" target="_blank" rel="noopener">🛒 Buy now on eBay</a>
   <p class="meta">Authentic Japanese item · shipped worldwide with tracking · eBay Money Back Guarantee. Sold by ${esc(brand)} on eBay.</p>
   <p style="margin-top:20px"><a class="btn blue" href="${esc(storeUrl)}" target="_blank" rel="noopener">See all items in our store →</a></p>
-  <div class="foot">© 2026 ${esc(brand)} · Independent seller on eBay. Not
+  <div class="foot">© 2026 ${esc(brand)} · Independent seller on eBay. Not affiliated with or endorsed by eBay Inc.</div>
+</div></body></html>`;
+}
+
+try {
+  const token     = await getToken();
+  const summaries = await getSellerItems(token);
+  const prevIds   = await loadPreviousIds();
+
+  const items = summaries.slice(0, MAX_ITEMS).map(it => ({
+    itemId: it.itemId,
+    title:  it.title,
+    price:  priceStr(it.price),
+    priceValue:    it.price?.value || "",
+    priceCurrency: it.price?.currency || "USD",
+    image:  it.image?.imageUrl || it.thumbnailImages?.[0]?.imageUrl || "",
+    url:    it.itemAffiliateWebUrl || it.itemWebUrl || "",
+    condition: it.condition || "",
+    isNew:  it.itemId ? !prevIds.has(it.itemId) : false,
+  }));
+
+  const out = { updatedAt: new Date().toISOString(), seller, count: items.length, items };
+  await writeFile(new URL("../data.json", import.meta.url), JSON.stringify(out, null, 2) + "\n", "utf8");
+
+  await mkdir(new URL("../items/", import.meta.url), { recursive: true });
+  const pageUrls = [];
+  for (const it of items) {
+    if (!it.itemId) continue;
+    const slug = slugify(it.itemId);
+    await writeFile(new URL(`../items/${slug}.html`, import.meta.url), itemPage(it), "utf8");
+    pageUrls.push(`${SITE_BASE}/items/${slug}.html`);
+  }
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+    `<url><loc>${SITE_BASE}/</loc></url>\n` +
+    pageUrls.map(u => `<url><loc>${u}</loc></url>`).join("\n") + `\n</urlset>\n`;
+  await writeFile(new URL("../sitemap.xml", import.meta.url), sitemap, "utf8");
+  await writeFile(new URL("../robots.txt", import.meta.url),
+    `User-agent: *\nAllow: /\nSitemap: ${SITE_BASE}/sitemap.xml\n`, "utf8");
+
+  const csvEsc = v => `"${String(v == null ? "" : v).replace(/"/g, '""')}"`;
+  const cond   = c => /new/i.test(c || "") ? "new" : (c ? "used" : "new");
+  const header = ["id","title","description","link","image_link","price","availability","condition","brand"];
+  const rows   = [header.join(",")];
+  for (const it of items) {
+    if (!it.itemId || !it.url || !it.image || !it.priceValue) continue;
+    const desc = `${it.title} — authentic Japanese item, shipped worldwide with tracking from ${brand}.`;
+    rows.push([
+      csvEsc(it.itemId), csvEsc(it.title.slice(0, 100)), csvEsc(desc.slice(0, 500)),
+      csvEsc(`${SITE_BASE}/items/${slugify(it.itemId)}.html`), csvEsc(it.image),
+      csvEsc(`${it.priceValue} ${it.priceCurrency}`), csvEsc("in stock"),
+      csvEsc(cond(it.condition)), csvEsc(brand),
+    ].join(","));
+  }
+  await writeFile(new URL("../feed.csv", import.meta.url), rows.join("\n") + "\n", "utf8");
+
+  const gtype = t => /pokemon|card|tcg|booster|psa/i.test(t) ? "Trading Cards"
+    : /figure|nendoroid|banpresto|megahouse|figuarts|prize/i.test(t) ? "Anime Figures"
+    : "Japanese Collectibles";
+  const gHeader = ["id","title","description","link","image_link","price","availability","condition","brand","identifier_exists","product_type"];
+  const gRows = [gHeader.join(",")];
+  for (const it of items) {
+    if (!it.itemId || !it.url || !it.image || !it.priceValue) continue;
+    const gdesc = `${it.title} — authentic Japanese item, shipped worldwide with tracking from ${brand}.`;
+    gRows.push([
+      csvEsc(it.itemId), csvEsc(it.title.slice(0, 150)), csvEsc(gdesc.slice(0, 500)),
+      csvEsc(`${SITE_BASE}/items/${slugify(it.itemId)}.html`), csvEsc(it.image),
+      csvEsc(`${it.priceValue} ${it.priceCurrency}`), csvEsc("in stock"),
+      csvEsc(cond(it.condition)), csvEsc(brand), csvEsc("no"), csvEsc(gtype(it.title)),
+    ].join(","));
+  }
+  await writeFile(new URL("../feed-google.csv", import.meta.url), gRows.join("\n") + "\n", "utf8");
+
+  console.log(`OK ${items.length} items, ${pageUrls.length} pages, feed.csv + feed-google.csv built.`);
+} catch (err) {
+  console.error("Failed:", err.message);
+  process.exit(1);
+}
