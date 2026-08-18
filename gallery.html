@@ -23,49 +23,50 @@
   .btn.gold{background:var(--gold);color:#111}
   .btn.green{background:var(--green);color:#04210f}
   .btn.tiny{padding:7px 12px;font-size:12.5px}
+  .btn:disabled{opacity:.5;cursor:default}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
   .card.intro{grid-column:1/-1}
   .card.intro .vid{max-width:300px;margin:0 auto}
   .vid{width:100%;background:#000;aspect-ratio:9/16;display:block}
   .body{padding:12px 12px 14px;display:flex;flex-direction:column;gap:9px;flex:1}
-  .cat{font-size:11px;font-weight:800;letter-spacing:.4px;color:#04210f;background:var(--blue);color:#fff;
-       align-self:flex-start;padding:3px 9px;border-radius:8px}
+  .cat{font-size:11px;font-weight:800;letter-spacing:.4px;background:var(--blue);color:#fff;align-self:flex-start;padding:3px 9px;border-radius:8px}
   .name{font-size:13px;font-weight:700;line-height:1.35;max-height:3.6em;overflow:hidden}
   .cap{width:100%;height:96px;resize:vertical;font:inherit;font-size:12px;color:var(--txt);
        background:#0c1017;border:1px solid var(--line);border-radius:10px;padding:8px}
   .row{display:flex;gap:8px;flex-wrap:wrap}
   .row .btn{flex:1;text-align:center}
-  a.btn{text-decoration:none;display:inline-block}
   .hint{background:#101722;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 18px;font-size:13px;color:var(--sub)}
   .hint b{color:var(--txt)}
   .empty{text-align:center;color:var(--sub);padding:50px 10px}
   .posted-tag{font-size:11px;color:var(--green);font-weight:800}
+  .loading{text-align:center;color:var(--sub);padding:40px 10px;font-size:14px}
   .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#111827;border:1px solid var(--line);
-         color:#fff;padding:11px 20px;border-radius:999px;font-size:13.5px;font-weight:700;opacity:0;transition:.25s;pointer-events:none;z-index:20}
+         color:#fff;padding:11px 20px;border-radius:999px;font-size:13.5px;font-weight:700;opacity:0;transition:.25s;pointer-events:none;z-index:20;max-width:90%}
   .toast.show{opacity:1}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="top"><span class="logo">🎬</span><span id="brandTop">Sanuki Trading</span> — Video Gallery</div>
-  <p class="lead">All your product videos in one place. Copy the caption, download the video, post it — then tap <b>Posted</b> and it disappears from this list.</p>
+  <p class="lead">投稿できる動画だけが並びます。投稿したら「✓ Posted」を押すと消えて、残り＝未投稿が一目でわかります。</p>
 
   <div class="hint">
-    <b>How to use:</b> pick a card → tap <b>Copy caption</b> → tap <b>Download</b> → post both to TikTok / Instagram / Reels → tap <b>✓ Posted</b> to hide it.
-    Your "posted" marks are saved in this browser, so the list always shows only what's left to post.
+    <b>使い方:</b> カードを選ぶ → <b>Copy caption</b>（キャプションをコピー）→ <b>Download</b>（動画を保存）→ TikTok / インスタに投稿 → <b>✓ Posted</b> で非表示。
+    「Posted」の記録はこの端末に保存されます。いつも同じ端末で開いてください。
   </div>
 
   <div class="bar">
-    <span class="count">To post: <b id="nLeft">0</b> &nbsp;·&nbsp; Posted: <span id="nDone">0</span></span>
+    <span class="count">未投稿: <b id="nLeft">…</b> &nbsp;·&nbsp; 投稿済: <span id="nDone">0</span></span>
     <span style="flex:1"></span>
-    <button class="btn ghost tiny" id="togglePosted">Show posted</button>
-    <button class="btn ghost tiny" id="resetPosted">Reset marks</button>
+    <button class="btn ghost tiny" id="togglePosted">投稿済を表示</button>
+    <button class="btn ghost tiny" id="resetPosted">リセット</button>
   </div>
 
   <div id="introWrap"></div>
   <div class="grid" id="grid"></div>
-  <div class="empty" id="empty" style="display:none">🎉 Everything is posted. Nice work!<br><small>New listings will appear here automatically as their videos are generated.</small></div>
+  <div class="loading" id="loading">動画を読み込み中…（存在する動画だけ表示します）</div>
+  <div class="empty" id="empty" style="display:none">🎉 未投稿はゼロ！お疲れさま。<br><small>新しい動画ができたら自動でここに追加されます。</small></div>
 </div>
 <div class="toast" id="toast"></div>
 
@@ -76,7 +77,7 @@ const LS_KEY = "sanuki_posted_v1";
 
 function slugify(s){return (String(s||"").replace(/[^a-zA-Z0-9]+/g,"-").replace(/^-+|-+$/g,"")) || "item";}
 function loadPosted(){try{return new Set(JSON.parse(localStorage.getItem(LS_KEY)||"[]"));}catch(e){return new Set();}}
-function savePosted(set){localStorage.setItem(LS_KEY, JSON.stringify([...set]));}
+function savePosted(set){try{localStorage.setItem(LS_KEY, JSON.stringify([...set]));}catch(e){}}
 let posted = loadPosted();
 let showPosted = false;
 
@@ -112,7 +113,34 @@ function caption(title, cat){
   return `${hook}\n${title}\n\n✅ 100% authentic  ✈️ worldwide tracked shipping\n🛒 Shop our full store — link in bio\n\n${TAGS[cat]||""}`;
 }
 
-function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),1400);}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),1800);}
+
+function copyText(txt){
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>toast("キャプションをコピー ✓")).catch(()=>toast("キャプションをコピー ✓"));}
+  else{const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();toast("キャプションをコピー ✓");}
+}
+
+// robust download: fetch the real bytes, then save. Never leaves a broken .crdownload.
+async function downloadVideo(url, filename, btn){
+  const old = btn.textContent;
+  btn.disabled = true; btn.textContent = "保存中…";
+  try{
+    const r = await fetch(url, {cache:"no-store"});
+    if(!r.ok) throw new Error("missing");
+    const blob = await r.blob();
+    const u = URL.createObjectURL(blob);
+    const a = document.createElement("a"); a.href = u; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(u), 5000);
+    toast("ダウンロード完了 ✓ 一覧から消しました");
+    return true;
+  }catch(e){
+    toast("この動画はまだ生成中です。数時間後にまた見てね");
+    return false;
+  }finally{
+    btn.disabled = false; btn.textContent = old;
+  }
+}
 
 function makeCard(it){
   const slug = slugify(it.itemId);
@@ -121,45 +149,38 @@ function makeCard(it){
   card.className="card"; card.dataset.slug=slug;
   const cap = caption(it.title, cat);
   card.innerHTML = `
-    <video class="vid" preload="metadata" playsinline muted controls ${it.image?`poster="${it.image}"`:""}>
-      <source src="${VID(slug)}#t=0.1" type="video/mp4">
-    </video>
+    <video class="vid" preload="none" playsinline muted controls ${it.image?`poster="${it.image}"`:""} src="${VID(slug)}"></video>
     <div class="body">
       <span class="cat">${cat}</span>
       <div class="name">${(it.title||"").replace(/</g,"&lt;")}</div>
       <textarea class="cap" spellcheck="false">${cap.replace(/</g,"&lt;")}</textarea>
       <div class="row">
         <button class="btn blue tiny act-copy">Copy caption</button>
-        <a class="btn gold tiny" href="${VID(slug)}" download="${slug}.mp4">Download</a>
+        <button class="btn gold tiny act-dl">Download</button>
       </div>
       <div class="row">
         <button class="btn green tiny act-posted">✓ Posted (hide)</button>
       </div>
     </div>`;
-  // hide the card if this product has no generated video yet
-  const src = card.querySelector("source");
-  src.addEventListener("error", ()=>{ card.remove(); refreshCounts(); });
-  card.querySelector(".act-copy").addEventListener("click",()=>{
-    const ta=card.querySelector(".cap"); ta.select();
-    navigator.clipboard?.writeText(ta.value).then(()=>toast("Caption copied ✓")).catch(()=>{document.execCommand("copy");toast("Caption copied ✓");});
+  card.querySelector(".act-copy").addEventListener("click",()=>copyText(card.querySelector(".cap").value));
+  card.querySelector(".act-dl").addEventListener("click",async(e)=>{
+    const ok = await downloadVideo(VID(slug), slug+".mp4", e.currentTarget);
+    if(ok){ posted.add(slug); savePosted(posted); applyFilter(); }
   });
   card.querySelector(".act-posted").addEventListener("click",()=>{
-    posted.add(slug); savePosted(posted); applyFilter(); toast("Marked as posted ✓");
+    posted.add(slug); savePosted(posted); applyFilter(); toast("投稿済にしました ✓");
   });
   return card;
 }
 
-let ALL=[];
 function applyFilter(){
   const grid=document.getElementById("grid");
   [...grid.children].forEach(c=>{
     const isPosted=posted.has(c.dataset.slug);
-    if(isPosted && !showPosted) c.style.display="none";
-    else c.style.display="";
+    c.style.display=(isPosted && !showPosted)?"none":"";
     let tag=c.querySelector(".posted-tag");
-    if(isPosted){
-      if(!tag){tag=document.createElement("span");tag.className="posted-tag";tag.textContent="● posted";c.querySelector(".body").prepend(tag);}
-    } else if(tag){tag.remove();}
+    if(isPosted){ if(!tag){tag=document.createElement("span");tag.className="posted-tag";tag.textContent="● 投稿済";c.querySelector(".body").prepend(tag);} }
+    else if(tag){tag.remove();}
   });
   refreshCounts();
 }
@@ -173,44 +194,63 @@ function refreshCounts(){
 }
 
 document.getElementById("togglePosted").addEventListener("click",e=>{
-  showPosted=!showPosted; e.target.textContent=showPosted?"Hide posted":"Show posted"; applyFilter();
+  showPosted=!showPosted; e.target.textContent=showPosted?"投稿済を隠す":"投稿済を表示"; applyFilter();
 });
 document.getElementById("resetPosted").addEventListener("click",()=>{
-  if(confirm("Clear all 'posted' marks? Every video will show as not-posted again.")){posted=new Set();savePosted(posted);applyFilter();toast("Marks reset");}
+  if(confirm("すべての『投稿済』マークを消して、全部を未投稿に戻しますか？")){posted=new Set();savePosted(posted);applyFilter();toast("リセットしました");}
 });
+
+// check a video really exists before showing its card
+async function exists(url){
+  try{ const r = await fetch(url, {method:"HEAD", cache:"no-store"}); return r.ok; }
+  catch(e){ return false; }
+}
+// run existence checks with limited concurrency
+async function pool(list, worker, size=8){
+  let i=0; const run=async()=>{ while(i<list.length){ const idx=i++; await worker(list[idx], idx); } };
+  await Promise.all(Array.from({length:Math.min(size,list.length)}, run));
+}
 
 (async function init(){
   try{
-    const cfg=await fetch(`${BASE}/config.json`).then(r=>r.json()).catch(()=>({}));
+    const cfg=await fetch(`${BASE}/config.json`,{cache:"no-store"}).then(r=>r.json()).catch(()=>({}));
     if(cfg.brandName) document.getElementById("brandTop").textContent=cfg.brandName;
-    // store intro card
-    const iw=document.getElementById("introWrap");
-    const introCap=`Welcome to ${cfg.brandName||"our store"} 🇯🇵\nPokémon cards · One Piece cards & figures · Dragon Ball & more — authentic, straight from Japan.\n\n✅ 100% authentic  ✈️ worldwide tracked shipping\n🛒 Shop our full store — link in bio\n\n#pokemon #onepiece #dragonball #animefigure #japanimport #collectibles #tcg`;
-    iw.innerHTML=`<div class="grid"><div class="card intro">
-      <video class="vid" preload="metadata" playsinline muted controls>
-        <source src="${BASE}/videos/store_intro.mp4#t=0.1" type="video/mp4"></video>
-      <div class="body">
-        <span class="cat">STORE INTRO</span>
-        <div class="name">Store introduction video — pin this first</div>
-        <textarea class="cap" spellcheck="false">${introCap.replace(/</g,"&lt;")}</textarea>
-        <div class="row">
-          <button class="btn blue tiny" id="introCopy">Copy caption</button>
-          <a class="btn gold tiny" href="${BASE}/videos/store_intro.mp4" download="store_intro.mp4">Download</a>
-        </div>
-      </div></div></div>`;
-    iw.querySelector("source").addEventListener("error",()=>{iw.innerHTML="";});
-    document.getElementById("introCopy").addEventListener("click",()=>{
-      const ta=iw.querySelector(".cap");ta.select();
-      navigator.clipboard?.writeText(ta.value).then(()=>toast("Caption copied ✓")).catch(()=>toast("Caption copied ✓"));
-    });
 
-    const data=await fetch(`${BASE}/data.json`).then(r=>r.json());
-    ALL=(data.items||[]).filter(it=>it.itemId);
+    // store intro card (only if it exists)
+    if(await exists(`${BASE}/videos/store_intro.mp4`)){
+      const iw=document.getElementById("introWrap");
+      const introCap=`Welcome to ${cfg.brandName||"our store"} 🇯🇵\nPokémon cards · One Piece cards & figures · Dragon Ball & more — authentic, straight from Japan.\n\n✅ 100% authentic  ✈️ worldwide tracked shipping\n🛒 Shop our full store — link in bio\n\n#pokemon #onepiece #dragonball #animefigure #japanimport #collectibles #tcg`;
+      iw.innerHTML=`<div class="grid"><div class="card intro">
+        <video class="vid" preload="none" playsinline muted controls src="${BASE}/videos/store_intro.mp4"></video>
+        <div class="body">
+          <span class="cat">STORE INTRO</span>
+          <div class="name">ストア紹介動画 — 最初にピン留めする用</div>
+          <textarea class="cap" spellcheck="false">${introCap.replace(/</g,"&lt;")}</textarea>
+          <div class="row">
+            <button class="btn blue tiny" id="introCopy">Copy caption</button>
+            <button class="btn gold tiny" id="introDl">Download</button>
+          </div>
+        </div></div></div>`;
+      document.getElementById("introCopy").addEventListener("click",()=>copyText(iw.querySelector(".cap").value));
+      document.getElementById("introDl").addEventListener("click",(e)=>downloadVideo(`${BASE}/videos/store_intro.mp4`,"store_intro.mp4",e.currentTarget));
+    }
+
+    const data=await fetch(`${BASE}/data.json`,{cache:"no-store"}).then(r=>r.json());
+    const items=(data.items||[]).filter(it=>it.itemId);
     const grid=document.getElementById("grid");
-    ALL.forEach(it=>grid.appendChild(makeCard(it)));
+
+    await pool(items, async(it)=>{
+      if(await exists(VID(slugify(it.itemId)))) grid.appendChild(makeCard(it));
+    }, 8);
+
+    document.getElementById("loading").style.display="none";
     applyFilter();
+    if(grid.children.length===0){
+      document.getElementById("loading").style.display="block";
+      document.getElementById("loading").textContent="まだ動画がありません。1日60本ずつ生成されます。数日後にまた開いてください。";
+    }
   }catch(e){
-    document.getElementById("grid").innerHTML=`<div class="empty">Could not load items. If the site was just set up, wait for the first daily update to finish.</div>`;
+    document.getElementById("loading").textContent="読み込みに失敗しました。少し待ってから再読み込みしてください。";
   }
 })();
 </script>
