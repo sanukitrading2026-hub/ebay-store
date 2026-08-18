@@ -1,4 +1,4 @@
-// fetch-ebay.mjs (SEO + Pinterest + Google feed)
+// fetch-ebay.mjs (SEO + Pinterest + Google feed + angle images)
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 
 const CLIENT_ID     = process.env.EBAY_CLIENT_ID;
@@ -63,7 +63,7 @@ async function getSellerItems(token) {
       if (it.itemId && !seen.has(it.itemId)) { seen.add(it.itemId); all.push(it); }
     }
     const total = json.total || 0;
-    console.log(`page offset=${offset}: got ${batch.length}, total=${total}, collected=${all.length}`);
+    console.log(`offset=${offset}: got ${batch.length}, total=${total}, collected=${all.length}`);
     if (batch.length < LIMIT || all.length >= total || all.length >= MAX_ITEMS) break;
   }
   return all;
@@ -76,9 +76,39 @@ async function loadPreviousIds() {
   } catch { return new Set(); }
 }
 
+async function loadPreviousImages() {
+  const m = new Map();
+  try {
+    const prev = JSON.parse(await readFile(new URL("../data.json", import.meta.url), "utf8"));
+    for (const i of (prev.items || [])) {
+      if (i.itemId && Array.isArray(i.images) && i.images.length) m.set(i.itemId, i.images);
+    }
+  } catch {}
+  return m;
+}
+
+async function getImages(token, itemId) {
+  try {
+    const url = "https://api.ebay.com/buy/browse/v1/item/" + encodeURIComponent(itemId);
+    const res = await fetch(url, {
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "X-EBAY-C-MARKETPLACE-ID": marketplace,
+        "Content-Type": "application/json",
+      },
+    });
+    if (!res.ok) return [];
+    const j = await res.json();
+    const arr = [];
+    if (j.image?.imageUrl) arr.push(j.image.imageUrl);
+    for (const a of (j.additionalImages || [])) if (a.imageUrl) arr.push(a.imageUrl);
+    return arr.slice(0, 6);
+  } catch { return []; }
+}
+
 function priceStr(p) {
   if (!p) return "";
-  const sym = { USD:"$", EUR:"€", GBP:"£", JPY:"¥", AUD:"A$", CAD:"C$" }[p.currency] || (p.currency + " ");
+  const sym = { USD:"$", EUR:"EUR ", GBP:"GBP ", JPY:"JPY ", AUD:"A$", CAD:"C$" }[p.currency] || (p.currency + " ");
   return `${sym}${p.value}`;
 }
 const slugify = id => String(id || "").replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "item";
@@ -105,11 +135,11 @@ function itemPage(it) {
 ${it.image ? `<meta property="og:image" content="${esc(it.image)}">` : ""}
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 <style>
-  body{margin:0;font-family:-apple-system,"Hiragino Kaku Gothic ProN",system-ui,sans-serif;background:#0b0e14;color:#eef1f6;line-height:1.6}
+  body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0b0e14;color:#eef1f6;line-height:1.6}
   a{color:#60a5fa;text-decoration:none}
   .wrap{max-width:760px;margin:0 auto;padding:24px 20px 60px}
   .top{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;margin-bottom:24px}
-  .logo{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#f43f5e);display:grid;place-items:center;font-size:17px}
+  .logo{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#f43f5e)}
   .thumb{width:100%;max-width:520px;aspect-ratio:1/1;object-fit:cover;border-radius:16px;border:1px solid #28303f;background:#141924;display:block;margin:0 auto 22px}
   h1{font-size:22px;line-height:1.35;margin:0 0 12px}
   .price{font-size:28px;font-weight:800;color:#f5b301;margin:0 0 20px}
@@ -119,13 +149,13 @@ ${it.image ? `<meta property="og:image" content="${esc(it.image)}">` : ""}
   .foot{margin-top:34px;border-top:1px solid #28303f;padding-top:16px;color:#9aa6b8;font-size:12.5px}
 </style></head>
 <body><div class="wrap">
-  <a class="top" href="${esc(SITE_BASE)}/"><span class="logo">🎴</span>${esc(brand)}</a>
+  <a class="top" href="${esc(SITE_BASE)}/"><span class="logo"></span>${esc(brand)}</a>
   ${it.image ? `<img class="thumb" src="${esc(it.image)}" alt="${esc(it.title)}">` : ""}
   <h1>${esc(it.title)}</h1>
   <div class="price">${esc(it.price)}</div>
-  <a class="btn" href="${esc(it.url || storeUrl)}" target="_blank" rel="noopener">🛒 Buy now on eBay</a>
-  <p class="meta">Authentic Japanese item · shipped worldwide with tracking · eBay Money Back Guarantee. Sold by ${esc(brand)} on eBay.</p>
-  <p style="margin-top:20px"><a class="btn blue" href="${esc(storeUrl)}" target="_blank" rel="noopener">See all items in our store →</a></p>
+  <a class="btn" href="${esc(it.url || storeUrl)}" target="_blank" rel="noopener">Buy now on eBay</a>
+  <p class="meta">Authentic Japanese item, shipped worldwide with tracking. Sold by ${esc(brand)} on eBay.</p>
+  <p style="margin-top:20px"><a class="btn blue" href="${esc(storeUrl)}" target="_blank" rel="noopener">See all items in our store</a></p>
   <div class="foot">© 2026 ${esc(brand)} · Independent seller on eBay. Not affiliated with or endorsed by eBay Inc.</div>
 </div></body></html>`;
 }
@@ -146,6 +176,14 @@ try {
     condition: it.condition || "",
     isNew:  it.itemId ? !prevIds.has(it.itemId) : false,
   }));
+
+  const prevImg = await loadPreviousImages();
+  for (const it of items) {
+    let imgs = it.itemId ? prevImg.get(it.itemId) : null;
+    if (!imgs) imgs = it.itemId ? await getImages(token, it.itemId) : [];
+    if ((!imgs || !imgs.length) && it.image) imgs = [it.image];
+    it.images = imgs;
+  }
 
   const out = { updatedAt: new Date().toISOString(), seller, count: items.length, items };
   await writeFile(new URL("../data.json", import.meta.url), JSON.stringify(out, null, 2) + "\n", "utf8");
@@ -199,7 +237,7 @@ try {
   }
   await writeFile(new URL("../feed-google.csv", import.meta.url), gRows.join("\n") + "\n", "utf8");
 
-  console.log(`OK ${items.length} items, ${pageUrls.length} pages, feed.csv + feed-google.csv built.`);
+  console.log(`OK ${items.length} items with images, pages + feeds built.`);
 } catch (err) {
   console.error("Failed:", err.message);
   process.exit(1);
