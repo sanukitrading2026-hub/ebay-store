@@ -4,8 +4,6 @@ on:
   schedule:
     - cron: "0 21 * * *"
   workflow_dispatch:
-  push:
-    branches: [ main ]
 
 permissions:
   contents: write
@@ -51,10 +49,15 @@ jobs:
           git config user.name  "store-bot"
           git config user.email "store-bot@users.noreply.github.com"
           git add -A
-          if ! git diff --cached --quiet; then
-            git commit -m "Auto-update items, SEO, feeds and videos"
-            git push
-            echo "pushed"
-          else
-            echo "no change"
+          if git diff --cached --quiet; then
+            echo "no change"; exit 0
           fi
+          git commit -m "Auto-update items, SEO, feeds and videos"
+          # push safely even if the branch moved while this long job was running
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "pushed"; exit 0
+            fi
+            echo "push retry $i ..."; sleep 5
+          done
+          echo "push failed after retries"; exit 1
