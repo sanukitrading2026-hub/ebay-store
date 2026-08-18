@@ -32,13 +32,27 @@ jobs:
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: node scripts/fetch-ebay.mjs
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install video tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          pip install --quiet pillow numpy
+
+      - name: Generate product videos
+        run: python scripts/make_videos.py
+
       - name: Commit changes
         run: |
           git config user.name  "store-bot"
           git config user.email "store-bot@users.noreply.github.com"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-update store items and SEO pages"
+            git commit -m "Auto-update items, SEO, feeds and videos"
             git push
             echo "pushed"
           else
