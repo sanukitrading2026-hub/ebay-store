@@ -115,10 +115,13 @@ function caption(title, cat){
 
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),1800);}
 
-function copyText(txt){
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>toast("キャプションをコピー ✓")).catch(()=>toast("キャプションをコピー ✓"));}
-  else{const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();toast("キャプションをコピー ✓");}
+function writeClip(txt){
+  try{
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).catch(()=>{});}
+    else{const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();}
+  }catch(e){}
 }
+function copyText(txt){ writeClip(txt); toast("キャプションをコピー ✓"); }
 
 // robust download: fetch the real bytes, then save. Never leaves a broken .crdownload.
 async function downloadVideo(url, filename, btn){
@@ -132,7 +135,7 @@ async function downloadVideo(url, filename, btn){
     const a = document.createElement("a"); a.href = u; a.download = filename;
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(()=>URL.revokeObjectURL(u), 5000);
-    toast("ダウンロード完了 ✓ 一覧から消しました");
+    toast("キャプションをコピー＆動画を保存 ✓ 一覧から消しました");
     return true;
   }catch(e){
     toast("この動画はまだ生成中です。数時間後にまた見てね");
@@ -164,6 +167,7 @@ function makeCard(it){
     </div>`;
   card.querySelector(".act-copy").addEventListener("click",()=>copyText(card.querySelector(".cap").value));
   card.querySelector(".act-dl").addEventListener("click",async(e)=>{
+    writeClip(card.querySelector(".cap").value);   // copy caption first, so it's never lost
     const ok = await downloadVideo(VID(slug), slug+".mp4", e.currentTarget);
     if(ok){ posted.add(slug); savePosted(posted); applyFilter(); }
   });
@@ -232,7 +236,7 @@ async function pool(list, worker, size=8){
           </div>
         </div></div></div>`;
       document.getElementById("introCopy").addEventListener("click",()=>copyText(iw.querySelector(".cap").value));
-      document.getElementById("introDl").addEventListener("click",(e)=>downloadVideo(`${BASE}/videos/store_intro.mp4`,"store_intro.mp4",e.currentTarget));
+      document.getElementById("introDl").addEventListener("click",(e)=>{writeClip(iw.querySelector(".cap").value);downloadVideo(`${BASE}/videos/store_intro.mp4`,"store_intro.mp4",e.currentTarget);});
     }
 
     const data=await fetch(`${BASE}/data.json`,{cache:"no-store"}).then(r=>r.json());
