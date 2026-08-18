@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 W, H = 1080, 1920
 MAX_PER_RUN = 60
 MAX_PHOTOS  = 5
-VERSION     = "v2-noprice"
+VERSION     = "v3-brandtop"    # bump to force full re-generation of product videos
 
 def font(paths, size):
     for p in paths:
@@ -80,9 +80,15 @@ def place_photo(img, imgpath, px, py, pw, ph, margin=70):
     except Exception:
         return False
 
+# ----- product slide (NO price, category + store CTA) -----
 def photo_slide(imgpath, idx, total, name, tint, badge):
     img = base()
-    px, py, pw, ph = 45, 120, W-90, 1180
+    # --- brand bar at the very top: visible from the first frame (second 1) ---
+    bt = logo_scaled(1.0, 96)
+    if bt: img.paste(bt, (40, 8), bt)
+    dh = ImageDraw.Draw(img)
+    dh.text((40 + (bt.width if bt else 0) + 16, 34), BRAND.upper(), font=fb(46), fill=(238, 241, 246))
+    px, py, pw, ph = 45, 130, W-90, 1150
     img.paste(vgrad(tint[0], tint[1], pw, ph), (px, py), rmask(pw, ph, 40))
     place_photo(img, imgpath, px, py, pw, ph)
     big = logo_scaled(0.10, 560)
@@ -133,9 +139,9 @@ def download(url, dest):
 def clip_from(png, dur, tmp, tag):
     cp = os.path.join(tmp, "clip_%s.mp4" % tag)
     fo = round(dur-0.3, 2)
-    subprocess.run(["ffmpeg","-y","-loglevel","error","-loop","1","-t",str(dur),"-i",png,
-        "-vf","fade=t=in:st=0:d=0.3,fade=t=out:st=%s:d=0.3,format=yuv420p" % fo,
-        "-r","30","-c:v","libx264","-preset","veryfast",cp], check=True)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-t", str(dur), "-i", png,
+        "-vf", "fade=t=in:st=0:d=0.3,fade=t=out:st=%s:d=0.3,format=yuv420p" % fo,
+        "-r", "30", "-c:v", "libx264", "-preset", "veryfast", cp], check=True)
     return cp
 
 def concat_mux(clips, outpath, tmp):
@@ -143,11 +149,11 @@ def concat_mux(clips, outpath, tmp):
     with open(listf, "w") as f:
         for c in clips: f.write("file '%s'\n" % c)
     silent = os.path.join(tmp, "silent.mp4")
-    subprocess.run(["ffmpeg","-y","-loglevel","error","-f","concat","-safe","0","-i",listf,
-        "-c:v","libx264","-pix_fmt","yuv420p","-preset","veryfast",silent], check=True)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", listf,
+        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "veryfast", silent], check=True)
     if HAS_THEME:
-        subprocess.run(["ffmpeg","-y","-loglevel","error","-i",silent,"-stream_loop","-1","-i",THEME,
-            "-c:v","copy","-c:a","aac","-b:a","192k","-shortest","-movflags","+faststart",outpath], check=True)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", silent, "-stream_loop", "-1", "-i", THEME,
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", outpath], check=True)
     else:
         shutil.move(silent, outpath)
 
@@ -173,9 +179,11 @@ def build_video(item, outpath, tmp):
     concat_mux(clips, outpath, tmp)
     return True
 
+# ---------- STORE INTRO (with real product photos, premium picks) ----------
 def firstimg(it):
     ims = it.get("images") or ([it["image"]] if it.get("image") else [])
     return ims[0] if ims else None
+
 def best_item(scorer):
     best, bs = None, 0
     for it in items:
@@ -183,6 +191,7 @@ def best_item(scorer):
         s = scorer(it["title"].lower())
         if s > bs: bs, best = s, it
     return best
+
 def sc_poke(t):
     s = 0
     if "storm emeralda" in t: s += 6
@@ -271,11 +280,13 @@ def build_store_intro(outpath, tmp):
     cp = os.path.join(tmp, "cta.png"); store_slide().save(cp)
     clips.append(clip_from(cp, 3.6, tmp, "cta"))
     if len(clips) >= 3:
-        concat_mux(clips, outpath, tmp); return True
+        concat_mux(clips, outpath, tmp)
+        return True
     return False
 
 def main():
     vdir = os.path.join(ROOT, "videos"); os.makedirs(vdir, exist_ok=True)
+    # version bump -> wipe product videos to regenerate in new style
     verf = os.path.join(vdir, ".version")
     cur = open(verf).read().strip() if os.path.exists(verf) else ""
     if cur != VERSION:
@@ -285,12 +296,14 @@ def main():
                 except Exception: pass
         open(verf, "w").write(VERSION)
         print("version changed -> regenerating all videos")
+    # store intro (always refresh, uses premium picks)
     with tempfile.TemporaryDirectory() as tmp:
         try:
             if build_store_intro(os.path.join(vdir, "store_intro.mp4"), tmp):
                 print("built store_intro.mp4")
         except Exception as e:
             print("store intro skip:", e)
+    # product videos
     made = 0
     for item in items:
         if made >= MAX_PER_RUN:
