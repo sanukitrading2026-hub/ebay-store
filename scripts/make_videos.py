@@ -160,4 +160,15 @@ def main():
             print("reached MAX_PER_RUN, rest next run"); break
         iid = item.get("itemId")
         if not iid: continue
-        out = os.path.join(vdir,
+        out = os.path.join(vdir, slugify(iid) + ".mp4")
+        if os.path.exists(out): continue
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                if build_video(item, out, tmp):
+                    made += 1; print("[%d] built %s.mp4" % (made, slugify(iid)))
+            except Exception as e:
+                print("skip %s: %s" % (slugify(iid), e))
+    print("done. built %d new video(s)." % made)
+
+if __name__ == "__main__":
+    main()
