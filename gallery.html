@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Video Gallery — Sanuki Trading</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--bg:#0b0e14;--card:#141924;--line:#28303f;--txt:#eef1f6;--sub:#9aa6b8;--gold:#f5b301;--blue:#3b82f6;--green:#22c55e}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"Hiragino Kaku Gothic ProN",system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
+  .wrap{max-width:1100px;margin:0 auto;padding:20px 16px 80px}
+  .top{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;margin-bottom:6px}
+  .logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#f43f5e);display:grid;place-items:center;font-size:18px}
+  .lead{color:var(--sub);font-size:14px;margin:0 0 18px}
+  .bar{position:sticky;top:0;z-index:5;background:rgba(11,14,20,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+       display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 2px;margin:0 0 18px}
+  .count{font-weight:800;font-size:15px}
+  .count b{color:var(--gold)}
+  .btn{cursor:pointer;border:none;border-radius:999px;font-weight:700;font-size:13.5px;padding:9px 16px}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--sub)}
+  .btn.blue{background:var(--blue);color:#fff}
+  .btn.gold{background:var(--gold);color:#111}
+  .btn.green{background:var(--green);color:#04210f}
+  .btn.tiny{padding:7px 12px;font-size:12.5px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .card.intro{grid-column:1/-1}
+  .card.intro .vid{max-width:300px;margin:0 auto}
+  .vid{width:100%;background:#000;aspect-ratio:9/16;display:block}
+  .body{padding:12px 12px 14px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .cat{font-size:11px;font-weight:800;letter-spacing:.4px;color:#04210f;background:var(--blue);color:#fff;
+       align-self:flex-start;padding:3px 9px;border-radius:8px}
+  .name{font-size:13px;font-weight:700;line-height:1.35;max-height:3.6em;overflow:hidden}
+  .cap{width:100%;height:96px;resize:vertical;font:inherit;font-size:12px;color:var(--txt);
+       background:#0c1017;border:1px solid var(--line);border-radius:10px;padding:8px}
+  .row{display:flex;gap:8px;flex-wrap:wrap}
+  .row .btn{flex:1;text-align:center}
+  a.btn{text-decoration:none;display:inline-block}
+  .hint{background:#101722;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 18px;font-size:13px;color:var(--sub)}
+  .hint b{color:var(--txt)}
+  .empty{text-align:center;color:var(--sub);padding:50px 10px}
+  .posted-tag{font-size:11px;color:var(--green);font-weight:800}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#111827;border:1px solid var(--line);
+         color:#fff;padding:11px 20px;border-radius:999px;font-size:13.5px;font-weight:700;opacity:0;transition:.25s;pointer-events:none;z-index:20}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span class="logo">🎬</span><span id="brandTop">Sanuki Trading</span> — Video Gallery</div>
+  <p class="lead">All your product videos in one place. Copy the caption, download the video, post it — then tap <b>Posted</b> and it disappears from this list.</p>
+
+  <div class="hint">
+    <b>How to use:</b> pick a card → tap <b>Copy caption</b> → tap <b>Download</b> → post both to TikTok / Instagram / Reels → tap <b>✓ Posted</b> to hide it.
+    Your "posted" marks are saved in this browser, so the list always shows only what's left to post.
+  </div>
+
+  <div class="bar">
+    <span class="count">To post: <b id="nLeft">0</b> &nbsp;·&nbsp; Posted: <span id="nDone">0</span></span>
+    <span style="flex:1"></span>
+    <button class="btn ghost tiny" id="togglePosted">Show posted</button>
+    <button class="btn ghost tiny" id="resetPosted">Reset marks</button>
+  </div>
+
+  <div id="introWrap"></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">🎉 Everything is posted. Nice work!<br><small>New listings will appear here automatically as their videos are generated.</small></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const BASE = location.pathname.replace(/\/gallery\.html?$/i, "");
+const VID = (slug) => `${BASE}/videos/${slug}.mp4`;
+const LS_KEY = "sanuki_posted_v1";
+
+function slugify(s){return (String(s||"").replace(/[^a-zA-Z0-9]+/g,"-").replace(/^-+|-+$/g,"")) || "item";}
+function loadPosted(){try{return new Set(JSON.parse(localStorage.getItem(LS_KEY)||"[]"));}catch(e){return new Set();}}
+function savePosted(set){localStorage.setItem(LS_KEY, JSON.stringify([...set]));}
+let posted = loadPosted();
+let showPosted = false;
+
+function category(t){
+  t=(t||"").toLowerCase();
+  if(t.includes("pokemon")&&(t.includes("card")||t.includes("tcg")||t.includes("booster")||t.includes("psa")))return "Pokémon Cards";
+  if(t.includes("one piece")&&(t.includes("card")||t.includes("op-")||t.includes("booster")))return "One Piece Cards";
+  if(t.includes("one piece")&&t.includes("figure"))return "One Piece Figure";
+  if(t.includes("dragon ball")||t.includes("dragonball"))return "Dragon Ball";
+  if(t.includes("pokemon")||t.includes("pikachu"))return "Pokémon";
+  if(t.includes("figure")||t.includes("banpresto")||t.includes("megahouse")||t.includes("nendoroid"))return "Anime Figure";
+  return "Japan Collectible";
+}
+const TAGS = {
+  "Pokémon Cards":"#pokemon #pokemoncards #pokemontcg #pokemoncollector #tcg #japanesepokemon #pokemonjapan",
+  "One Piece Cards":"#onepiece #onepiececard #onepiececardgame #optcg #anime #tcg #japancards",
+  "One Piece Figure":"#onepiece #onepiecefigure #anime #figurecollection #banpresto #japanimport #animefigure",
+  "Dragon Ball":"#dragonball #dragonballz #dbz #figure #ichibankuji #anime #japanimport #collectibles",
+  "Pokémon":"#pokemon #pokemoncollector #pikachu #japanimport #anime #collectibles",
+  "Anime Figure":"#animefigure #anime #figurecollection #japanimport #banpresto #otaku #collectibles",
+  "Japan Collectible":"#japan #collectibles #anime #import #rare #madeinjapan"
+};
+function caption(title, cat){
+  const hook = {
+    "Pokémon Cards":"Pokémon card straight from Japan 🇯🇵🔥",
+    "One Piece Cards":"One Piece TCG from Japan 🇯🇵🏴‍☠️",
+    "One Piece Figure":"One Piece figure — authentic Japan import 🏴‍☠️",
+    "Dragon Ball":"Dragon Ball collectible from Japan 🐉🔥",
+    "Pokémon":"Pokémon collectible from Japan 🇯🇵",
+    "Anime Figure":"Anime figure — authentic Japan import ✨",
+    "Japan Collectible":"Rare find, straight from Japan 🇯🇵"
+  }[cat] || "Straight from Japan 🇯🇵";
+  return `${hook}\n${title}\n\n✅ 100% authentic  ✈️ worldwide tracked shipping\n🛒 Shop our full store — link in bio\n\n${TAGS[cat]||""}`;
+}
+
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),1400);}
+
+function makeCard(it){
+  const slug = slugify(it.itemId);
+  const cat = category(it.title);
+  const card = document.createElement("div");
+  card.className="card"; card.dataset.slug=slug;
+  const cap = caption(it.title, cat);
+  card.innerHTML = `
+    <video class="vid" preload="metadata" playsinline muted controls ${it.image?`poster="${it.image}"`:""}>
+      <source src="${VID(slug)}#t=0.1" type="video/mp4">
+    </video>
+    <div class="body">
+      <span class="cat">${cat}</span>
+      <div class="name">${(it.title||"").replace(/</g,"&lt;")}</div>
+      <textarea class="cap" spellcheck="false">${cap.replace(/</g,"&lt;")}</textarea>
+      <div class="row">
+        <button class="btn blue tiny act-copy">Copy caption</button>
+        <a class="btn gold tiny" href="${VID(slug)}" download="${slug}.mp4">Download</a>
+      </div>
+      <div class="row">
+        <button class="btn green tiny act-posted">✓ Posted (hide)</button>
+      </div>
+    </div>`;
+  // hide the card if this product has no generated video yet
+  const src = card.querySelector("source");
+  src.addEventListener("error", ()=>{ card.remove(); refreshCounts(); });
+  card.querySelector(".act-copy").addEventListener("click",()=>{
+    const ta=card.querySelector(".cap"); ta.select();
+    navigator.clipboard?.writeText(ta.value).then(()=>toast("Caption copied ✓")).catch(()=>{document.execCommand("copy");toast("Caption copied ✓");});
+  });
+  card.querySelector(".act-posted").addEventListener("click",()=>{
+    posted.add(slug); savePosted(posted); applyFilter(); toast("Marked as posted ✓");
+  });
+  return card;
+}
+
+let ALL=[];
+function applyFilter(){
+  const grid=document.getElementById("grid");
+  [...grid.children].forEach(c=>{
+    const isPosted=posted.has(c.dataset.slug);
+    if(isPosted && !showPosted) c.style.display="none";
+    else c.style.display="";
+    let tag=c.querySelector(".posted-tag");
+    if(isPosted){
+      if(!tag){tag=document.createElement("span");tag.className="posted-tag";tag.textContent="● posted";c.querySelector(".body").prepend(tag);}
+    } else if(tag){tag.remove();}
+  });
+  refreshCounts();
+}
+function refreshCounts(){
+  const cards=[...document.getElementById("grid").children];
+  const total=cards.length;
+  const done=cards.filter(c=>posted.has(c.dataset.slug)).length;
+  document.getElementById("nLeft").textContent=total-done;
+  document.getElementById("nDone").textContent=done;
+  document.getElementById("empty").style.display=(total>0 && total-done===0 && !showPosted)?"block":"none";
+}
+
+document.getElementById("togglePosted").addEventListener("click",e=>{
+  showPosted=!showPosted; e.target.textContent=showPosted?"Hide posted":"Show posted"; applyFilter();
+});
+document.getElementById("resetPosted").addEventListener("click",()=>{
+  if(confirm("Clear all 'posted' marks? Every video will show as not-posted again.")){posted=new Set();savePosted(posted);applyFilter();toast("Marks reset");}
+});
+
+(async function init(){
+  try{
+    const cfg=await fetch(`${BASE}/config.json`).then(r=>r.json()).catch(()=>({}));
+    if(cfg.brandName) document.getElementById("brandTop").textContent=cfg.brandName;
+    // store intro card
+    const iw=document.getElementById("introWrap");
+    const introCap=`Welcome to ${cfg.brandName||"our store"} 🇯🇵\nPokémon cards · One Piece cards & figures · Dragon Ball & more — authentic, straight from Japan.\n\n✅ 100% authentic  ✈️ worldwide tracked shipping\n🛒 Shop our full store — link in bio\n\n#pokemon #onepiece #dragonball #animefigure #japanimport #collectibles #tcg`;
+    iw.innerHTML=`<div class="grid"><div class="card intro">
+      <video class="vid" preload="metadata" playsinline muted controls>
+        <source src="${BASE}/videos/store_intro.mp4#t=0.1" type="video/mp4"></video>
+      <div class="body">
+        <span class="cat">STORE INTRO</span>
+        <div class="name">Store introduction video — pin this first</div>
+        <textarea class="cap" spellcheck="false">${introCap.replace(/</g,"&lt;")}</textarea>
+        <div class="row">
+          <button class="btn blue tiny" id="introCopy">Copy caption</button>
+          <a class="btn gold tiny" href="${BASE}/videos/store_intro.mp4" download="store_intro.mp4">Download</a>
+        </div>
+      </div></div></div>`;
+    iw.querySelector("source").addEventListener("error",()=>{iw.innerHTML="";});
+    document.getElementById("introCopy").addEventListener("click",()=>{
+      const ta=iw.querySelector(".cap");ta.select();
+      navigator.clipboard?.writeText(ta.value).then(()=>toast("Caption copied ✓")).catch(()=>toast("Caption copied ✓"));
+    });
+
+    const data=await fetch(`${BASE}/data.json`).then(r=>r.json());
+    ALL=(data.items||[]).filter(it=>it.itemId);
+    const grid=document.getElementById("grid");
+    ALL.forEach(it=>grid.appendChild(makeCard(it)));
+    applyFilter();
+  }catch(e){
+    document.getElementById("grid").innerHTML=`<div class="empty">Could not load items. If the site was just set up, wait for the first daily update to finish.</div>`;
+  }
+})();
+</script>
+</body>
+</html>
