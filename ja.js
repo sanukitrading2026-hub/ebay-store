@@ -227,6 +227,7 @@
         '<p class="st-sub st-ja">そう言われるようになるまでの店主の話を、noteに書いています。お店を続けながら、毎日の作業の一部をAIに任せるようになるまでの記録です。</p>' +
         '<p class="st-ja" style="margin:0;font-weight:800">noteの新しい記事</p>' +
         '<div class="st-notes st-ja">' + notesHtml + "</div>" +
+        '<p class="st-sub" style="margin:16px 0 0">' + bi("Readers outside Japan can buy paid note articles too. Pay with PayPal (a free note account is required; overseas-issued credit cards may not work). Articles are written in Japanese; note may show English machine translations of some articles.", "海外にお住まいの方も、noteの有料記事を購入できます（PayPalでのお支払い・noteの会員登録が必要です。海外で発行されたクレジットカードは使えない場合があります）。") + "</p>" +
         '<div class="st-row">' +
           '<a class="btn" href="https://note.com/sanukitrading/n/n62e7064ee02f" target="_blank" rel="noopener">' + bi("Read on note (Japanese, free) →", "無料で読む →") + "</a>" +
           '<a class="btn ghost st-ja" href="https://line.me/R/ti/p/@619sptqi" target="_blank" rel="noopener">LINEで新しい話のお知らせを受け取る →</a>' +
