@@ -202,10 +202,11 @@
   var sitesHtml = SITES.map(function (s) {
     return '<a class="st-site" href="' + s[0] + '" target="_blank" rel="noopener"><b>' + bi(s[1], s[2]) + "</b><span>" + s[3] + "</span></a>";
   }).join("");
-  var notesHtml = NOTES.map(function (n) {
+  function noteRow(n) {
     var p = n.price ? '<span class="st-p">' + Number(n.price).toLocaleString("ja-JP") + "円</span>" : '<span class="st-p free">無料</span>';
     return '<a href="' + esc(n.url) + '" target="_blank" rel="noopener"><span class="st-t"><span>' + esc(n.name) + '</span><span class="st-d">' + esc(n.date) + "</span></span>" + p + "</a>";
-  }).join("");
+  }
+  var notesHtml = NOTES.map(noteRow).join("");
   var snsHtml = SNS.map(function (s) {
     return '<a class="st-chip" href="' + s[1] + '" target="_blank" rel="noopener">' + s[0] + "</a>";
   }).join("");
@@ -237,6 +238,14 @@
   var about = document.getElementById("about");
   if (about && about.parentNode) about.parentNode.insertBefore(add, about.nextSibling);
   else document.body.appendChild(add);
+
+  /* noteの新しい記事：notes.json（GitHubが3時間ごとにnoteから自動で作る）があれば、そちらに入れ替える */
+  fetch("notes.json?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (list) {
+    if (!list || !list.length) return;
+    list = list.filter(function (n) { return n && /^https:\/\/note\.com\/sanukitrading\/n\/[a-z0-9]+$/.test(n.url) && n.name; }).slice(0, 5);
+    var box = document.querySelector(".st-notes");
+    if (box && list.length) box.innerHTML = list.map(noteRow).join("");
+  }).catch(function () {});
 
   /* 今のページの英語を日本語に（元の英語は覚えておき、ENで戻す） */
   var orig = new WeakMap(), touched = [];
