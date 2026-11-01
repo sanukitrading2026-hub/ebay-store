@@ -182,6 +182,7 @@
     ".st-notes a:hover .st-t{text-decoration:underline}.st-t{display:flex;flex-direction:column;gap:2px;min-width:0}" +
     ".st-d{font-size:12px;color:var(--muted,#9aa6b8)}.st-p{font-size:13px;font-weight:700;white-space:nowrap}.st-p.free{color:var(--accent,#f43f5e)}" +
     ".st-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}" +
+    ".st-list{margin:12px 0 0;padding-left:1.2em;color:var(--ink)}.st-list li{margin:6px 0}" +
     ".st-chip{padding:8px 16px;border:1.5px solid var(--line,#28303f);border-radius:999px;font-weight:700;font-size:14px}.st-chip:hover{border-color:var(--brand,#3b82f6)}" +
     "@media (max-width:700px){.st-sites{grid-template-columns:repeat(2,minmax(0,1fr))}.st-box{padding:18px}}";
   document.head.appendChild(css);
@@ -220,6 +221,17 @@
         '<div class="st-sites">' + sitesHtml + "</div>" +
         '<p class="st-sub" style="margin-top:16px">' + bi("Looking for a Japanese item? Message us on eBay. We will do our best to find it, though we cannot guarantee availability or price.", "日本の商品で探しているものがあれば、eBayのメッセージでお知らせください。必ず見つかる・この値段で、とはお約束できませんが、できるかぎり探します。") + "</p>" +
       "</div></section>" +
+      '<section class="st-sec" id="returns"><div class="wrap"><div class="st-box">' +
+        '<p class="st-eyebrow">' + bi("Returns & contact", "返品とお問い合わせ") + "</p>" +
+        "<h2>" + bi("30-day returns", "30日間の返品を受け付けています") + "</h2>" +
+        '<ul class="st-list">' +
+          "<li>" + bi("Returns are accepted within 30 days after your item is delivered.", "商品が届いてから30日以内なら、返品を受け付けます。") + "</li>" +
+          "<li>" + bi("To return an item, open the order in your eBay Purchase history and select “Return this item”.", "返品するときは、eBayの購入履歴でその注文を開き、「返品する」を選んでください。") + "</li>" +
+          "<li>" + bi("Full return terms, including who pays return shipping, are shown on each eBay listing.", "返送料をどちらが払うかなど、くわしい条件はeBayの各商品ページに書いてあります。") + "</li>" +
+          "<li>" + bi("Every purchase is covered by the eBay Money Back Guarantee.", "すべてのご購入は、eBayの返金保証の対象です。") + "</li>" +
+        "</ul>" +
+        '<div class="st-row"><a class="btn ghost" href="https://www.ebay.com/usr/sanuki.japan" target="_blank" rel="noopener">' + bi("Contact us on eBay →", "eBayのメッセージで問い合わせる →") + "</a></div>" +
+      "</div></div></section>" +
       '<section class="st-sec" id="owner"><div class="wrap"><div class="st-box">' +
         '<p class="st-eyebrow">' + bi("From the owner", "店主の話") + "</p>" +
         "<h2>" + bi("Run by one person in Japan", "「明るくなったね」") + "</h2>" +
