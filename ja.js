@@ -316,7 +316,8 @@
     s.innerHTML = '<p style="margin:0 0 4px;color:#b3261e;font-weight:700">新しい無料ツール</p>' +
       '<p style="margin:0 0 6px;font-size:1.2rem;font-weight:700">家族の「もしも」手続きナビ</p>' +
       '<p style="margin:0 0 12px">家族が亡くなったあとの手続きを、質問に答えるだけで期限の近い順に並べます。期限は法律の条文で確かめ、根拠を表示しています。</p>' +
-      '<a href="moshimo/" style="display:inline-block;background:#b3261e;color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:10px">無料で使う →</a>';
+      '<a href="moshimo/" style="display:inline-block;background:#b3261e;color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:10px">無料で使う →</a>' +
+      '<a href="https://www.tiktok.com/@sanukitrading/video/7703539880848084244" target="_blank" rel="noopener" style="display:inline-block;margin-left:12px;color:#b3261e;font-weight:700">▶ 動画で見る（約30秒）</a>';
     var f = document.querySelector("footer");
     if (f && f.parentNode) f.parentNode.insertBefore(s, f); else document.body.appendChild(s);
   } catch (e) {}
