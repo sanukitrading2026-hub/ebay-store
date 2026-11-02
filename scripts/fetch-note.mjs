@@ -17,7 +17,7 @@ const toDate = iso => {
 const list = contents
   .filter(c => c && c.name && /^https:\/\/note\.com\/sanukitrading\/n\/[a-z0-9]+$/.test(c.noteUrl || ""))
   .slice(0, 5)
-  .map(c => ({ name: c.name, url: c.noteUrl, price: Number(c.price) || 0, date: toDate(c.publishAt) }));
+  .map(c => ({ name: c.name, url: c.noteUrl, price: Number(c.price) || 0, date: toDate(c.publishAt), image: (typeof c.eyecatch === "string" && /^https:\/\/assets\.st-note\.com\//.test(c.eyecatch)) ? c.eyecatch : "" }));
 
 if (!list.length) { console.error("no articles found; keep the old file"); process.exit(1); }
 

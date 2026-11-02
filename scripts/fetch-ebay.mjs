@@ -175,6 +175,7 @@ try {
     url:    it.itemAffiliateWebUrl || it.itemWebUrl || "",
     condition: it.condition || "",
     isNew:  it.itemId ? !prevIds.has(it.itemId) : false,
+    listedAt: it.itemCreationDate || "",
   }));
 
   const prevImg = await loadPreviousImages();
