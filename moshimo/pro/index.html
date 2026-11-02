@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>もしもナビ 有料版</title>
+<style>
+:root{--bg:#fafaf7;--card:#fff;--ink:#1d1d1f;--sub:#5f6368;--line:#e3e1da;--accent:#b3261e;--soft:#f3efe6;--ok:#1e6b3a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161616;--card:#1f1f1f;--ink:#ececec;--sub:#a8a8a8;--line:#333;--accent:#ff6b5e;--soft:#262420;--ok:#6fcf8f}}
+:root[data-theme="dark"]{--bg:#161616;--card:#1f1f1f;--ink:#ececec;--sub:#a8a8a8;--line:#333;--accent:#ff6b5e;--soft:#262420;--ok:#6fcf8f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;line-height:1.7}
+.wrap{max-width:780px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.5rem;margin:0 0 4px}
+h2{font-size:1.2rem;margin:30px 0 10px;border-left:5px solid var(--accent);padding-left:10px}
+h3.cat{font-size:1.05rem;margin:22px 0 6px;color:var(--sub)}
+.lead{color:var(--sub);margin:0 0 16px}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.9rem;color:var(--sub)}
+fieldset{border:1px solid var(--line);border-radius:12px;background:var(--card);margin:12px 0;padding:12px 16px}
+legend{font-weight:700;padding:0 6px}
+label{display:inline-flex;align-items:center;gap:6px;margin:5px 14px 5px 0;cursor:pointer}
+input[type=date],input[type=password],input[type=text]{font-size:1rem;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+button{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:12px 20px;font-size:1rem;font-weight:700;cursor:pointer}
+button.sec{background:transparent;color:var(--accent);border:1px solid var(--accent);padding:8px 14px;font-size:.92rem}
+.item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+.item h4{margin:0 0 6px;font-size:1.02rem}
+.due{display:inline-block;background:var(--accent);color:#fff;border-radius:6px;padding:0 8px;font-size:.82rem;margin-right:6px}
+.date{display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:6px;padding:0 8px;font-size:.82rem;margin-right:6px;font-weight:700}
+.item dl{margin:8px 0 0;display:grid;grid-template-columns:7em 1fr;gap:4px 10px;font-size:.92rem}
+.item dt{color:var(--sub)}
+.item dd{margin:0}
+.item ol,.item ul{margin:4px 0;padding-left:1.3em}
+.src{font-size:.8rem;color:var(--sub);word-break:break-all;margin:8px 0 0}
+.src a{color:inherit}
+table.cal{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line)}
+table.cal th,table.cal td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+table.cal thead th{background:var(--soft)}
+table.cal td.d{white-space:nowrap;font-weight:700}
+.chk{margin-right:6px;transform:scale(1.2)}
+.memo-sec{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0}
+.memo-sec h4{margin:0 0 6px}
+.memo-sec .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 10px;font-size:.88rem}
+.memo-sec .line{border-bottom:1px solid var(--sub);min-height:2.1em;padding-top:1.1em;color:var(--sub);font-size:.8rem}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.tabs button{background:var(--card);color:var(--ink);border:1px solid var(--line);padding:8px 14px;font-size:.95rem}
+.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.err{color:var(--accent);font-weight:700}
+.hidden{display:none}
+@media print{.noprint,button,form,.tabs{display:none!important}.item,.memo-sec{break-inside:avoid}body{background:#fff;color:#000}.printall #res .hidden{display:block!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>家族の「もしも」手続きナビ 有料版</h1>
+<p class="lead">Sanuki Trading ／ 購入者専用ページ</p>
+
+<div id="lock">
+<p class="note">note の有料記事に書いてある「合言葉」を入れてください。合言葉の確認と中身の表示は、この端末の中だけで行います（どこにも送信しません）。</p>
+<form id="lf" onsubmit="return false"><p><input type="password" id="pw" autocomplete="off" placeholder="合言葉" style="width:16em"> <button type="submit" id="unlock">ひらく</button></p></form>
+<p id="lmsg" class="err"></p>
+</div>
+
+<div id="app" class="hidden">
+<p class="note">入力した内容はこの端末の中だけで使い、どこにも送信・保存しません（ページを閉じると消えます）。ここに書いてあるのは、国の法令と各社の公式ページにもとづく一般的な手続きです（公式ページ・法令で確かめた項目には、出典と確認日を付けています）。手続きの細かい内容は、市区町村・加入先・会社によって違うことがあり、変わることもあります。個別のご判断は、各窓口や専門家（弁護士・司法書士・税理士）にご確認ください。</p>
+
+<form id="q" onsubmit="return false"></form>
+<p class="noprint"><button type="button" id="go">私の手続き一覧を作る</button></p>
+
+<div id="res" class="hidden">
+<div class="tabs noprint"><button type="button" data-t="cal" class="on">① 期限カレンダー</button><button type="button" data-t="list">② 手続きの詳しい中身</button><button type="button" data-t="memo">③ もしもメモ（記入表）</button></div>
+<div id="t-cal"></div>
+<div id="t-list" class="hidden"></div>
+<div id="t-memo" class="hidden"></div>
+<p class="noprint"><button type="button" class="sec" id="pr">表示中のページを印刷</button> <button type="button" class="sec" id="prall">①②③をまとめて印刷</button></p>
+</div>
+<p class="src" id="ver"></p>
+</div>
+</div>
+
+<script src="enc.js?v=20261103"></script>
+<script>
+const ENC=window.MOSHIMO_ENC;
+let D=null;
+const $=id=>document.getElementById(id);
+function b64(s){const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
+async function unlock(){
+ const pw=$("pw").value.normalize("NFKC").replace(/\s+/g,"").toLowerCase();
+ $("lmsg").textContent="";
+ if(!pw){$("lmsg").textContent="合言葉を入れてください。";return}
+ try{
+  const km=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
+  const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b64(ENC.salt),iterations:ENC.iter,hash:"SHA-256"},km,{name:"AES-GCM",length:256},false,["decrypt"]);
+  const pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:b64(ENC.iv)},key,b64(ENC.ct));
+  const ds=new Blob([pt]).stream().pipeThrough(new DecompressionStream("gzip"));
+  D=JSON.parse(await new Response(ds).text());
+ }catch(e){$("lmsg").textContent="合言葉がちがうようです。全角・半角や空白をご確認ください。";return}
+ $("lock").classList.add("hidden");$("app").classList.remove("hidden");build();
+}
+$("lf").addEventListener("submit",unlock);
+
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+// ---- 日付（期限の計算）----
+// 日数：戸籍法43条（初日を算入）。月数：民法140条（初日不算入）・143条（暦に従い、応当日の前日。応当日がないときは月末）。
+// 期限の末日が土日祝日でも延ばしません（早めの安全側）。
+function ymd(d){return d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日（"+"日月火水木金土"[d.getDay()]+"）"}
+function addDays(d,n){const x=new Date(d.getFullYear(),d.getMonth(),d.getDate());x.setDate(x.getDate()+n);return x}
+function lastDay(y,m){return new Date(y,m+1,0)}
+function monthsEnd(base,n){
+ const s=addDays(base,1); // 初日不算入：翌日から起算
+ if(s.getDate()===1){return lastDay(s.getFullYear(),s.getMonth()+n-1)} // 月の初めから起算→最後の月の末日
+ const y=s.getFullYear(),m=s.getMonth()+n,dd=s.getDate();
+ const ld=lastDay(y,m);
+ if(dd>ld.getDate())return ld; // 応当日がない→その月の末日
+ return addDays(new Date(y,m,dd),-1); // 応当日の前日
+}
+function dueDate(rule,death,know){
+ if(!rule)return null;
+ const base=rule.from==="know"?know:death;
+ if(rule.type==="koseki")return addDays(base,rule.n-1);
+ if(rule.type==="days_early")return addDays(base,rule.n-1);
+ if(rule.type==="months")return monthsEnd(base,rule.n);
+ return null;
+}
+function ruleLabel(rule){
+ if(!rule)return"";
+ const f=rule.from==="know"?"亡くなったことを知った日":"亡くなった日";
+ if(rule.type==="koseki")return f+"を1日目として"+rule.n+"日目（戸籍法の数え方）";
+ if(rule.type==="days_early")return (rule.label?rule.label+"。":"")+"いちばん早い数え方（"+f+"を1日目）で表示した目安";
+ if(rule.type==="months")return f+"の翌日から数えて"+rule.n+"か月"+(rule.safe?"（起算日が"+f+"より後になる場合もあるため、早めに出る安全側の目安）":"");
+ return"";
+}
+
+// ---- 質問 ----
+const QS=[
+ {id:"rel",t:"亡くなった方とあなたの関係",o:[["spouse","配偶者"],["child","子"],["parent","親"],["sibling","兄弟姉妹"],["other","その他"]]},
+ {id:"work",t:"亡くなった方の働き方",o:[["employee","会社員・公務員"],["self","自営業など"],["pension","年金を受け取っていた"],["other","その他・分からない"]]},
+ {id:"ins",t:"亡くなった方の健康保険",o:[["kokuho","国民健康保険"],["kouki","後期高齢者医療（75歳以上など）"],["kenpo","会社の健康保険（協会けんぽ・健康保険組合）"],["unknown","分からない"]]},
+ {id:"head",t:"亡くなった方は世帯主でしたか",o:[["yes","はい"],["no","いいえ"],["unknown","分からない"]]},
+ {id:"realestate",t:"不動産（土地・建物）",o:[["yes","ある"],["no","ない"],["unknown","分からない"]]},
+ {id:"debt",t:"借金・ローン",o:[["yes","ある"],["no","ない"],["unknown","分からない"]]},
+ {id:"will",t:"自筆の遺言書（公正証書でないもの）",o:[["yes","ある"],["no","ない"],["unknown","分からない"]]},
+ {id:"income",t:"亡くなった年に、亡くなった方に給与以外の収入や確定申告が必要な所得がありましたか",o:[["yes","あった"],["no","なかった"],["unknown","分からない"]]},
+ {id:"bank",multi:true,t:"口座のある銀行（いくつでも）",o:[["yucho","ゆうちょ銀行"],["mufg","三菱UFJ銀行"],["smbc","三井住友銀行"],["mizuho","みずほ銀行"],["otherbank","ほかの銀行・信用金庫など"],["unknown","分からない"]]},
+ {id:"sec",multi:true,t:"株や投資信託の口座（いくつでも）",o:[["nomura","野村證券"],["sbi","SBI証券"],["rakuten","楽天証券"],["othersec","ほかの証券会社"],["none","ない"],["unknown","分からない"]]},
+ {id:"life",t:"生命保険（亡くなった方が被保険者のもの）",o:[["yes","ある"],["no","ない"],["unknown","分からない"]]},
+ {id:"mobile",multi:true,t:"携帯電話の会社（いくつでも）",o:[["docomo","ドコモ（ahamo含む）"],["au","au・UQ mobile"],["softbank","ソフトバンク"],["rakutenm","楽天モバイル"],["othermobile","ほかの会社"],["none","ない・分からない"]]},
+ {id:"card",multi:true,t:"クレジットカード（いくつでも）",o:[["smbccard","三井住友カード"],["jcb","JCB"],["othercard","ほかのカード"],["none","ない"],["unknown","分からない"]]},
+ {id:"digital",multi:true,t:"使っていたアカウント（いくつでも）",o:[["apple","Apple（iPhone・iCloud）"],["google","Google（Gmail・Android など）"],["facebook","Facebook"],["instagram","Instagram"],["x","X（旧Twitter）"],["line","LINE"]]}
+];
+const DEF={bank:["unknown"],sec:["unknown"],card:["unknown"],mobile:[],digital:[]};
+function buildForm(){
+ const f=$("q");let h=`<fieldset><legend>日付（期限の日付を出すために使います）</legend>
+ <label>亡くなった日 <input type="date" id="dd"></label><br>
+ <label>亡くなったことを知った日 <input type="date" id="kd"></label><br>
+ <span class="src">知った日が分からない・同じ日のときは、空けておけば亡くなった日で計算します。日付を入れなくても一覧は作れます。</span></fieldset>`;
+ QS.forEach(q=>{
+  h+=`<fieldset><legend>${esc(q.t)}</legend>`+q.o.map(([v,l],i)=>{
+   const on=q.multi?(DEF[q.id]||[]).includes(v):i===q.o.length-1;
+   return `<label><input type="${q.multi?"checkbox":"radio"}" name="${q.id}" value="${v}" ${on?"checked":""}>${esc(l)}</label>`}).join("")+`</fieldset>`;
+ });
+ f.innerHTML=h;
+}
+function answers(){
+ const a={};
+ QS.forEach(q=>{
+  if(q.multi){a[q.id]=[...$("q").querySelectorAll(`input[name="${q.id}"]:checked`)].map(x=>x.value)}
+  else{const c=$("q").querySelector(`input[name="${q.id}"]:checked`);a[q.id]=c?c.value:"unknown"}
+ });
+ return a;
+}
+function match(w,a){
+ if(!w||w.all)return true;
+ const v=a[w.q];
+ if(w.in)return w.in.includes(v);
+ if(w.not)return !w.not.includes(v);
+ if(w.any){const arr=Array.isArray(v)?v:[v];return arr.some(x=>w.any.includes(x))}
+ return true;
+}
+const CATS=["役所・年金・税金・登記","預貯金","証券","生命保険","クレジットカード","携帯電話","デジタル"];
+function srcName(u,it){
+ if(u.includes("e-gov"))return"e-Gov法令";
+ if(u.includes("nenkin"))return"日本年金機構";
+ return it.srcName||u.replace(/^https?:\/\/([^\/]+).*/,"$1");
+}
+function itemHTML(it,dt){
+ const dl=[];
+ const add=(k,v)=>{if(v&&(!Array.isArray(v)||v.length))dl.push(`<dt>${k}</dt><dd>${Array.isArray(v)?(v.length>1?"<ul>"+v.map(x=>"<li>"+esc(x)+"</li>").join("")+"</ul>":esc(v[0])):esc(v)}</dd>`)};
+ add("必要な場合",it.who);add("届け出る人",it.by);add("窓口",it.where);add("連絡先",it.contact);
+ add("期限",it.due);add("時期",it.timing);
+ if(it.steps&&it.steps.length)dl.push(`<dt>流れ</dt><dd><ol>${it.steps.map(x=>"<li>"+esc(x)+"</li>").join("")}</ol></dd>`);
+ add("主な書類",it.docs);add("費用",it.cost);add("注意",it.note);add("注意",it.notes);
+ const badge=dt?`<span class="date">${esc(ymd(dt))}まで</span>`:(it.dueLabel?`<span class="due">${esc(it.dueLabel)}</span>`:"");
+ const src=(it.src||[]).length?"出典："+it.src.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(srcName(u,it))}</a>`).join("・"):"出典：なし（公式ページを確かめられていないため、一般的な案内だけです）";
+ return `<div class="item"><h4>${badge}${esc(it.name)}</h4><dl>${dl.join("")}</dl><p class="src">${it.law?"根拠："+esc(it.law)+"　":""}${src}（確認日 ${esc(it.checked)}）</p></div>`;
+}
+function render(){
+ const a=answers();
+ const dv=$("dd").value,kv=$("kd").value;
+ const death=dv?new Date(dv+"T00:00:00"):null;
+ let know=kv?new Date(kv+"T00:00:00"):death;
+ const all=D.public.concat(D.private).filter(it=>match(it.when,a)).sort((x,y)=>x.order-y.order);
+ // ① カレンダー
+ let c=`<h2>期限カレンダー（${all.length}件）</h2>`;
+ if(!death){c+=`<p class="note">上の「亡くなった日」を入れると、期限の日付が出ます。いまは期限の長さだけを表示しています。</p>`}
+ else if(know<death){c+=`<p class="err">「知った日」が「亡くなった日」より前になっています。日付をご確認ください。</p>`;know=death}
+ const rows=all.map(it=>({it,dt:death?dueDate(it.rule,death,know):null}));
+ const dated=rows.filter(r=>r.dt).sort((x,y)=>x.dt-y.dt||x.it.order-y.it.order);
+ const und=rows.filter(r=>!r.dt);
+ if(death){
+  c+=`<table class="cal"><thead><tr><th>済</th><th>期限の目安</th><th>手続き</th><th>数え方</th></tr></thead><tbody>`+
+  dated.map(r=>`<tr><td><input type="checkbox" class="chk"></td><td class="d">${esc(ymd(r.dt))}</td><td>${esc(r.it.name)}</td><td class="src" style="margin:0">${esc(ruleLabel(r.it.rule))}</td></tr>`).join("")+`</tbody></table>`;
+  c+=`<p class="note">期限の末日が土・日・祝日のときに翌日まで延びる場合がありますが、このカレンダーでは延ばさずに表示しています（早めに済ませるため）。「死亡届」は国内で亡くなった場合の期限です（国外の場合は3か月以内）。</p>`;
+ }
+ c+=`<h3 class="cat">日付の決まりがない・すぐにするもの</h3><table class="cal"><thead><tr><th>済</th><th>時期</th><th>手続き</th></tr></thead><tbody>`+
+  (death?und:rows).map(r=>`<tr><td><input type="checkbox" class="chk"></td><td>${esc(r.it.dueLabel||r.it.timing||"")}</td><td>${esc(r.it.name)}</td></tr>`).join("")+`</tbody></table>`;
+ $("t-cal").innerHTML=c;
+ // ② 詳しい中身
+ let l=`<h2>手続きの詳しい中身</h2>`;
+ CATS.forEach(cat=>{const xs=rows.filter(r=>r.it.cat===cat);if(!xs.length)return;l+=`<h3 class="cat">${esc(cat)}（${xs.length}件）</h3>`+xs.map(r=>itemHTML(r.it,r.dt)).join("")});
+ l+=`<p class="note">役所の手続きの必要書類・手数料・支給額は、市区町村や加入先によって違うため「窓口でご確認ください」としています。</p>`;
+ $("t-list").innerHTML=l;
+ $("res").classList.remove("hidden");
+ tab("cal");$("res").scrollIntoView({behavior:"smooth"});
+}
+function memo(){
+ const S=D.memo;
+ $("t-memo").innerHTML=`<h2>もしもメモ（記入表）</h2><p class="note">${esc(S.intro)}</p>`+S.sections.map(s=>`<div class="memo-sec"><h4>${esc(s.title)}</h4>${s.hint?`<p class="src" style="margin:0 0 4px">${esc(s.hint)}</p>`:""}${Array.from({length:s.rows}).map(()=>`<div class="row">${s.cols.map(cn=>`<div class="line">${esc(cn)}</div>`).join("")}</div>`).join("")}</div>`).join("")+`<p class="src">記入日：　　　年　　月　　日　／　記入した人：</p>`;
+}
+function tab(t){["cal","list","memo"].forEach(x=>{$("t-"+x).classList.toggle("hidden",x!==t)});document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===t))}
+function build(){
+ buildForm();memo();
+ $("go").addEventListener("click",render);
+ document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>tab(b.dataset.t)));
+ $("pr").addEventListener("click",()=>print());
+ $("prall").addEventListener("click",()=>{document.body.classList.add("printall");print();document.body.classList.remove("printall")});
+ $("ver").textContent="データ版："+D.version;
+}
+</script>
+</body>
+</html>
