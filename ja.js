@@ -304,3 +304,20 @@
     if (h === "ja" || h === "en") setLang(h);
   });
 })();
+
+/* もしもナビ（無料）への案内。日本語の閲覧者にだけ表示。2026-11-02 追加 */
+(function () {
+  try {
+    var ja = /^ja/i.test(navigator.language || "") || location.hash === "#ja";
+    if (!ja || document.getElementById("moshimo-banner")) return;
+    var s = document.createElement("section");
+    s.id = "moshimo-banner";
+    s.style.cssText = "max-width:960px;margin:32px auto;padding:20px 16px;border:2px solid #b3261e;border-radius:14px;background:#fff;color:#1d1d1f;font-family:'Hiragino Sans','Noto Sans JP',sans-serif;line-height:1.7";
+    s.innerHTML = '<p style="margin:0 0 4px;color:#b3261e;font-weight:700">新しい無料ツール</p>' +
+      '<p style="margin:0 0 6px;font-size:1.2rem;font-weight:700">家族の「もしも」手続きナビ</p>' +
+      '<p style="margin:0 0 12px">家族が亡くなったあとの手続きを、質問に答えるだけで期限の近い順に並べます。期限は法律の条文で確かめ、根拠を表示しています。</p>' +
+      '<a href="moshimo/" style="display:inline-block;background:#b3261e;color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:10px">無料で使う →</a>';
+    var f = document.querySelector("footer");
+    if (f && f.parentNode) f.parentNode.insertBefore(s, f); else document.body.appendChild(s);
+  } catch (e) {}
+})();
