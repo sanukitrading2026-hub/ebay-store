@@ -27,6 +27,7 @@
   ];
 
   var SNS = [
+    ["Facebook", "https://www.facebook.com/profile.php?id=61596054124895"],
     ["Instagram", "https://www.instagram.com/sanuki.trading/"],
     ["TikTok", "https://www.tiktok.com/@sanukitrading"],
     ["X", "https://x.com/st21343919"],
