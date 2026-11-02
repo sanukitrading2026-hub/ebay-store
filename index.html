@@ -94,9 +94,10 @@
   <div class="wrap">
     <a class="brand" href="#top"><span class="logo" id="brandEmoji">🛍️</span><span id="brandName">My Store</span></a>
     <div class="nav-links">
-      <a href="#featured">Featured</a>
       <a href="#categories">Categories</a>
-      <a href="#why">Why us</a>
+      <a href="#featured">New</a>
+      <a href="#recommended">Recommended</a>
+      <a href="#owner">News</a>
       <a href="#about">About</a>
       <a class="btn" id="navCta" href="#" target="_blank" rel="noopener">Visit eBay Store →</a>
     </div>
@@ -109,7 +110,7 @@
     <p class="lead" id="heroLead"></p>
     <div class="cta">
       <a class="btn gold" id="heroCta" href="#" target="_blank" rel="noopener">🛒 Shop on eBay</a>
-      <a class="btn ghost" href="#featured">See what's new</a>
+      <a class="btn ghost" href="#categories">Browse categories</a>
     </div>
     <div class="badges">
       <span>🆕 <b id="statCount">Fresh</b> listings</span>
@@ -120,25 +121,34 @@
   </div>
 </header>
 
-<section id="featured">
-  <div class="wrap">
-    <p class="eyebrow">Live from our store</p>
-    <h2 class="title">New &amp; featured items</h2>
-    <p class="sub">Updated automatically from our eBay store — tap any item to view and buy on eBay.</p>
-    <div class="items" id="itemGrid"><div class="empty">Loading latest items…</div></div>
-    <p class="updated" id="updatedAt"></p>
-    <div style="text-align:center;margin-top:32px">
-      <a class="btn" id="allItemsCta" href="#" target="_blank" rel="noopener">View all items on eBay →</a>
-    </div>
-  </div>
-</section>
-
-<section id="categories" style="background:var(--panel2)">
+<section id="categories" style="background:var(--panel2);padding:40px 0">
   <div class="wrap">
     <p class="eyebrow">What we sell</p>
     <h2 class="title">Browse by category</h2>
     <p class="sub">Every category links straight to our eBay store.</p>
     <div class="cats" id="catGrid"></div>
+  </div>
+</section>
+
+<section id="featured">
+  <div class="wrap">
+    <p class="eyebrow">Live from our store</p>
+    <h2 class="title">New arrivals</h2>
+    <p class="sub">Our latest listings, updated automatically from our eBay store — tap any item to view and buy on eBay.</p>
+    <div class="items" id="itemGrid"><div class="empty">Loading latest items…</div></div>
+  </div>
+</section>
+
+<section id="recommended" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Hand-picked</p>
+    <h2 class="title">Recommended</h2>
+    <p class="sub">Popular items picked by our store. For everything else, browse by category above.</p>
+    <div class="items" id="recGrid"><div class="empty">Loading…</div></div>
+    <p class="updated" id="updatedAt"></p>
+    <div style="text-align:center;margin-top:32px">
+      <a class="btn" id="allItemsCta" href="#" target="_blank" rel="noopener">View all items on eBay →</a>
+    </div>
   </div>
 </section>
 
@@ -179,8 +189,10 @@
 <footer>
   <div class="wrap">
     <div class="fl">
-      <a href="#featured">Featured</a>
       <a href="#categories">Categories</a>
+      <a href="#featured">New</a>
+      <a href="#recommended">Recommended</a>
+      <a href="#owner">News</a>
       <a href="#why">Why us</a>
       <a id="footCta" href="#" target="_blank" rel="noopener">eBay Store</a>
     </div>
@@ -221,25 +233,33 @@
         <div class="go">Shop now →</div>
       </a>`).join("");
 
-    // items (from data.json, newest first, auto-updated)
+    // items (from data.json, auto-updated). 新着＝出品日の新しい順、おすすめ＝config.json の featuredIds。残りはカテゴリから。
     const items = (data.items||[]);
     $("#statCount").textContent = items.length ? (items.length + "+") : "Fresh";
-    if(items.length){
-      $("#itemGrid").innerHTML = items.map(it=>`
+    const num = it => { const m = String(it.itemId||"").match(/\d{9,}/); return m ? Number(m[0]) : 0; };
+    const card = it => `
         <a class="item" href="${esc(it.url||store)}" target="_blank" rel="noopener">
           <div class="thumb" style="${it.image?`background-image:url('${esc(it.image)}')`:''}">
             ${it.image?"":`<div class="fallback">${esc(it.emoji||"🛍️")}</div>`}
-            ${it.isNew?`<span class="tag">NEW</span>`:(it.tag?`<span class="tag">${esc(it.tag)}</span>`:"")}
+            ${it.tag?`<span class="tag">${esc(it.tag)}</span>`:""}
           </div>
           <div class="body">
             <div class="name">${esc(it.title)}</div>
             <div class="price">${esc(it.price||"")}</div>
             <div class="view">View on eBay →</div>
           </div>
-        </a>`).join("");
-    } else {
-      $("#itemGrid").innerHTML = `<div class="empty">Items will appear here automatically once setup is complete.</div>`;
-    }
+        </a>`;
+    const fids = (cfg.featuredIds||[]).map(Number);
+    const rec = fids.map(id => items.find(it => num(it) === id)).filter(Boolean).slice(0, cfg.featuredCount||8);
+    const recSet = new Set(rec);
+    const newest = items.filter(it => !recSet.has(it)).sort((a,b) => {
+      const da = Date.parse(a.listedAt||"") || 0, db = Date.parse(b.listedAt||"") || 0;
+      return (db - da) || (num(b) - num(a));
+    }).slice(0, cfg.newCount||8);
+    $("#itemGrid").innerHTML = newest.length ? newest.map(it => card(Object.assign({}, it, {tag:"NEW"}))).join("")
+      : `<div class="empty">Items will appear here automatically once setup is complete.</div>`;
+    $("#recGrid").innerHTML = rec.length ? rec.map(card).join("")
+      : `<div class="empty">Browse by category to see all items.</div>`;
     if(data.updatedAt){
       const d = new Date(data.updatedAt);
       $("#updatedAt").textContent = "Last updated: " + (isNaN(d)? data.updatedAt : d.toLocaleString());

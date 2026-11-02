@@ -1,29 +1,84 @@
 {
   "_comment": "ここはあなたが自由に編集する設定ファイル(秘密ではない情報のみ)。APIキーはここに書かず、GitHubのSecretsに入れます。",
-
   "sellerUsername": "sanuki.japan",
   "marketplaceId": "EBAY_US",
   "ebayStoreUrl": "https://www.ebay.com/str/sanukitrading",
-
   "brandName": "Sanuki Trading",
   "brandEmoji": "🛍️",
   "heroTitle": "Curated finds, <span class=\"hl\">shipped worldwide</span> from Japan.",
   "heroLead": "Japanese collectibles, fashion, cameras and more — authenticated, carefully packed, and delivered with tracking to your door.",
   "aboutText": "We're a Japan-based seller passionate about sending quality items to buyers around the globe. Each order is checked, cleaned and packed with care. Every purchase goes through eBay's secure checkout — your payment and personal details stay protected by eBay and are never handled by us directly.",
-
   "categories": [
-    { "icon": "📷", "name": "Cameras & Photo",  "desc": "Vintage & modern gear",   "url": "" },
-    { "icon": "👘", "name": "Japanese Fashion", "desc": "Streetwear & vintage",     "url": "" },
-    { "icon": "🎮", "name": "Games & Toys",     "desc": "Retro consoles & figures", "url": "" },
-    { "icon": "⌚", "name": "Watches",          "desc": "Seiko, Citizen & more",    "url": "" },
-    { "icon": "🎴", "name": "Collectibles",     "desc": "Cards, coins & rare items","url": "" },
-    { "icon": "🎧", "name": "Audio & Vinyl",    "desc": "Records & hi-fi",          "url": "" }
+    {
+      "icon": "📷",
+      "name": "Cameras & Photo",
+      "desc": "Vintage & modern gear",
+      "url": ""
+    },
+    {
+      "icon": "👘",
+      "name": "Japanese Fashion",
+      "desc": "Streetwear & vintage",
+      "url": ""
+    },
+    {
+      "icon": "🎮",
+      "name": "Games & Toys",
+      "desc": "Retro consoles & figures",
+      "url": ""
+    },
+    {
+      "icon": "⌚",
+      "name": "Watches",
+      "desc": "Seiko, Citizen & more",
+      "url": ""
+    },
+    {
+      "icon": "🎴",
+      "name": "Collectibles",
+      "desc": "Cards, coins & rare items",
+      "url": ""
+    },
+    {
+      "icon": "🎧",
+      "name": "Audio & Vinyl",
+      "desc": "Records & hi-fi",
+      "url": ""
+    }
   ],
-
   "socials": [
-    { "icon": "📸", "label": "Instagram", "url": "" },
-    { "icon": "📌", "label": "Pinterest", "url": "" },
-    { "icon": "▶️", "label": "YouTube",   "url": "" },
-    { "icon": "𝕏",  "label": "X",         "url": "" }
-  ]
+    {
+      "icon": "📸",
+      "label": "Instagram",
+      "url": ""
+    },
+    {
+      "icon": "📌",
+      "label": "Pinterest",
+      "url": ""
+    },
+    {
+      "icon": "▶️",
+      "label": "YouTube",
+      "url": ""
+    },
+    {
+      "icon": "𝕏",
+      "label": "X",
+      "url": ""
+    }
+  ],
+  "_featured_comment": "おすすめ商品（ホームページの「おすすめ」欄）。itemIdの数字部分を、見せたい順に並べる。2026-11-02 社長指示で追加。",
+  "featuredIds": [
+    "860002497947",
+    "860097043102",
+    "860095049495",
+    "860045409790",
+    "860008900616",
+    "318882565354",
+    "318702054149",
+    "860105591506"
+  ],
+  "newCount": 8,
+  "featuredCount": 8
 }

@@ -45,6 +45,13 @@
     "listings": "点 出品中", "Tracked": "追跡つき", "shipping": "発送", "Worldwide": "世界中へ", "delivery": "お届け",
     "30-day": "30日間", "returns": "返品",
     "Live from our store": "eBayのお店から", "New & featured items": "新着・おすすめ商品",
+    "New": "新着", "Recommended": "おすすめ", "News": "お知らせ", "New arrivals": "新着商品",
+    "Our latest listings, updated automatically from our eBay store — tap any item to view and buy on eBay.":
+      "新しく出品した商品です。eBayのお店から毎日自動で更新しています。商品を押すと、eBayのページで見て買えます。",
+    "Hand-picked": "当店のおすすめ",
+    "Popular items picked by our store. For everything else, browse by category above.":
+      "人気の商品を選んでいます。ほかの商品は、上のカテゴリから見てください。",
+    "Browse categories": "カテゴリを見る",
     "Updated automatically from our eBay store — tap any item to view and buy on eBay.":
       "eBayのお店から毎日自動で更新しています。商品を押すと、eBayのページで見て買えます。",
     "View all items on eBay →": "eBayですべての商品を見る →",
@@ -184,6 +191,9 @@
     ".st-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}" +
     ".st-list{margin:12px 0 0;padding-left:1.2em;color:var(--ink)}.st-list li{margin:6px 0}" +
     ".st-chip{padding:8px 16px;border:1.5px solid var(--line,#28303f);border-radius:999px;font-weight:700;font-size:14px}.st-chip:hover{border-color:var(--brand,#3b82f6)}" +
+    ".st-fold>summary{cursor:pointer;list-style:none;display:flex;flex-direction:column;gap:4px}.st-fold>summary::-webkit-details-marker{display:none}" +
+    ".st-fold>summary .st-sum{font-size:15px;font-weight:700}.st-fold>summary .st-sum::after{content:' ▼';font-size:12px;color:var(--muted,#9aa6b8)}" +
+    ".st-fold[open]>summary .st-sum::after{content:' ▲'}.st-fold-in{margin-top:16px}" +
     "@media (max-width:700px){.st-sites{grid-template-columns:repeat(2,minmax(0,1fr))}.st-box{padding:18px}}";
   document.head.appendChild(css);
 
@@ -206,6 +216,28 @@
   function noteRow(n) {
     var p = n.price ? '<span class="st-p">' + Number(n.price).toLocaleString("ja-JP") + "円</span>" : '<span class="st-p free">無料</span>';
     return '<a href="' + esc(n.url) + '" target="_blank" rel="noopener"><span class="st-t"><span>' + esc(n.name) + '</span><span class="st-d">' + esc(n.date) + "</span></span>" + p + "</a>";
+  }
+  /* 事業の発信をカードで表示（商品と同じ見た目）。もしもナビとnoteは日本語の閲覧者向け。2026-11-02 社長指示 */
+  var MOSHIMO_POSTS = [
+    { name: "家族の「もしも」手続きナビ｜質問に答えるだけで、必要な手続きを期限の近い順に", url: "moshimo/", image: "moshimo/thumb.png", tag: "無料ツール", label: "無料で使う →", ext: false },
+    { name: "動画で見る：家族の「もしも」手続きナビ（約30秒）", url: "https://www.tiktok.com/@sanukitrading/video/7703539880848084244", image: "moshimo/thumb.png", tag: "▶ 動画", label: "動画を見る →", ext: true }
+  ];
+  function postCard(p) {
+    var img = p.image ? "background-image:url('" + esc(p.image) + "')" : "background-image:url('" + esc(LOGO) + "');background-size:contain;background-repeat:no-repeat";
+    var price = p.price === undefined ? "" : (p.price ? Number(p.price).toLocaleString("ja-JP") + "円" : "無料");
+    return '<a class="item st-ja" href="' + esc(p.url) + '"' + (p.ext === false ? "" : ' target="_blank" rel="noopener"') + '>' +
+      '<div class="thumb" style="aspect-ratio:1.91/1;' + img + '">' + (p.tag ? '<span class="tag">' + esc(p.tag) + "</span>" : "") + "</div>" +
+      '<div class="body"><div class="name">' + esc(p.name) + "</div>" +
+      (p.date ? '<div class="st-d">' + esc(p.date) + "</div>" : "") +
+      '<div class="price">' + price + '</div><div class="view">' + esc(p.label || "読む →") + "</div></div></a>";
+  }
+  function postsHtml(notes) {
+    var list = MOSHIMO_POSTS.slice();
+    (notes || []).forEach(function (n) {
+      if (/n39450ded3b65$/.test(n.url)) n = Object.assign({}, n, { image: n.image || "moshimo/thumb.png" });
+      list.push(Object.assign({ tag: "note", label: "noteで読む →" }, n));
+    });
+    return list.slice(0, 8).map(postCard).join("");
   }
   var notesHtml = NOTES.map(noteRow).join("");
   var snsHtml = SNS.map(function (s) {
@@ -232,13 +264,16 @@
         "</ul>" +
         '<div class="st-row"><a class="btn ghost" href="https://www.ebay.com/usr/sanuki.japan" target="_blank" rel="noopener">' + bi("Contact us on eBay →", "eBayのメッセージで問い合わせる →") + "</a></div>" +
       "</div></div></section>" +
-      '<section class="st-sec" id="owner"><div class="wrap"><div class="st-box">' +
+      '<section class="st-sec" id="owner"><div class="wrap">' +
+        '<p class="st-eyebrow">' + bi("News & posts", "Sanuki Tradingの発信") + "</p>" +
+        "<h2>" + bi("Latest from Sanuki Trading", "新しい記事・無料ツール") + "</h2>" +
+        '<p class="st-sub st-ja">押すと、それぞれのページが開きます。</p>' +
+        '<div class="items st-posts" id="st-posts">' + postsHtml(NOTES) + "</div>" +
+        '<div class="st-box" style="margin-top:22px">' +
         '<p class="st-eyebrow">' + bi("From the owner", "店主の話") + "</p>" +
         "<h2>" + bi("Run by one person in Japan", "「明るくなったね」") + "</h2>" +
         '<p class="st-sub st-en">The owner writes, in Japanese, about running the shop day to day with help from AI.</p>' +
         '<p class="st-sub st-ja">そう言われるようになるまでの店主の話を、noteに書いています。お店を続けながら、毎日の作業の一部をAIに任せるようになるまでの記録です。</p>' +
-        '<p class="st-ja" style="margin:0;font-weight:800">noteの新しい記事</p>' +
-        '<div class="st-notes st-ja">' + notesHtml + "</div>" +
         '<p class="st-sub" style="margin:16px 0 0">' + bi("Readers outside Japan can buy paid note articles too. Pay with PayPal (a free note account is required; overseas-issued credit cards may not work). Articles are written in Japanese; note may show English machine translations of some articles.", "海外にお住まいの方も、noteの有料記事を購入できます（PayPalでのお支払い・noteの会員登録が必要です。海外で発行されたクレジットカードは使えない場合があります）。") + "</p>" +
         '<div class="st-row">' +
           '<a class="btn" href="https://note.com/sanukitrading/n/n62e7064ee02f" target="_blank" rel="noopener">' + bi("Read on note (Japanese, free) →", "無料で読む →") + "</a>" +
@@ -251,13 +286,16 @@
   var about = document.getElementById("about");
   if (about && about.parentNode) about.parentNode.insertBefore(add, about.nextSibling);
   else document.body.appendChild(add);
+  /* 事業の発信（note・SNS・無料ツール）は「おすすめ」のすぐ下へ。押すと開く形（2026-11-02 社長指示） */
+  var ownerSec = document.getElementById("owner"), recSec = document.getElementById("recommended");
+  if (ownerSec && recSec && recSec.parentNode) recSec.parentNode.insertBefore(ownerSec, recSec.nextSibling);
 
   /* noteの新しい記事：notes.json（GitHubが3時間ごとにnoteから自動で作る）があれば、そちらに入れ替える */
   fetch("notes.json?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (list) {
     if (!list || !list.length) return;
     list = list.filter(function (n) { return n && /^https:\/\/note\.com\/sanukitrading\/n\/[a-z0-9]+$/.test(n.url) && n.name; }).slice(0, 5);
-    var box = document.querySelector(".st-notes");
-    if (box && list.length) box.innerHTML = list.map(noteRow).join("");
+    var box = document.getElementById("st-posts");
+    if (box && list.length) box.innerHTML = postsHtml(list);
   }).catch(function () {});
 
   /* 今のページの英語を日本語に（元の英語は覚えておき、ENで戻す） */
@@ -305,20 +343,4 @@
   });
 })();
 
-/* もしもナビ（無料）への案内。日本語の閲覧者にだけ表示。2026-11-02 追加 */
-(function () {
-  try {
-    var ja = /^ja/i.test(navigator.language || "") || location.hash === "#ja";
-    if (!ja || document.getElementById("moshimo-banner")) return;
-    var s = document.createElement("section");
-    s.id = "moshimo-banner";
-    s.style.cssText = "max-width:960px;margin:32px auto;padding:20px 16px;border:2px solid #b3261e;border-radius:14px;background:#fff;color:#1d1d1f;font-family:'Hiragino Sans','Noto Sans JP',sans-serif;line-height:1.7";
-    s.innerHTML = '<p style="margin:0 0 4px;color:#b3261e;font-weight:700">新しい無料ツール</p>' +
-      '<p style="margin:0 0 6px;font-size:1.2rem;font-weight:700">家族の「もしも」手続きナビ</p>' +
-      '<p style="margin:0 0 12px">家族が亡くなったあとの手続きを、質問に答えるだけで期限の近い順に並べます。期限は法律の条文で確かめ、根拠を表示しています。</p>' +
-      '<a href="moshimo/" style="display:inline-block;background:#b3261e;color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:10px">無料で使う →</a>' +
-      '<a href="https://www.tiktok.com/@sanukitrading/video/7703539880848084244" target="_blank" rel="noopener" style="display:inline-block;margin-left:12px;color:#b3261e;font-weight:700">▶ 動画で見る（約30秒）</a>';
-    var f = document.querySelector("footer");
-    if (f && f.parentNode) f.parentNode.insertBefore(s, f); else document.body.appendChild(s);
-  } catch (e) {}
-})();
+/* もしもナビの案内は「Sanuki Tradingの発信」のカードに移した（2026-11-02 社長指示）。 */
