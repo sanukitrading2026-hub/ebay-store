@@ -1,0 +1,14 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Sanuki Trading video bridge</title></head>
+<body><script>
+/* Hands one of the store's own public product videos to the Sanuki Trading Facebook page tab (for posting reels/stories). */
+(function(){
+  var ALLOWED = ["https://www.facebook.com", "https://business.facebook.com"];
+  var f = new URLSearchParams(location.search).get("f") || "";
+  function send(msg){ ALLOWED.forEach(function(o){ try{ parent.postMessage(msg, o); }catch(e){} }); }
+  if (!/^videos\/(v1-\d+-0|store_intro)\.mp4$/.test(f)) { send({kind:"sanuki-hello"}); return; }
+  fetch(f, {cache:"no-store"}).then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.blob(); })
+    .then(function(b){ send({kind:"sanuki-vid", f:f, size:b.size, blob:b}); })
+    .catch(function(e){ send({kind:"sanuki-err", f:f, error:String(e)}); });
+})();
+</script></body></html>
