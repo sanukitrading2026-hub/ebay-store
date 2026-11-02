@@ -38,6 +38,7 @@ table.cal th,table.cal td{border:1px solid var(--line);padding:7px 8px;text-alig
 table.cal thead th{background:var(--soft)}
 table.cal td.d{white-space:nowrap;font-weight:700}
 .chk{margin-right:6px;transform:scale(1.2)}
+.cl{list-style:none;padding-left:0!important}.cl label{display:flex;align-items:flex-start;gap:6px;margin:2px 0}.cl .chk{margin-top:.45em}
 .memo-sec{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0}
 .memo-sec h4{margin:0 0 6px}
 .memo-sec .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 10px;font-size:.88rem}
@@ -65,7 +66,7 @@ table.cal td.d{white-space:nowrap;font-weight:700}
 <p class="note">入力した内容はこの端末の中だけで使い、どこにも送信・保存しません（ページを閉じると消えます）。ここに書いてあるのは、国の法令と各社の公式ページにもとづく一般的な手続きです（公式ページ・法令で確かめた項目には、出典と確認日を付けています）。手続きの細かい内容は、市区町村・加入先・会社によって違うことがあり、変わることもあります。個別のご判断は、各窓口や専門家（弁護士・司法書士・税理士）にご確認ください。</p>
 
 <form id="q" onsubmit="return false"></form>
-<p class="noprint"><button type="button" id="go">私の手続き一覧を作る</button></p>
+<p class="noprint"><button type="button" id="go">私の手続き一覧を作る</button> <button type="button" class="sec" id="memoonly">もしもメモ（記入表）だけ見る</button></p>
 
 <div id="res" class="hidden">
 <div class="tabs noprint"><button type="button" data-t="cal" class="on">① 期限カレンダー</button><button type="button" data-t="list">② 手続きの詳しい中身</button><button type="button" data-t="memo">③ もしもメモ（記入表）</button></div>
@@ -78,7 +79,7 @@ table.cal td.d{white-space:nowrap;font-weight:700}
 </div>
 </div>
 
-<script src="enc.js?v=20261103"></script>
+<script src="enc.js?v=20261103b"></script>
 <script>
 const ENC=window.MOSHIMO_ENC;
 let D=null;
@@ -88,6 +89,7 @@ async function unlock(){
  const pw=$("pw").value.normalize("NFKC").replace(/\s+/g,"").toLowerCase();
  $("lmsg").textContent="";
  if(!pw){$("lmsg").textContent="合言葉を入れてください。";return}
+ if(!window.crypto||!crypto.subtle||typeof DecompressionStream==="undefined"){$("lmsg").textContent="お使いのブラウザでは開けません。iPhone・Android・パソコンのブラウザを最新にしてから、もう一度お試しください（Safari 16.4以降・Chrome 80以降など）。";return}
  try{
   const km=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
   const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b64(ENC.salt),iterations:ENC.iter,hash:"SHA-256"},km,{name:"AES-GCM",length:256},false,["decrypt"]);
@@ -190,7 +192,8 @@ function itemHTML(it,dt){
  add("必要な場合",it.who);add("届け出る人",it.by);add("窓口",it.where);add("連絡先",it.contact);
  add("期限",it.due);add("時期",it.timing);
  if(it.steps&&it.steps.length)dl.push(`<dt>流れ</dt><dd><ol>${it.steps.map(x=>"<li>"+esc(x)+"</li>").join("")}</ol></dd>`);
- add("主な書類",it.docs);add("費用",it.cost);add("注意",it.note);add("注意",it.notes);
+ if(it.docs){const ds=Array.isArray(it.docs)?it.docs:[it.docs];dl.push(`<dt>主な書類</dt><dd><ul class="cl">${ds.map(x=>"<li><label><input type=\"checkbox\" class=\"chk\">"+esc(x)+"</label></li>").join("")}</ul></dd>`)}
+ add("費用",it.cost);add("注意",it.note);add("注意",it.notes);
  const badge=dt?`<span class="date">${esc(ymd(dt))}まで</span>`:(it.dueLabel?`<span class="due">${esc(it.dueLabel)}</span>`:"");
  const src=(it.src||[]).length?"出典："+it.src.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(srcName(u,it))}</a>`).join("・"):"出典：なし（公式ページを確かめられていないため、一般的な案内だけです）";
  return `<div class="item"><h4>${badge}${esc(it.name)}</h4><dl>${dl.join("")}</dl><p class="src">${it.law?"根拠："+esc(it.law)+"　":""}${src}（確認日 ${esc(it.checked)}）</p></div>`;
@@ -206,11 +209,12 @@ function render(){
  if(!death){c+=`<p class="note">上の「亡くなった日」を入れると、期限の日付が出ます。いまは期限の長さだけを表示しています。</p>`}
  else if(know<death){c+=`<p class="err">「知った日」が「亡くなった日」より前になっています。日付をご確認ください。</p>`;know=death}
  const rows=all.map(it=>({it,dt:death?dueDate(it.rule,death,know):null}));
+ const debtNote=a.debt!=="no"?"（借金・ローンが「ある・分からない」と答えたため、相続放棄・限定承認の期限に特にご注意ください）":"";
  const dated=rows.filter(r=>r.dt).sort((x,y)=>x.dt-y.dt||x.it.order-y.it.order);
  const und=rows.filter(r=>!r.dt);
  if(death){
   c+=`<table class="cal"><thead><tr><th>済</th><th>期限の目安</th><th>手続き</th><th>数え方</th></tr></thead><tbody>`+
-  dated.map(r=>`<tr><td><input type="checkbox" class="chk"></td><td class="d">${esc(ymd(r.dt))}</td><td>${esc(r.it.name)}</td><td class="src" style="margin:0">${esc(ruleLabel(r.it.rule))}</td></tr>`).join("")+`</tbody></table>`;
+  dated.map(r=>`<tr><td><input type="checkbox" class="chk"></td><td class="d">${esc(ymd(r.dt))}</td><td>${esc(r.it.name)}${r.it.name.startsWith("相続放棄")&&debtNote?`<br><span class="err">${esc(debtNote)}</span>`:""}</td><td class="src" style="margin:0">${esc(ruleLabel(r.it.rule))}</td></tr>`).join("")+`</tbody></table>`;
   c+=`<p class="note">期限の末日が土・日・祝日のときに翌日まで延びる場合がありますが、このカレンダーでは延ばさずに表示しています（早めに済ませるため）。「死亡届」は国内で亡くなった場合の期限です（国外の場合は3か月以内）。</p>`;
  }
  c+=`<h3 class="cat">日付の決まりがない・すぐにするもの</h3><table class="cal"><thead><tr><th>済</th><th>時期</th><th>手続き</th></tr></thead><tbody>`+
@@ -232,9 +236,10 @@ function tab(t){["cal","list","memo"].forEach(x=>{$("t-"+x).classList.toggle("hi
 function build(){
  buildForm();memo();
  $("go").addEventListener("click",render);
+ $("memoonly").addEventListener("click",()=>{$("res").classList.remove("hidden");tab("memo");$("res").scrollIntoView({behavior:"smooth"})});
  document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>tab(b.dataset.t)));
  $("pr").addEventListener("click",()=>print());
- $("prall").addEventListener("click",()=>{document.body.classList.add("printall");print();document.body.classList.remove("printall")});
+ $("prall").addEventListener("click",()=>{document.body.classList.add("printall");window.addEventListener("afterprint",()=>document.body.classList.remove("printall"),{once:true});print()});
  $("ver").textContent="データ版："+D.version;
 }
 </script>
