@@ -13,8 +13,16 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My eBay Store</title>
-<meta name="description" content="Discover curated items shipped worldwide. Fast tracked shipping and easy returns on eBay.">
+<title>Sanuki Trading – Authentic Japanese Collectibles</title>
+<meta name="description" content="Authentic Japanese collectibles shipped from Japan with tracking: Pokémon cards, One Piece cards and anime figures. Shop Sanuki Trading on eBay.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sanuki Trading">
+<meta property="og:title" content="Sanuki Trading – Authentic Japanese Collectibles">
+<meta property="og:description" content="Authentic Japanese collectibles shipped from Japan with tracking: Pokémon cards, One Piece cards and anime figures. Shop Sanuki Trading on eBay.">
+<meta property="og:url" content="https://sanukitrading2026-hub.github.io/ebay-store/">
+<meta property="og:image" content="https://sanukitrading2026-hub.github.io/ebay-store/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sanuki Trading – Authentic Japanese Collectibles">
 <style>
   :root{
     --bg:#0b0e14; --panel:#141924; --panel2:#1b2130; --line:#28303f;
@@ -213,13 +221,13 @@
     const store = cfg.ebayStoreUrl || "#";
     const linkOr = u => (u && String(u).trim()) ? u : store;
 
-    $("#brandName").textContent = cfg.brandName || "My eBay Store";
+    $("#brandName").textContent = cfg.brandName || "Sanuki Trading";
     $("#brandEmoji").textContent = cfg.brandEmoji || "🛍️";
-    document.title = cfg.brandName || "My eBay Store";
+    document.title = cfg.brandName || "Sanuki Trading";
     if(cfg.heroTitle) $("#heroTitle").innerHTML = cfg.heroTitle;
     $("#heroLead").textContent = cfg.heroLead || "";
     $("#aboutText").textContent = cfg.aboutText || "";
-    $("#footText").innerHTML = "© 2026 " + esc(cfg.brandName||"My eBay Store") +
+    $("#footText").innerHTML = "© 2026 " + esc(cfg.brandName||"Sanuki Trading") +
       " · Independent seller on eBay. Not affiliated with or endorsed by eBay Inc.";
 
     ["#navCta","#heroCta","#allItemsCta","#bandCta","#footCta"].forEach(id=>{ const el=$(id); if(el) el.href=store; });
