@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>家族の「もしも」手続きナビ</title>
+<style>
+:root{--bg:#fafaf7;--card:#fff;--ink:#1d1d1f;--sub:#5f6368;--line:#e3e1da;--accent:#b3261e;--soft:#f3efe6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161616;--card:#1f1f1f;--ink:#ececec;--sub:#a8a8a8;--line:#333;--accent:#ff6b5e;--soft:#262420}}
+:root[data-theme="dark"]{--bg:#161616;--card:#1f1f1f;--ink:#ececec;--sub:#a8a8a8;--line:#333;--accent:#ff6b5e;--soft:#262420}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.5rem;margin:0 0 4px}
+.lead{color:var(--sub);margin:0 0 20px}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.9rem;color:var(--sub)}
+fieldset{border:1px solid var(--line);border-radius:12px;background:var(--card);margin:14px 0;padding:14px 16px}
+legend{font-weight:700;padding:0 6px}
+label{display:inline-flex;align-items:center;gap:6px;margin:6px 14px 6px 0;cursor:pointer}
+button{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:12px 20px;font-size:1rem;font-weight:700;cursor:pointer}
+.item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.item h3{margin:0 0 6px;font-size:1.05rem}
+.due{display:inline-block;background:var(--accent);color:#fff;border-radius:6px;padding:0 8px;font-size:.85rem;margin-right:6px}
+.item dl{margin:8px 0 0;display:grid;grid-template-columns:7em 1fr;gap:4px 10px;font-size:.92rem}
+.item dt{color:var(--sub)}
+.item dd{margin:0}
+.src{font-size:.8rem;color:var(--sub);word-break:break-all}
+.src a{color:inherit}
+h2{font-size:1.2rem;margin:28px 0 10px}
+.cmp{width:100%;border-collapse:collapse;background:var(--card);font-size:.9rem;border:1px solid var(--line)}
+.cmp th,.cmp td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+.cmp thead th{background:var(--soft)}
+.cmp tbody th{font-weight:600;width:42%}
+@media print{button,form,.noprint{display:none}.item{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>家族の「もしも」手続きナビ</h1>
+<p class="lead">質問に答えると、必要な手続きを期限の近い順に並べます。</p>
+<p class="note">入力した内容はこの端末の中だけで使い、どこにも送信しません。ここに書いてあるのは国や役所の公式情報にもとづく一般的な手続きです。手続きの細かい内容は市区町村や加入先によって違うことがあります。個別のご判断は、各窓口や専門家（弁護士・司法書士・税理士）にご確認ください。</p>
+
+<form id="q"></form>
+<p class="noprint"><button type="button" id="go">一覧を作る</button></p>
+<div id="out"></div>
+
+<h2>無料版と有料版のちがい</h2>
+<table class="cmp">
+<thead><tr><th></th><th>無料版（このページ）</th><th>有料版（準備中）</th></tr></thead>
+<tbody>
+<tr><th>役所・年金・保険・税金・登記の手続きと期限</th><td>○</td><td>○</td></tr>
+<tr><th>期限の根拠（法律の条文）と確認日</th><td>○</td><td>○</td></tr>
+<tr><th>必要書類</th><td>「窓口でご確認ください」の表示</td><td>○ 公式ページで確かめた主な書類を項目ごとに表示</td></tr>
+<tr><th>民間の手続き（銀行・証券・生命保険・クレジットカード・携帯電話）</th><td>×</td><td>○</td></tr>
+<tr><th>デジタルの手続き（Apple・Google・Facebook／Instagram・X・LINE のアカウント）</th><td>×</td><td>○</td></tr>
+<tr><th>期限の日付が入ったカレンダー・印刷版</th><td>一覧の印刷のみ</td><td>○ 亡くなった日を入れると期限の日付を表示</td></tr>
+<tr><th>「もしもメモ」（元気なうちに家族のために書いておく記入表）</th><td>×</td><td>○</td></tr>
+<tr><th>法律・制度が変わったときの更新</th><td>このページを更新</td><td>○ 更新版をお届け</td></tr>
+</tbody>
+</table>
+<p class="note">有料版は、ひとつひとつ公式ページの原文で確かめてから販売します。価格と発売日は決まりしだいお知らせします。</p>
+<p class="src noprint" id="ver"></p>
+</div>
+
+<script src="data.js"></script>
+<script>
+// 質問（答えの値は data.js の when 条件で使う）
+const QUESTIONS=[
+ {id:"rel",t:"亡くなった方とあなたの関係",o:[["spouse","配偶者"],["child","子"],["parent","親"],["sibling","兄弟姉妹"],["other","その他"]]},
+ {id:"work",t:"亡くなった方の働き方",o:[["employee","会社員・公務員"],["self","自営業など"],["pension","年金を受け取っていた"],["other","その他・分からない"]]},
+ {id:"ins",t:"亡くなった方の健康保険",o:[["kokuho","国民健康保険"],["kouki","後期高齢者医療（75歳以上など）"],["kenpo","会社の健康保険（協会けんぽ・健康保険組合）"],["unknown","分からない"]]},
+ {id:"head",t:"亡くなった方は世帯主でしたか",o:[["yes","はい"],["no","いいえ"],["unknown","分からない"]]},
+ {id:"realestate",t:"不動産（土地・建物）",o:[["yes","ある"],["no","ない"],["unknown","分からない"]]},
+ {id:"debt",t:"借金・ローン",o:[["yes","ある"],["no","ない"],["unknown","分からない"]]},
+ {id:"will",t:"自筆の遺言書（公正証書でないもの）",o:[["yes","ある"],["no","ない"],["unknown","分からない"]]},
+ {id:"income",t:"亡くなった年に、亡くなった方に給与以外の収入や確定申告が必要な所得がありましたか",o:[["yes","あった"],["no","なかった"],["unknown","分からない"]]}
+];
+const form=document.getElementById("q");
+QUESTIONS.forEach(q=>{
+ const fs=document.createElement("fieldset");
+ fs.innerHTML="<legend>"+q.t+"</legend>"+q.o.map(([v,l],i)=>`<label><input type="radio" name="${q.id}" value="${v}" ${i===q.o.length-1?"checked":""}>${l}</label>`).join("");
+ form.appendChild(fs);
+});
+function answers(){const a={};QUESTIONS.forEach(q=>{const c=form.querySelector(`input[name="${q.id}"]:checked`);a[q.id]=c?c.value:"unknown"});return a}
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function render(){
+ const a=answers();
+ const list=(window.ITEMS||[]).filter(it=>{try{return it.when(a)}catch(e){return true}}).sort((x,y)=>x.order-y.order);
+ const out=document.getElementById("out");
+ if(!list.length){out.innerHTML='<p class="note">手続きのデータを準備中です。</p>';return}
+ out.innerHTML=`<h2>あなたの手続き一覧（${list.length}件）</h2><p class="noprint"><button type="button" onclick="print()">印刷する</button></p>`+list.map(it=>`
+ <div class="item"><h3><span class="due">${esc(it.dueLabel)}</span>${esc(it.name)}</h3>
+ <dl><dt>必要な場合</dt><dd>${esc(it.who)}</dd><dt>届け出る人</dt><dd>${esc(it.by)}</dd><dt>窓口</dt><dd>${esc(it.where)}</dd>
+ <dt>期限</dt><dd>${esc(it.due)}</dd><dt>主な書類</dt><dd>${esc(it.docs)}</dd>${it.note?`<dt>注意</dt><dd>${esc(it.note)}</dd>`:""}</dl>
+ <p class="src">根拠：${esc(it.law)}${(it.src||[]).length?"　出典："+it.src.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${u.includes("e-gov")?"e-Gov法令検索":"日本年金機構"}</a>`).join("・"):""}（確認日 ${esc(it.checked)}）</p></div>`).join("")+`<p class="note">必要書類・手数料・支給額は、市区町村や加入先によって違います。各窓口でご確認ください。</p>`;
+ out.scrollIntoView({behavior:"smooth"});
+}
+document.getElementById("go").addEventListener("click",render);
+document.getElementById("ver").textContent="データ版："+(window.DATA_VERSION||"準備中");
+</script>
+</body>
+</html>
