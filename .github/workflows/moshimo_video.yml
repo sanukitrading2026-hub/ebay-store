@@ -1,0 +1,51 @@
+name: Build moshimo video
+
+# もしもナビの紹介動画（videos/moshimo_v3.mp4）を作る。ホームページのページ内で再生するため（2026-11-03）
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/moshimo_video/**"
+      - ".github/workflows/moshimo_video.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: moshimo-video
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk
+          pip install --quiet numpy
+          cd /tmp && npm install --silent playwright@1.48.2 && npx playwright install --with-deps chromium
+      - name: Build video
+        env:
+          NODE_PATH: /tmp/node_modules
+        run: bash scripts/moshimo_video/build.sh
+      - name: Commit video
+        run: |
+          git config user.name  "store-bot"
+          git config user.email "store-bot@users.noreply.github.com"
+          git add videos/moshimo_v3.mp4
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git commit -m "もしもナビの紹介動画（ページ内再生用）を作成"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then echo "pushed"; exit 0; fi
+            sleep 5
+          done
+          exit 1
