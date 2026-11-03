@@ -221,12 +221,12 @@
   /* 事業の発信をカードで表示（商品と同じ見た目）。もしもナビとnoteは日本語の閲覧者向け。2026-11-02 社長指示 */
   var MOSHIMO_POSTS = [
     { name: "家族の「もしも」手続きナビ｜質問に答えるだけで、必要な手続きを期限の近い順に", url: "moshimo/", image: "moshimo/thumb.png", tag: "無料ツール", label: "無料で使う →", ext: false },
-    { name: "動画で見る：家族の「もしも」手続きナビ（約30秒）", url: "https://www.tiktok.com/@sanukitrading/video/7703539880848084244", image: "moshimo/thumb.png", tag: "▶ 動画", label: "動画を見る →", ext: true }
+    { name: "動画で見る：家族の「もしも」手続きナビ（約30秒）", url: "https://www.tiktok.com/@sanukitrading/video/7703539880848084244", video: "videos/moshimo_v3.mp4", image: "moshimo/thumb.png", tag: "▶ 動画", label: "動画を見る →", ext: true }
   ];
   function postCard(p) {
     var img = p.image ? "background-image:url('" + esc(p.image) + "')" : "background-image:url('" + esc(LOGO) + "');background-size:contain;background-repeat:no-repeat";
     var price = p.price === undefined ? "" : (p.price ? Number(p.price).toLocaleString("ja-JP") + "円" : "無料");
-    return '<a class="item st-ja" href="' + esc(p.url) + '"' + (p.ext === false ? "" : ' target="_blank" rel="noopener"') + '>' +
+    return '<a class="item st-ja" href="' + esc(p.url) + '"' + (p.video ? ' data-video="' + esc(p.video) + '"' : "") + (p.ext === false ? "" : ' target="_blank" rel="noopener"') + '>' +
       '<div class="thumb" style="aspect-ratio:1.91/1;' + img + '">' + (p.tag ? '<span class="tag">' + esc(p.tag) + "</span>" : "") + "</div>" +
       '<div class="body"><div class="name">' + esc(p.name) + "</div>" +
       (p.date ? '<div class="st-d">' + esc(p.date) + "</div>" : "") +
@@ -290,6 +290,28 @@
   /* 事業の発信（note・SNS・無料ツール）は「おすすめ」のすぐ下へ。押すと開く形（2026-11-02 社長指示） */
   var ownerSec = document.getElementById("owner"), recSec = document.getElementById("recommended");
   if (ownerSec && recSec && recSec.parentNode) recSec.parentNode.insertBefore(ownerSec, recSec.nextSibling);
+
+  /* 動画のカードは、このページの上でそのまま再生する（TikTokを開くと最初に再生されないことがあるため。2026-11-03 社長指摘） */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[data-video]");
+    if (!a) return;
+    e.preventDefault();
+    var bg = document.createElement("div");
+    bg.setAttribute("style", "position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;padding:16px");
+    var v = document.createElement("video");
+    v.src = a.getAttribute("data-video");
+    v.controls = true; v.playsInline = true; v.setAttribute("playsinline", "");
+    v.setAttribute("style", "max-width:100%;max-height:88vh;border-radius:12px;background:#000");
+    var x = document.createElement("button");
+    x.type = "button"; x.textContent = "× 閉じる";
+    x.setAttribute("style", "position:absolute;top:12px;right:12px;padding:8px 14px;border:0;border-radius:999px;background:#fff;color:#111;font-size:15px;font-weight:700;cursor:pointer");
+    function close() { try { v.pause(); } catch (_) {} bg.remove(); }
+    x.addEventListener("click", close);
+    bg.addEventListener("click", function (ev) { if (ev.target === bg) close(); });
+    bg.appendChild(v); bg.appendChild(x); document.body.appendChild(bg);
+    var pr = v.play();
+    if (pr && pr.catch) pr.catch(function () { v.muted = true; v.play().catch(function () {}); });
+  });
 
   /* noteの新しい記事：notes.json（GitHubが3時間ごとにnoteから自動で作る）があれば、そちらに入れ替える */
   fetch("notes.json?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (list) {
