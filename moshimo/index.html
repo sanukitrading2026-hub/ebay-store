@@ -42,7 +42,8 @@ h2{font-size:1.2rem;margin:28px 0 10px}
 <div class="wrap">
 <h1>家族の「もしも」手続きナビ</h1>
 <p class="lead">質問に答えると、必要な手続きを期限の近い順に並べます。</p>
-<p class="noprint"><a href="https://www.tiktok.com/@sanukitrading/video/7703539880848084244" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700">▶ 動画で見る（約30秒・TikTok）</a></p>
+<details class="noprint" id="mvid"><summary style="color:var(--accent);font-weight:700;cursor:pointer">▶ 動画で見る（約30秒・音が出ます）</summary><video src="../videos/moshimo_v3.mp4" controls playsinline preload="none" poster="thumb.png" style="display:block;width:100%;max-width:360px;margin:10px 0;border-radius:12px;background:#000"></video></details>
+<script>(function(){var d=document.getElementById("mvid"),v=d.querySelector("video");d.querySelector("summary").addEventListener("click",function(){if(!d.open){var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}});})();</script>
 <p class="note">入力した内容はこの端末の中だけで使い、どこにも送信しません（ページの閲覧数を数えるためにGoogleアナリティクスを使っていますが、入力した内容は送りません）。ここに書いてあるのは国や役所の公式情報にもとづく一般的な手続きです。手続きの細かい内容は市区町村や加入先によって違うことがあります。個別のご判断は、各窓口や専門家（弁護士・司法書士・税理士）にご確認ください。</p>
 
 <form id="q"></form>
