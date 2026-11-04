@@ -98,6 +98,8 @@
   footer .fl a:hover{color:var(--ink)}
   .empty{color:var(--muted);text-align:center;padding:30px;border:1px dashed var(--line);border-radius:var(--radius)}
 </style>
+<script data-goatcounter="https://sanukitrading.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<style>.visits{position:absolute;top:14px;right:16px;z-index:5;background:rgba(0,0,0,.45);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.82rem;color:#fff;white-space:nowrap}.visits b{color:#f5c542}.gc-note{font-size:.72rem;opacity:.6;margin-top:10px}@media(max-width:520px){.visits{top:8px;right:8px;font-size:.74rem;padding:4px 10px}}</style>
 </head>
 <body>
 <nav>
@@ -115,6 +117,7 @@
 </nav>
 
 <header class="hero" id="top">
+  <div class="visits" id="visits" aria-label="Visitors">👀 Today <b id="vToday">–</b> · This month <b id="vMonth">–</b></div>
   <div class="wrap">
     <h1 id="heroTitle">Curated finds, <span class="hl">shipped worldwide</span>.</h1>
     <p class="lead" id="heroLead"></p>
@@ -207,6 +210,7 @@
       <a id="footCta" href="#" target="_blank" rel="noopener">eBay Store</a>
     </div>
     <div id="footText"></div>
+    <p class="gc-note">Visits are counted anonymously with GoatCounter (no personal data is collected).</p>
   </div>
 </footer>
 
@@ -280,6 +284,17 @@
     $("#socialRow").innerHTML = socials.map(s=>
       `<a class="social" href="${esc(s.url)}" target="_blank" rel="noopener" title="${esc(s.label||"")}">${esc(s.icon||"🔗")}</a>`).join("");
   });
+})();
+</script>
+<script>
+(function(){
+  var base='https://sanukitrading.goatcounter.com/counter/TOTAL.json';
+  var now=new Date(Date.now()+9*3600*1000); var p=function(n){return String(n).padStart(2,'0')};
+  var today=now.getUTCFullYear()+'-'+p(now.getUTCMonth()+1)+'-'+p(now.getUTCDate());
+  var first=now.getUTCFullYear()+'-'+p(now.getUTCMonth()+1)+'-01';
+  function get(q,id){fetch(base+q).then(function(r){return r.ok?r.json():{count:'0'}}).then(function(j){document.getElementById(id).textContent=(j&&j.count)||'0'}).catch(function(){document.getElementById(id).textContent='0'})}
+  get('?start='+today+'&end='+today,'vToday');
+  get('?start='+first+'&end='+today,'vMonth');
 })();
 </script>
 <script src="ja.js" defer></script>
