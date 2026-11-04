@@ -147,7 +147,7 @@ ${it.image ? `<meta property="og:image" content="${esc(it.image)}">` : ""}
   .btn.blue{background:#3b82f6;color:#fff;font-weight:700}
   .meta{color:#9aa6b8;font-size:14px;margin-top:18px}
   .foot{margin-top:34px;border-top:1px solid #28303f;padding-top:16px;color:#9aa6b8;font-size:12.5px}
-</style></head>
+</style><script data-goatcounter="https://sanukitrading.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script></head>
 <body><div class="wrap">
   <a class="top" href="${esc(SITE_BASE)}/"><span class="logo"></span>${esc(brand)}</a>
   ${it.image ? `<img class="thumb" src="${esc(it.image)}" alt="${esc(it.title)}">` : ""}
