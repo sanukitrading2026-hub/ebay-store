@@ -98,6 +98,7 @@
   footer .fl a:hover{color:var(--ink)}
   .empty{color:var(--muted);text-align:center;padding:30px;border:1px dashed var(--line);border-radius:var(--radius)}
 </style>
+<script>window.goatcounter={path:function(p){return location.pathname}};</script>
 <script data-goatcounter="https://sanukitrading.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <style>.visits{position:absolute;top:14px;left:16px;z-index:5;background:rgba(0,0,0,.45);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.82rem;color:#fff;white-space:nowrap}.visits b{color:#f5c542}.gc-note{font-size:.72rem;opacity:.6;margin-top:10px}@media(max-width:520px){.visits{top:8px;left:8px;font-size:.74rem;padding:4px 10px}}</style>
 </head>
@@ -293,8 +294,8 @@
   var today=now.getUTCFullYear()+'-'+p(now.getUTCMonth()+1)+'-'+p(now.getUTCDate());
   var first=now.getUTCFullYear()+'-'+p(now.getUTCMonth()+1)+'-01';
   function get(q,id){fetch(base+q).then(function(r){return r.ok?r.json():{count:'0'}}).then(function(j){document.getElementById(id).textContent=(j&&j.count)||'0'}).catch(function(){document.getElementById(id).textContent='0'})}
-  get('?start='+today+'&end='+today,'vToday');
-  get('?start='+first+'&end='+today,'vMonth');
+  get('?start='+today,'vToday');
+  get('?start='+first,'vMonth');
 })();
 </script>
 <script src="ja.js" defer></script>
