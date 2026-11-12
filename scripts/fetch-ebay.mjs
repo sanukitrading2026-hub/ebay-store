@@ -150,12 +150,13 @@ ${it.image ? `<meta property="og:image" content="${esc(it.image)}">` : ""}
 </style><script data-goatcounter="https://sanukitrading.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script></head>
 <body><div class="wrap">
   <a class="top" href="${esc(SITE_BASE)}/"><span class="logo"></span>${esc(brand)}</a>
-  ${it.image ? `<img class="thumb" src="${esc(it.image)}" alt="${esc(it.title)}">` : ""}
   <h1>${esc(it.title)}</h1>
   <div class="price">${esc(it.price)}</div>
-  <a class="btn" href="${esc(it.url || storeUrl)}" target="_blank" rel="noopener">Buy now on eBay</a>
+  <a class="btn" href="${esc(it.url || storeUrl)}" target="_blank" rel="noopener" data-goatcounter-click="ebay-buy-top-${esc(String(it.itemId||"").split("|")[1]||"")}" data-goatcounter-title="Buy on eBay (top)">Buy now on eBay</a>
   <p class="meta">Authentic Japanese item, shipped worldwide with tracking. Sold by ${esc(brand)} on eBay.</p>
-  <p style="margin-top:20px"><a class="btn blue" href="${esc(storeUrl)}" target="_blank" rel="noopener">See all items in our store</a></p>
+  ${it.image ? `<img class="thumb" src="${esc(it.image)}" alt="${esc(it.title)}">` : ""}
+  <a class="btn" href="${esc(it.url || storeUrl)}" target="_blank" rel="noopener" data-goatcounter-click="ebay-buy-bottom-${esc(String(it.itemId||"").split("|")[1]||"")}" data-goatcounter-title="Buy on eBay (bottom)">Buy now on eBay</a>
+  <p style="margin-top:20px"><a class="btn blue" href="${esc(storeUrl)}" target="_blank" rel="noopener" data-goatcounter-click="ebay-store" data-goatcounter-title="eBay store">See all items in our store</a></p>
   <div class="foot">© 2026 ${esc(brand)} · Independent seller on eBay. Not affiliated with or endorsed by eBay Inc.</div>
 </div></body></html>`;
 }
