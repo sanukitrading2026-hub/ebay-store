@@ -48,7 +48,7 @@ async function getSellerItems(token) {
   const LIMIT = 200;
   for (let offset = 0; offset <= 9800; offset += LIMIT) {
     const url = new URL("https://api.ebay.com/buy/browse/v1/item_summary/search");
-    url.searchParams.set("filter", `sellers:{${seller}}`);
+    url.searchParams.set("filter", `sellers:{${seller}},buyingOptions:{FIXED_PRICE|AUCTION|BEST_OFFER}`);
     url.searchParams.set("category_ids", "0");
     url.searchParams.set("limit", String(LIMIT));
     url.searchParams.set("offset", String(offset));
