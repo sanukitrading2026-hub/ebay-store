@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T01:37:52.250Z",
+  "updatedAt": "2026-11-13T02:51:11.834Z",
   "seller": "sanuki.japan",
   "count": 153,
   "items": [
@@ -14,6 +14,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-09-17T12:28:43.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/7hoAAeSwSbhqq-xA/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/JhQAAeSwTadqq9Cy/s-l1600.jpg",
@@ -30,10 +37,17 @@
       "priceValue": "271.99",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/M18AAeSwahJqnRoq/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318452618215?hash=item4a254153e7:g:M18AAeSwahJqnRoq&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7mcBxBnpU%2BZOZ9WUQyy3slXc0zE6GA7ucSLReGpslHfhlY1QSeADdmmND%2BsKe0M9H%2FEXj8xXuk4KA53gnMbhPaKzMpwVAjzbdNSkn3ppkepAJWQ07SY08QqWKb7ahxYeH1FgqcueOhUGIye7KCqCGNkt3rtHrCY6XoG3NKuU27uIlNM0q6QESNjStPny2JXe8F0pa%2BM%2BP3TssG7Cr8JgrR5h9eRySpRhNdtFkk9kDFMLmj9liEcTzhsGo%2BZTWU3E0q80cqfWTTXESeGQJ9TXvDf",
+      "url": "https://www.ebay.com/itm/318452618215?hash=item4a254153e7:g:M18AAeSwahJqnRoq&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7mcBxBnpU%2BZOZ9WUQyy3slXc0zE6GA7ucSLReGpslHfhlY1QSeADdmmND%2BsKe0M9H%2FEXj8xXuk4KA53gnMbhPaKzMpwVAjzbdNSkn3ppkepAJWQ07SY08QqWKb7ahxYeH1yDtCjXXhUMfL0nYADX%2Fy9m3QS4YiziN9M1n07tZoj3zvzYv37bGfGXahX0JJnOzyHPqowAbQY84akarpNoCJUmfZKtH%2FR1rscHBS5O2HE1WEgecaHLNGmnqGSSt02qm7VRS25N5F8r9lu0RCtzrDh",
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-06-14T03:10:45.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/IMMAAeSwSLlqdKIs/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/6F4AAeSwLKlqdKIy/s-l1600.jpg",
@@ -50,10 +64,17 @@
       "priceValue": "59.99",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/vesAAeSwOT5qgpaU/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860132298249?hash=itemc843e14e09:g:vesAAeSwOT5qgpaU&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7myu4pq3z6dtA8aqiTC5q7jXVvtzVTvL7pjmB9ocQCq5juDnlYzriOk5IFBbnCSKJFbLDvzkpBVQIVlZy%2FFbturQcnG94GUjoXUbUulyyHMwkY6g85OahoPzCabnpqnzAAylMFbmDX8jeELAQ%2BOsut7FMuZpGRjiv2ge%2BNMJO1RDUpdnPnFwNnr8M6cZu1iQrI%2Bun%2BidHO1UC4fdGvfVOgEy6OHpJja8k4NL9522usg2Gipkt60gD%2BCQVn39uunRLNPmKLEogRKASPrj2sC%2Bx7F",
+      "url": "https://www.ebay.com/itm/860132298249?hash=itemc843e14e09:g:vesAAeSwOT5qgpaU&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7myu4pq3z6dtA8aqiTC5q7jXVvtzVTvL7pjmB9ocQCq5juDnlYzriOk5IFBbnCSKJFbLDvzkpBVQIVlZy%2FFbturQcnG94GUjoXUbUulyyHMwkY6g85OahoPzCabnpqnzAB2h8Jn7%2BXB0fFAVPlNDnaZ7l5XBzNWlPTmVYgpmx2m1YUP4fCy77nwSJ4BdPeIrlvew5wQlHceVkNL0ria3AmSzQP%2BRVUIT6thuW81Zi8lQqC5qxUmRMMcp4Zvi%2Fx5%2B%2B8itpHSoX23WfOGoqs7C3hp",
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-10T23:02:28.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/vesAAeSwOT5qgpaU/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/-WYAAeSwcSpp-aSh/s-l1600.jpg",
@@ -70,10 +91,17 @@
       "priceValue": "31.99",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/-RUAAeSwDPJqBH7-/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318399001730?hash=item4a220f3482:g:-RUAAeSwDPJqBH7-&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7nzAroEb6ev8ppVL5MT2gzqbI4ZEFSaw%2BlBcpVAATZyvnASfdXCe8oWk0CftSD4xX2QvRZrI2YOwZXzp55pkzvRcW1V215mMUuzGTwMii2EnMxEnCA9kZwoLa0z4cqqwoC%2FLuozM2kjYc2LUGP%2BlrW5gZ2aMHw%2Fad5%2BckPnD6ap%2FHN4IzNtZjx0qW0vOxmmBV98sfe%2Ba2L%2F7mRXov7BWK7l55zslZoqcSzUtPMUduqwKwe%2BjFs1AJudQJDUb3FBaOjYrit4TcCZuQOy%2BR6mOtpN",
+      "url": "https://www.ebay.com/itm/318399001730?hash=item4a220f3482:g:-RUAAeSwDPJqBH7-&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7nzAroEb6ev8ppVL5MT2gzqbI4ZEFSaw%2BlBcpVAATZyvnASfdXCe8oWk0CftSD4xX2QvRZrI2YOwZXzp55pkzvRcW1V215mMUuzGTwMii2EnMxEnCA9kZwoLa0z4cqqwoD4tzXrM8xVO%2F3vYGTwusnj%2FEWIRLbjve2kWmoY%2BkKWpnsi17aoRiXuT3ORW3yay3vaSSi%2F3uZI0VSC1ZwXmwYoSfSrhCZQLikl3NjyK5Qsp9H3gPGyqyqFETZjFsaVM0yAlu%2BjRndDBP%2BboNw%2Fwmgf",
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-06-02T11:32:11.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/-RUAAeSwDPJqBH7-/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/8uQAAeSw8ohqBH8D/s-l1600.jpg",
@@ -94,6 +122,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-11-03T03:34:29.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/iQ8AAeSwG~dqmtH5/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/MlQAAeSwM2lqmok0/s-l1600.jpg",
@@ -114,6 +149,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-10-27T21:33:30.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/j2EAAeSwsKZq4KQb/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/gS8AAeSwaR9q4KQh/s-l1600.jpg",
@@ -121,26 +163,6 @@
         "https://i.ebayimg.com/images/g/rrMAAeSwfGxq4KQu/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/vGsAAeSwHTBq4KQ1/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/DGgAAeSw-EZq4KQ7/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|860138809024|0",
-      "title": "Master Roshi Figure Dragon Ball Solid Edge Works Kame Sennin Banpresto New",
-      "price": "$20.42",
-      "priceValue": "20.42",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/5OEAAeSw5oRqOnag/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860138809024?hash=itemc84444a6c0:g:5OEAAeSw5oRqOnag",
-      "condition": "New",
-      "isNew": false,
-      "listedAt": "2026-11-12T23:52:05.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/5OEAAeSw5oRqOnag/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/1JAAAeSwKNZqOnan/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/kZgAAeSwPYBqOnao/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/6WsAAeSwkcBqOnat/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/tjoAAeSwsvBqOnay/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/jGMAAeSwBO5qOna3/s-l1600.jpg"
       ]
     },
     {
@@ -154,30 +176,17 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-10-26T04:44:06.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/WnEAAeSwelBq2wXO/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/giMAAeSw~fxq2wXN/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/8EMAAeSwmgVq2wXM/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|860135766944|0",
-      "title": "Pokemon 30th Anniversary Celebration Futuristic Box Japanese Sealed Pikachu ex",
-      "price": "$515.99",
-      "priceValue": "515.99",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/N7QAAeSwG2VqxZJp/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860135766944?hash=itemc844163ba0:g:N7QAAeSwG2VqxZJp",
-      "condition": "New/Factory Sealed",
-      "isNew": false,
-      "listedAt": "2026-11-12T01:18:15.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/N7QAAeSwG2VqxZJp/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/FsQAAeSw5AlqxZJx/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/KJ8AAeSwo29qxZJ~/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/GCEAAeSwe1BqxZKK/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/4LQAAeSwi0lqxZKW/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/DTYAAeSwejZqxZKg/s-l1600.jpg"
       ]
     },
     {
@@ -191,6 +200,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-11-10T23:41:23.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/v5kAAeSw8Ztq8yHx/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/BPUAAeSww~1q8yHx/s-l1600.jpg",
@@ -198,6 +214,60 @@
         "https://i.ebayimg.com/images/g/DUkAAeSwyxZq8yHx/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/ljsAAeSwoGZq8yHx/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/4D4AAeSwisVq8yHw/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|860135766944|0",
+      "title": "Pokemon 30th Anniversary Celebration Futuristic Box Japanese Sealed Pikachu ex",
+      "price": "$515.99",
+      "priceValue": "515.99",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/N7QAAeSwG2VqxZJp/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/860135766944?hash=itemc844163ba0:g:N7QAAeSwG2VqxZJp",
+      "condition": "New/Factory Sealed",
+      "isNew": false,
+      "listedAt": "2026-11-12T01:18:15.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/N7QAAeSwG2VqxZJp/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/FsQAAeSw5AlqxZJx/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/KJ8AAeSwo29qxZJ~/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/GCEAAeSwe1BqxZKK/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/4LQAAeSwi0lqxZKW/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/DTYAAeSwejZqxZKg/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|860138809024|0",
+      "title": "Master Roshi Figure Dragon Ball Solid Edge Works Kame Sennin Banpresto New",
+      "price": "$20.42",
+      "priceValue": "20.42",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/5OEAAeSw5oRqOnag/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/860138809024?hash=itemc84444a6c0:g:5OEAAeSw5oRqOnag",
+      "condition": "New",
+      "isNew": false,
+      "listedAt": "2026-11-12T23:52:05.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/5OEAAeSw5oRqOnag/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/1JAAAeSwKNZqOnan/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/kZgAAeSwPYBqOnao/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/6WsAAeSwkcBqOnat/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/tjoAAeSwsvBqOnay/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/jGMAAeSwBO5qOna3/s-l1600.jpg"
       ]
     },
     {
@@ -211,6 +281,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-10-10T09:40:35.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/IZAAAeSwcjxqxadQ/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/3yMAAeSwH1FqxadW/s-l1600.jpg",
@@ -218,26 +295,6 @@
         "https://i.ebayimg.com/images/g/ebIAAeSwv1tqxadi/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/n2AAAeSwmE1qxadq/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/oKkAAeSwZPtqxadv/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|860138807812|0",
-      "title": "Trafalgar Law Figure P.O.P DX One Piece MegaHouse Portrait of Pirates New Sealed",
-      "price": "$84.78",
-      "priceValue": "84.78",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/MDMAAeSwvFVqdKQW/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860138807812?hash=itemc84444a204:g:MDMAAeSwvFVqdKQW",
-      "condition": "New",
-      "isNew": false,
-      "listedAt": "2026-11-12T23:50:40.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/MDMAAeSwvFVqdKQW/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/WqUAAeSwVnNqdKQb/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/MBcAAeSw4vtqdKQg/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/SbMAAeSwvgtqdKQo/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/GTEAAeSw9~xqdKQt/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/FYoAAeSweu9qdKQ0/s-l1600.jpg"
       ]
     },
     {
@@ -251,6 +308,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-10-31T22:00:01.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/VOcAAeSwGY9q5ItM/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/7w4AAeSwCYhq5Itq/s-l1600.jpg",
@@ -261,16 +325,50 @@
       ]
     },
     {
+      "itemId": "v1|860059396525|0",
+      "title": "One Piece Nami Glitter & Glamours Elbaph Style Figure Banpresto Elbaf Japan New",
+      "price": "$16.49",
+      "priceValue": "16.49",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/InEAAeSws~Vq1GjO/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/860059396525?hash=itemc83f88e9ad:g:InEAAeSws~Vq1GjO",
+      "condition": "New",
+      "isNew": false,
+      "listedAt": "2026-10-18T22:55:29.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/InEAAeSws~Vq1GjO/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/iw8AAeSwTxBq1GjV/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/luAAAeSwt1Zq1Gjg/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/MlwAAeSwq~dq1Gjm/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/oEAAAeSwrF1q1Gju/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/NQ8AAeSwI5tq1Gj2/s-l1600.jpg"
+      ]
+    },
+    {
       "itemId": "v1|318352931650|0",
       "title": "One Piece Card Gol D. Roger OP09-118 SEC Portgas D. Ace P-028 Promo Japanese 2pc",
       "price": "$23.71",
       "priceValue": "23.71",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/avsAAeSwGTpqEroi/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318352931650?hash=item4a1f503b42:g:avsAAeSwGTpqEroi&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7n9x1XfMLQ6Rskrn9o1b9XfNSyy84mt5Z%2BywbNIcX%2F2hYg1nBCLUbcIdg%2B1aIhMmUiownFPlRZqojNhY0kY71g788GUwtYkfGsmikUjCuTRK7wVWQscINF3zKPqUH2sFtZ43Ac39%2B64lrZMWYoeGo9PE0zMGuEEX3tW%2FXPkqUevLg9B39pyq%2FS6WDMca%2F6DqNHBu%2BKUaFe%2Bery6gcmiubCgvCQiZyFBJHiBLVa960DePaZRu81UxqCxc8w7XDeyvZCVkme1gJBqPfQwo9lbFolO",
+      "url": "https://www.ebay.com/itm/318352931650?hash=item4a1f503b42:g:avsAAeSwGTpqEroi&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7n9x1XfMLQ6Rskrn9o1b9XfNSyy84mt5Z%2BywbNIcX%2F2hYg1nBCLUbcIdg%2B1aIhMmUiownFPlRZqojNhY0kY71g788GUwtYkfGsmikUjCuTRK7wVWQscINF3zKPqUH2sFtbO%2BaUX%2BZBm3q%2Bw7CQB2NOlIk6ivRM81oIRqIJYx0lGKr1k0v%2B8ItLUqnYARi7F7uR13kZ64LEla2AGg9WL28ODIHbCAfjNNgPqtyO6fjIqybbfu0ztnVYVlkzmiT%2FW%2Fwzk4bWAS%2FV90PP2trypadAg",
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-05-24T10:06:57.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/avsAAeSwGTpqEroi/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/~JIAAeSwFS5qErok/s-l1600.jpg",
@@ -284,10 +382,17 @@
       "priceValue": "51.80",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/iKIAAeSwndBqdJnP/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318149040634?hash=item4a132919fa:g:iKIAAeSwndBqdJnP&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7mXDqT1Pzdh5aQBcWwTa0lfrHaCQMq3D3OlyUCaaX9ozYWe1MCItbZJWY1lM%2FxinL6OWJ4kRBur288%2B97gupbTj37aF2DYZJIbhq416gNnuJXuZV%2BU6G4pn5UnOKR5E69U0QbqSsaT9YKNvhmken4PEQ%2BsCMK3HOhgGbONzCyej6MnOs69AiMvW5wmNHb%2BFvZ87FzetqWIgr%2Bdl1PsroiSud8%2F2FofBnGHD20SsyaxiINzgqek8%2FSy9M%2BEb6JN5siodv3ZgBTcjZAlX0YAINajS",
+      "url": "https://www.ebay.com/itm/318149040634?hash=item4a132919fa:g:iKIAAeSwndBqdJnP&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7mXDqT1Pzdh5aQBcWwTa0lfrHaCQMq3D3OlyUCaaX9ozYWe1MCItbZJWY1lM%2FxinL6OWJ4kRBur288%2B97gupbTj37aF2DYZJIbhq416gNnuJXuZV%2BU6G4pn5UnOKR5E69WWOoCbaNbnh7YWUIihMI1YdT%2F5P3Ol9ETa%2BWN8iQf%2FfOesOwQXuXO%2Bb2Zw%2FJ7eZe7AD8WUNemOtY%2Fo9UcioeesHgjzSyYyA2ACswRNKGvE%2F%2BWXsMAZfgmc9DOKaGFV1E0Kzif0I61c1%2BWhqbvi1geh",
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-14T13:07:56.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/iKIAAeSwndBqdJnP/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/9E8AAeSw3T9qdJnV/s-l1600.jpg",
@@ -304,10 +409,17 @@
       "priceValue": "51.29",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/5dUAAeSwDF1qXD3W/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860135808198?hash=itemc84416dcc6:g:5dUAAeSwDF1qXD3W&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7kyCvhktD7aL%2Fuz%2Fiof2nEMLC4jp70BIvlJQBBJh%2FplBWV%2BevCLti8Gs0JBHqpF3j7P2BUzYFJyylxqAiDnmzHgRi38SjNqIL4Ut0Fqrvpa5qYad%2BbgYnghmryJLRXezuzWa3bnaTc2pNtxJwFKE6JObGCYofqtQgt4zQzsxJZ%2FLH6Vci8pJgnxWszS3SmO9KnWaPWBPr4Lpx6NEVVxheGmxvMkF%2B%2Bi0BOCbOFjDByWMnpg5co%2Fr74CfFex5r71s58H90APu19KFlNZCEClaJhG",
+      "url": "https://www.ebay.com/itm/860135808198?hash=itemc84416dcc6:g:5dUAAeSwDF1qXD3W&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7kyCvhktD7aL%2Fuz%2Fiof2nEMLC4jp70BIvlJQBBJh%2FplBWV%2BevCLti8Gs0JBHqpF3j7P2BUzYFJyylxqAiDnmzHgRi38SjNqIL4Ut0Fqrvpa5qYad%2BbgYnghmryJLRXezuzecxMntYg54cDuGXnLBcF3DpTkXsqrgvpE70n%2Bkjf9UTwwEJzvTbmY7W1F4eY3KgtgpM8sQm4Vkkr%2BxL5nDwSe%2B6a2CtjC5LgKoWolYrWdsRD3zSt%2BMHLuSiYJpkREYiEuLkjkCcJo9fo4vHIw36vZ",
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-12T01:39:41.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/5dUAAeSwDF1qXD3W/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/VosAAeSwlcJqXD3U/s-l1600.jpg",
@@ -315,26 +427,6 @@
         "https://i.ebayimg.com/images/g/VBwAAeSw0ZZqXD3f/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/5mIAAeSw6PpqXD3m/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/pTEAAeSw~LpqXD3w/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|860059396525|0",
-      "title": "One Piece Nami Glitter & Glamours Elbaph Style Figure Banpresto Elbaf Japan New",
-      "price": "$16.49",
-      "priceValue": "16.49",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/InEAAeSws~Vq1GjO/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860059396525?hash=itemc83f88e9ad:g:InEAAeSws~Vq1GjO",
-      "condition": "New",
-      "isNew": false,
-      "listedAt": "2026-10-18T22:55:29.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/InEAAeSws~Vq1GjO/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/iw8AAeSwTxBq1GjV/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/luAAAeSwt1Zq1Gjg/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/MlwAAeSwq~dq1Gjm/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/oEAAAeSwrF1q1Gju/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/NQ8AAeSwI5tq1Gj2/s-l1600.jpg"
       ]
     },
     {
@@ -348,6 +440,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-10-13T22:08:04.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/koAAAeSwFJJqzetz/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/ZzUAAeSwHatqzete/s-l1600.jpg",
@@ -368,6 +467,12 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-08-02T11:32:14.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/Pt4AAeSwDCFqbyog/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/1jcAAeSw-1dqbyos/s-l1600.jpg",
@@ -388,6 +493,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-10-30T06:58:51.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/fVQAAeSwsKZq3FK0/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/6Y0AAeSwsf1q5D1J/s-l1600.jpg",
@@ -407,6 +519,12 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-11-02T22:00:01.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/ZoUAAeSwxF9q6Gc6/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/Rz4AAeSwcI9q6Gc6/s-l1600.jpg",
@@ -414,6 +532,33 @@
         "https://i.ebayimg.com/images/g/PTIAAeSwgqhq6Gc6/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/RzQAAeSwc45q6Gc6/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/XrUAAeSw0fVq6Gc6/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|860138807812|0",
+      "title": "Trafalgar Law Figure P.O.P DX One Piece MegaHouse Portrait of Pirates New Sealed",
+      "price": "$84.78",
+      "priceValue": "84.78",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/MDMAAeSwvFVqdKQW/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/860138807812?hash=itemc84444a204:g:MDMAAeSwvFVqdKQW",
+      "condition": "New",
+      "isNew": false,
+      "listedAt": "2026-11-12T23:50:40.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/MDMAAeSwvFVqdKQW/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/WqUAAeSwVnNqdKQb/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/MBcAAeSw4vtqdKQg/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/SbMAAeSwvgtqdKQo/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/GTEAAeSw9~xqdKQt/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/FYoAAeSweu9qdKQ0/s-l1600.jpg"
       ]
     },
     {
@@ -427,6 +572,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-04-12T12:22:31.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/zSUAAeSwgcVp25IP/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/x18AAeSwTWJp25IT/s-l1600.jpg",
@@ -447,6 +599,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-09-19T22:22:05.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/w8AAAeSwYWxqp~Ap/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/~IQAAeSwFGVqp~A0/s-l1600.jpg",
@@ -454,26 +613,6 @@
         "https://i.ebayimg.com/images/g/SUgAAeSwuIVqp~BD/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/2-sAAeSwbUdqp~BN/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/suYAAeSwnsxqp~BU/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|860135814104|0",
-      "title": "Dragon Ball Z Solid Edge Works Metal Cooler Figure Banpresto Bandai Japan New",
-      "price": "$22.29",
-      "priceValue": "22.29",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/mBwAAeSwRkZqNOzB/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860135814104?hash=itemc84416f3d8:g:mBwAAeSwRkZqNOzB",
-      "condition": "New",
-      "isNew": false,
-      "listedAt": "2026-11-12T01:42:59.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/mBwAAeSwRkZqNOzB/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/lzoAAeSwlmBqNOzF/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/nfIAAeSwQjhqNOzI/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/UwoAAeSwrXtqNOzL/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/sqYAAeSwn75qNOzO/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/gkEAAeSwTslqNOzR/s-l1600.jpg"
       ]
     },
     {
@@ -487,6 +626,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-08-12T09:18:03.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/N2UAAeSwdSZqfDnD/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/lyAAAeSwndBqfDnM/s-l1600.jpg",
@@ -494,6 +640,33 @@
         "https://i.ebayimg.com/images/g/wPMAAeSwEi9qfDnf/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/1QwAAeSwUrdqfDnn/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/rHUAAeSwjgRqfDnv/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|860135814104|0",
+      "title": "Dragon Ball Z Solid Edge Works Metal Cooler Figure Banpresto Bandai Japan New",
+      "price": "$22.29",
+      "priceValue": "22.29",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/mBwAAeSwRkZqNOzB/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/860135814104?hash=itemc84416f3d8:g:mBwAAeSwRkZqNOzB",
+      "condition": "New",
+      "isNew": false,
+      "listedAt": "2026-11-12T01:42:59.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/mBwAAeSwRkZqNOzB/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/lzoAAeSwlmBqNOzF/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/nfIAAeSwQjhqNOzI/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/UwoAAeSwrXtqNOzL/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/sqYAAeSwn75qNOzO/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/gkEAAeSwTslqNOzR/s-l1600.jpg"
       ]
     },
     {
@@ -507,6 +680,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-08-28T21:36:40.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/f2oAAeSwrBFqkUGQ/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/jP8AAeSwR8JqkUGX/s-l1600.jpg",
@@ -527,6 +707,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-10T01:28:54.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/qxoAAeSwlnZqOnWr/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/hVgAAeSwPYBqOnWn/s-l1600.jpg",
@@ -547,6 +734,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-21T05:47:28.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/PCkAAeSwY5xp5w4P/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/tdcAAeSwPL5p5w4T/s-l1600.jpg"
@@ -559,10 +753,17 @@
       "priceValue": "44.81",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/RLIAAeSwAQ9qc8YD/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860135812067?hash=itemc84416ebe3:g:RLIAAeSwAQ9qc8YD&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7n8I3aD5ZOXLnVTr%2FZ4t7ZPOoICfCiFH6pZv1ceu8Oqn4ccZFHiBZgIqbS11xtqVb6IvAvLZ7cyyebp%2BO20SAqrl3g6pUSyp0V77J4tYkjUbl02T%2Fm%2F96mu28nI6%2FJXD%2BKVA%2B0vxxZBuRjabbB6FfQ%2Fg8A2nVy6N5gw5Fnevg60FhI0mTarCKk%2BtIHTaPFDOOcLUj1QjcDBfEx2bNT%2BglMobxurfQrTYtdSIIo8qbMNe%2B3XY4EAZsa632YEQaEFFq7wtfJK5hbXwmQulibJjKpj",
+      "url": "https://www.ebay.com/itm/860135812067?hash=itemc84416ebe3:g:RLIAAeSwAQ9qc8YD&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7n8I3aD5ZOXLnVTr%2FZ4t7ZPOoICfCiFH6pZv1ceu8Oqn4ccZFHiBZgIqbS11xtqVb6IvAvLZ7cyyebp%2BO20SAqrl3g6pUSyp0V77J4tYkjUbl02T%2Fm%2F96mu28nI6%2FJXD%2BIGbk8xOyWM%2BoUTA1%2BzvCjTl5rgQLC1halY0jz7weg7KmyZNi3r6009ooYg8xAAnEoQ9fSIKxvUMOaOhrXh%2F85T5YlOlgXStVInDtCd0CXuDyPQ8nrTVmfpAxAPBJBVp3EtUSddunxYj%2F5k0RtqwXJ9",
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-12T01:41:48.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/RLIAAeSwAQ9qc8YD/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/fVYAAeSwAY9qc8YP/s-l1600.jpg",
@@ -579,10 +780,17 @@
       "priceValue": "23.99",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/OBIAAeSwo-lqp-~E/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860126469782?hash=itemc843885e96:g:OBIAAeSwo-lqp-~E&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7lOa1YG%2BSs%2BCvRJpkLstE0s1scRpFoOvsqWiKgvai5nZTURYfCawax6c5bfOLA1Pm92TSAq%2BUsbAFIYwtMey6PK5lsuqBhvhxdFfDg0BcpwkQ17797hlEf76HwGP6LCqVLf8Ofj6nAexEwFIsknyDvDBqgE913Kl0U9xrimvR1MDMfGCmZ7eCu7wHkfllHJFO89uWO%2FzvLRq0UfscpXvy9bdPvILc3yTWNdJKM0GwkgcphLLXAiqa4H%2FarDxstrQE%2Btte8BZVeg5jhQG%2F8Db4Fb",
+      "url": "https://www.ebay.com/itm/860126469782?hash=itemc843885e96:g:OBIAAeSwo-lqp-~E&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7lOa1YG%2BSs%2BCvRJpkLstE0s1scRpFoOvsqWiKgvai5nZTURYfCawax6c5bfOLA1Pm92TSAq%2BUsbAFIYwtMey6PK5lsuqBhvhxdFfDg0BcpwkQ17797hlEf76HwGP6LCqVJ2IyJxfZILYTTxubtbbTlvbhrlUelEqe70rthqJ64GWPDATfqrBHzV4QfEjruKyHOWBIX5M6n9KOHzBK2VlCbL3z4Hqd5qZ1DW7K2Zswz%2FnNmONYk54r8%2FXD%2Bx1GjesnnT%2FPMoyGS%2BPEXnWq4rIKmK",
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-09T02:43:20.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/OBIAAeSwo-lqp-~E/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/npkAAeSwCMlqp-~G/s-l1600.jpg",
@@ -599,10 +807,17 @@
       "priceValue": "28.02",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/8-YAAeSwHFFp3PfD/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318143729879?hash=item4a12d810d7:g:8-YAAeSwHFFp3PfD&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7ndPDVXfl5FJKufMDMaMdsvXhxERw%2Fg10KoWNh389A2Ov%2FRHK0bE5qDye9OHiAexV6qNPSl9nfgupPUpA0FM25W4vKkyuI8UD0ptiMXvxcQZTu2sEmakjn5PvAGbJvz9jYzj84pDNif58fBJzc7iytK8YfBxuqHnIU9DufW0EL15lzHF96reZKwWllArSIB9stXKw5PEHm8%2FTMOgM6iFUPTWuhuJHMf8HSJTGkLnZlB6kqCT2yVRyYSThtyfJFJ1hFSJUg%2BLN4Oin5rDdAZLMGP",
+      "url": "https://www.ebay.com/itm/318143729879?hash=item4a12d810d7:g:8-YAAeSwHFFp3PfD&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7ndPDVXfl5FJKufMDMaMdsvXhxERw%2Fg10KoWNh389A2Ov%2FRHK0bE5qDye9OHiAexV6qNPSl9nfgupPUpA0FM25W4vKkyuI8UD0ptiMXvxcQZTu2sEmakjn5PvAGbJvz9jbosr22LWZGsUR3O51Pts2GK7DFpZ4a%2BTFPcewecWLwpiktWwKO6--KqqjKTSRkyFEiZcTN5DWYzk4lnw5EKGYXg9hNpjlcwO8RzmlGZEKmP%2BGx%2BPRxY%2B8IxH4XLtOAe9thdckNHTBFL0thMnQ87aMH",
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-13T11:26:49.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/8-YAAeSwHFFp3PfD/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/U74AAeSwkJNp3PfG/s-l1600.jpg",
@@ -619,10 +834,17 @@
       "priceValue": "18.49",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/DuAAAeSw-EZq4KRp/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860112528233?hash=itemc842b3a369:g:DuAAAeSw-EZq4KRp&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7nL6dV5HMxzZcsrzasMj0bUyakzBCOBqNn5tvPrmx%2BSon%2FNS9XdefWnFjoW8PWyolSy6B4Ceo8tdksYPIV2nqilsihe8ouEcy4D4G387OOTDs5%2Ban23YYDCU8TYjtzVJK7AygDFOCzreOAk3QWBggK3gq%2Bc6g2hR87c8QtDzZQnqP8AbSmRWUjjC5S0HA0xt5Kx9jA4Sdwghxij98FWEh2CQr8ZIvbl81hp1ZRi9nXlHLn3UmGpzzpEi%2B1QFz2BGTcvujl9tnxetUlturUKKKlR",
+      "url": "https://www.ebay.com/itm/860112528233?hash=itemc842b3a369:g:DuAAAeSw-EZq4KRp&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7nL6dV5HMxzZcsrzasMj0bUyakzBCOBqNn5tvPrmx%2BSon%2FNS9XdefWnFjoW8PWyolSy6B4Ceo8tdksYPIV2nqilsihe8ouEcy4D4G387OOTDs5%2Ban23YYDCU8TYjtzVJK4BR6JJ78yQ3m1MJ9SaJCsO8IXv2C149jARa4%2Be3Bjrjp0LqA0NP8Jjk5IFI7FDa8EzCnCsZjB224RDKPPUtX3u%2FGuqQpgDQErlnNLD7R%2BfxstEh2%2BFYFSJkEqxm3Ts2%2FAjVRR%2BBvq0iYwSt%2BA8YqYW",
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-04T22:00:01.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/DuAAAeSw-EZq4KRp/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/wNcAAeSwYNlq4KRu/s-l1600.jpg",
@@ -643,6 +865,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-06-06T04:27:18.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/bWEAAeSwiiVqITEi/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/j80AAeSw9Z5qITEl/s-l1600.jpg",
@@ -663,6 +892,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-07-23T00:14:11.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/~34AAeSwsJVqe7jy/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/BvQAAeSw2SRqe7j6/s-l1600.jpg",
@@ -683,6 +919,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-24T09:55:03.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/AR0AAeSwTrRqeyE4/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/6rAAAeSwgvRqeyE-/s-l1600.jpg"
@@ -699,6 +942,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-05-14T11:33:34.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/NLoAAeSweFVqBH9Z/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/RWsAAeSwe69qBH9e/s-l1600.jpg",
@@ -719,6 +969,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-10-06T23:16:39.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/g-oAAeSwKkJqqTEj/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/3v8AAeSwbLhqqS78/s-l1600.jpg",
@@ -738,6 +995,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-08-10T15:24:34.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/Fs4AAeSwKTRqeeyu/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/fEQAAeSw1cJqeey0/s-l1600.jpg",
@@ -754,10 +1018,17 @@
       "priceValue": "21.99",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/y1UAAeSwpgRq5-MC/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860109419898?hash=itemc84284357a:g:y1UAAeSwpgRq5-MC&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7mBMdGVS6QOsOJie%2FjcHezp8%2FNHBp46NhShtmN8J%2BghQjt0IHjw%2BmUj3SISeiaSRNAbtCuVuTywEVNFHg0ZNLmenZzz40NZnmMsxIR%2BZi10LfeCppOWKVYYgrXukIdMiMQEonMQ%2FD0%2Ba3LVDoNN9obLH9lsy202gZWKEBuO7jQrgZNkTdRz3XRZx%2BkSIL0tFncvo9uKn0bb%2BbmKkDCv3WftEzl3kva4XCSx%2FfogqXTOB0MrC%2B5h4oR%2FwH5Fe12xuMsVam6lwXADAwyUu%2B58S21W",
+      "url": "https://www.ebay.com/itm/860109419898?hash=itemc84284357a:g:y1UAAeSwpgRq5-MC&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7mBMdGVS6QOsOJie%2FjcHezp8%2FNHBp46NhShtmN8J%2BghQjt0IHjw%2BmUj3SISeiaSRNAbtCuVuTywEVNFHg0ZNLmenZzz40NZnmMsxIR%2BZi10LfeCppOWKVYYgrXukIdMiMSxlOG1w7VqG85v965G94Ak59zmFxJbmmT35wcJmuZL4NZuBHQPp5GVoeiawOTjbjU21smitUf2WVYD9xoksiebBRNKD8zZjda6kfZ%2FNsre5t9i3DH5jeT7fPkn1EtuVdX2vNm%2Fi0yFQVIC2nOf4WLy",
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-11-03T22:00:01.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/y1UAAeSwpgRq5-MC/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/mccAAeSwpdZq5-NR/s-l1600.jpg",
@@ -774,10 +1045,17 @@
       "priceValue": "33.53",
       "priceCurrency": "USD",
       "image": "https://i.ebayimg.com/images/g/qfgAAeSwmvtp3P7I/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318485970880?hash=item4a273e3fc0:g:qfgAAeSwmvtp3P7I&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7nW1p9FTvQ9DSfVyXj6Wea6%2FG84qFxDN5VphE515V1ePEYr1YdHWOKtZFv5p4RdlyHp7UdwwpKW2CtqHVTv7HZjtI6FPgI674jIzFgJuIyr8sZ%2BBKAaW7YKTxOmWqFTTGOfCyYfCoAeV2fq53%2Bce8nWa%2F1DGBnWXrx8t4MBMG6ELMRF--ULNrTIyMAsIFttzm4Mcc0BG4yRvAppV5qrlwaGFRJm8zjNyW82kO%2BhM1Pr4aFtRUJLPiARXv0LiIFEmBTdrMkbmEj%2BMt2ObrFxnok5",
+      "url": "https://www.ebay.com/itm/318485970880?hash=item4a273e3fc0:g:qfgAAeSwmvtp3P7I&amdata=enc%3AAQALAAAA4Of5zIIojhOf%2BkQK%2Bxzjn7nW1p9FTvQ9DSfVyXj6Wea6%2FG84qFxDN5VphE515V1ePEYr1YdHWOKtZFv5p4RdlyHp7UdwwpKW2CtqHVTv7HZjtI6FPgI674jIzFgJuIyr8sZ%2BBKAaW7YKTxOmWqFTTGO65TiSb6sT5sTwoXgtJ6pmk4CP%2FVdy74pK6JAN1b%2FIJwcxNLSXfuqJh4pC4eKMNhuxLX1swRUfYwDrLPi0uLQw5Yh7kuJ3YNJxSGJvwNyRYLsWanofKX2EjiGShiDE0geUhGBu%2Bwq4%2BCUl3luVh0eg",
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-06-21T14:48:46.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/qfgAAeSwmvtp3P7I/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/djYAAeSwPZBp3P6r/s-l1600.jpg",
@@ -798,6 +1076,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-11-11T22:31:45.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/oWMAAeSwSLlqe7eD/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/2dUAAeSw5glqe7eG/s-l1600.jpg",
@@ -818,6 +1103,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-05-08T10:11:57.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/vzAAAeSwjF1qc8R4/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/v38AAeSwENVqc8R9/s-l1600.jpg",
@@ -838,6 +1130,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-07-11T12:12:46.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/1VAAAeSw46RqUjBK/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/oB8AAeSw24RqUjBP/s-l1600.jpg",
@@ -858,6 +1157,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-05-07T11:54:34.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/DYYAAeSwOT5qdKMW/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/86oAAeSw8vxqdKMf/s-l1600.jpg",
@@ -878,6 +1184,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-06-23T08:06:19.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/8YkAAeSwsv9qOj1c/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/UbMAAeSwqV1qOj1c/s-l1600.jpg",
@@ -898,6 +1211,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-04-22T14:54:29.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/uk8AAeSwTFBp6N~j/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/gO4AAeSwCmBp6N~n/s-l1600.jpg",
@@ -918,6 +1238,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-05-25T23:09:12.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/pDoAAeSwt4FqbyeC/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/668AAeSwYG9qbyeK/s-l1600.jpg",
@@ -938,6 +1265,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-07-04T04:58:35.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/xd4AAeSwbqtqPzcW/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/VxoAAeSwtb5qPzca/s-l1600.jpg",
@@ -956,6 +1290,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-08-01T00:06:41.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/8NEAAeSwfE5qbTxd/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/MAwAAeSw46tqbGKC/s-l1600.jpg",
@@ -963,26 +1304,6 @@
         "https://i.ebayimg.com/images/g/OgQAAeSwzDRqbGKQ/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/EQkAAeSw1uFqbGKW/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/OkgAAeSwycZqbGKc/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|318700358941|0",
-      "title": "Pokemon Moncolle Mega Gengar Figure Takara Tomy Monster Collection Japan New",
-      "price": "$4.00",
-      "priceValue": "4.00",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/PeMAAeSwk-9qddk3/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318700358941?hash=item4a34058d1d:g:PeMAAeSwk-9qddk3",
-      "condition": "New",
-      "isNew": false,
-      "listedAt": "2026-08-09T02:28:33.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/PeMAAeSwk-9qddk3/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/SGoAAeSwSKxqddlA/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/ToEAAeSwQGhqddlH/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/SUcAAeSwfn9qddlL/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/aX0AAeSwtlZqddlR/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/YPIAAeSwP~VqddlX/s-l1600.jpg"
       ]
     },
     {
@@ -996,6 +1317,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-07-13T14:31:33.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/J38AAeSwLLxqPjm~/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/mx8AAeSwh8lqPjnO/s-l1600.jpg",
@@ -1003,6 +1331,33 @@
         "https://i.ebayimg.com/images/g/qi4AAeSwdi1qOkdR/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/UA4AAeSwQMRqOkdR/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/7dQAAeSw-ghqOkdS/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|318700358941|0",
+      "title": "Pokemon Moncolle Mega Gengar Figure Takara Tomy Monster Collection Japan New",
+      "price": "$4.00",
+      "priceValue": "4.00",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/PeMAAeSwk-9qddk3/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/318700358941?hash=item4a34058d1d:g:PeMAAeSwk-9qddk3",
+      "condition": "New",
+      "isNew": false,
+      "listedAt": "2026-08-09T02:28:33.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/PeMAAeSwk-9qddk3/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/SGoAAeSwSKxqddlA/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/ToEAAeSwQGhqddlH/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/SUcAAeSwfn9qddlL/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/aX0AAeSwtlZqddlR/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/YPIAAeSwP~VqddlX/s-l1600.jpg"
       ]
     },
     {
@@ -1016,6 +1371,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-10-24T22:39:18.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/uRkAAeSw335q2xVA/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/DocAAeSwULVq2xVF/s-l1600.jpg",
@@ -1036,6 +1398,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-04-22T07:31:51.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/WzYAAeSwYudp3PhC/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/LU0AAeSwRxtp45~Q/s-l1600.jpg",
@@ -1055,6 +1424,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-06-04T08:11:01.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/ddoAAeSwiiVqITIq/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/jLUAAeSwhnxqITIu/s-l1600.jpg",
@@ -1075,6 +1451,13 @@
       "condition": "Brand New",
       "isNew": false,
       "listedAt": "2026-10-08T23:14:34.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/d~EAAeSw4tZqxZHi/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/F80AAeSwkXNqxZHj/s-l1600.jpg",
@@ -1094,11 +1477,45 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-10-12T23:43:55.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/BAsAAeSwtKhqzG40/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/As8AAeSwFoVqzG48/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/r80AAeSw-NdqzG5D/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/raUAAeSwUJVqzG5K/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|318269987612|0",
+      "title": "MegaHouse One Piece P.O.P DX Portgas D Ace Dome Tour Limited Ver Figure New",
+      "price": "$60.00",
+      "priceValue": "60.00",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/1ugAAeSwr0Np44c4/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/318269987612?hash=item4a1a5e9b1c:g:1ugAAeSwr0Np44c4",
+      "condition": "New",
+      "isNew": false,
+      "listedAt": "2026-05-08T10:09:58.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/1ugAAeSwr0Np44c4/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/9t0AAeSwZK1p44c7/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/KPMAAeSwl5xp44c~/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/8isAAeSw73lp44dE/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/cRIAAeSw6z9p44dI/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/b8cAAeSw9Npp44dL/s-l1600.jpg"
       ]
     },
     {
@@ -1112,6 +1529,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-07-12T09:39:07.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/6yAAAeSwvRxqRSLm/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/zrsAAeSwUD9qRSLp/s-l1600.jpg",
@@ -1132,6 +1556,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-10-15T21:32:14.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/s5wAAeSwdzdqze8E/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/vWYAAeSwqJZqze8H/s-l1600.jpg",
@@ -1149,6 +1580,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-03-22T07:49:11.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/JsgAAeSws3NqeyDQ/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/Hf4AAeSw5VxqeyDY/s-l1600.jpg",
@@ -1166,6 +1604,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-05-05T05:17:49.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/ungAAeSw44Jp62LL/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/Bj8AAeSwhPFp62LM/s-l1600.jpg",
@@ -1173,26 +1618,6 @@
         "https://i.ebayimg.com/images/g/cOMAAeSw7LFp62Lt/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/EkIAAeSwrIhp62Lx/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/1xYAAeSwwelp62L1/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|318269987612|0",
-      "title": "MegaHouse One Piece P.O.P DX Portgas D Ace Dome Tour Limited Ver Figure New",
-      "price": "$60.00",
-      "priceValue": "60.00",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/1ugAAeSwr0Np44c4/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318269987612?hash=item4a1a5e9b1c:g:1ugAAeSwr0Np44c4",
-      "condition": "New",
-      "isNew": false,
-      "listedAt": "2026-05-08T10:09:58.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/1ugAAeSwr0Np44c4/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/9t0AAeSwZK1p44c7/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/KPMAAeSwl5xp44c~/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/8isAAeSw73lp44dE/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/cRIAAeSw6z9p44dI/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/b8cAAeSw9Npp44dL/s-l1600.jpg"
       ]
     },
     {
@@ -1206,6 +1631,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-08-23T02:47:37.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/fM4AAeSw2o5qilzn/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/408AAeSwM6Bqilzu/s-l1600.jpg",
@@ -1226,6 +1658,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-08-28T11:01:35.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/n0kAAeSw7zhqkUD1/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/6P4AAeSw-95qkUD5/s-l1600.jpg",
@@ -1246,6 +1685,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-06-05T00:24:07.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/kAQAAeSwOS1qIS8D/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/0~0AAeSwut5qIS8I/s-l1600.jpg",
@@ -1266,6 +1712,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-07-01T14:23:13.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/KmQAAeSwGspqRSKf/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/-pUAAeSwy7BqRSKh/s-l1600.jpg",
@@ -1286,6 +1739,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-08-15T03:26:19.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/xzcAAeSw~wRqe7FD/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/d50AAeSwjKBqTLRe/s-l1600.jpg",
@@ -1306,6 +1766,13 @@
       "condition": "Graded",
       "isNew": false,
       "listedAt": "2026-08-16T01:40:44.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/rk8AAeSw1vZqYwpp/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/PxgAAeSw0XBqYwpz/s-l1600.jpg",
@@ -1325,6 +1792,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-06T23:16:43.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/Dm0AAeSwVppqm4el/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/jykAAeSwK6Fqm4er/s-l1600.jpg",
@@ -1345,6 +1819,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-12T01:45:05.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/flEAAeSwZnFqa1~8/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/7soAAeSwU6Vqa2AB/s-l1600.jpg",
@@ -1365,6 +1846,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-15T04:46:01.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/1lwAAeSwKnpp3xEl/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/FDMAAeSwGTpp3xEm/s-l1600.jpg"
@@ -1381,6 +1869,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-08-31T13:39:59.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/-vYAAeSw7EhqbyZo/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/t9AAAeSw2OhqbyZv/s-l1600.jpg",
@@ -1401,6 +1896,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-08-09T23:44:43.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/LNUAAeSwFKNqXfZl/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/LlwAAeSwXRFqXfZr/s-l1600.jpg",
@@ -1421,6 +1923,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-09-28T22:14:24.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/nvQAAeSwS1lque0l/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/uZoAAeSwU6Zque0r/s-l1600.jpg",
@@ -1441,6 +1950,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-05-13T11:57:38.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/IFsAAeSwPmNqAtts/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/LpoAAeSwoslqAttu/s-l1600.jpg",
@@ -1461,6 +1977,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-05-31T01:17:01.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/YUUAAeSwBKJp~fN3/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/Qz8AAeSwVKVp~fN8/s-l1600.jpg",
@@ -1481,6 +2004,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-08-03T01:27:05.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/nxIAAeSwaJdqesHv/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/BkMAAeSwfn9qesHj/s-l1600.jpg",
@@ -1501,6 +2031,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-05-28T09:01:44.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/9SsAAeSwnK1qGAPD/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/3cwAAeSwqg5qGAPk/s-l1600.jpg",
@@ -1521,6 +2058,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-07-15T03:36:23.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/7KIAAeSw8KJqVvrx/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/HVAAAeSw0XBqVviY/s-l1600.jpg",
@@ -1541,6 +2085,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-09T02:13:55.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/jRcAAeSwV0tqNQTk/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/hF8AAeSwbyJqNQTr/s-l1600.jpg",
@@ -1561,6 +2112,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-11-10T23:28:31.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/3awAAeSwQRBq8yCE/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/yx8AAeSwz-Nq8yCE/s-l1600.jpg",
@@ -1581,6 +2139,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-22T05:24:16.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/~BoAAeSwvb1p5433/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/mtwAAeSwpZhp5436/s-l1600.jpg"
@@ -1597,6 +2162,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-06-07T12:36:10.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/6uEAAeSwtZBqAtwt/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/PvcAAeSwQMdqAtwv/s-l1600.jpg",
@@ -1617,6 +2189,13 @@
       "condition": "Graded",
       "isNew": false,
       "listedAt": "2026-07-16T00:48:00.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/dCoAAeSwl85qWCne/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/CDUAAeSwpx9qWCns/s-l1600.jpg",
@@ -1637,6 +2216,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-09-12T00:24:19.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/uwkAAeSw~sJqo6AZ/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/FnYAAeSweDpqo6Ag/s-l1600.jpg",
@@ -1657,6 +2243,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-09-21T23:51:07.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/-44AAeSwFW1qdKFq/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/RWQAAeSwaRZqdKF2/s-l1600.jpg",
@@ -1677,12 +2270,43 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-10-24T00:10:50.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/arMAAeSws-Fq2xTl/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/0s0AAeSwE5pq2xTz/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/s9gAAeSwWA1q2xT6/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/rDsAAeSwnKtq2xUC/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/wZUAAeSwvfFq2xUR/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|860117036004|0",
+      "title": "Pokemon Lost Abyss Booster Pack S11 Japanese Sealed Giratina Lost Origin 2022",
+      "price": "$5.00",
+      "priceValue": "5.00",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/qn0AAeSw2hFq4L2c/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/860117036004?hash=itemc842f86be4:g:qn0AAeSw2hFq4L2c",
+      "condition": "New/Factory Sealed",
+      "isNew": false,
+      "listedAt": "2026-11-05T22:03:11.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/qn0AAeSw2hFq4L2c/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/EukAAeSwiGdq4L2g/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/d4sAAeSwtgFq4L2m/s-l1600.jpg"
       ]
     },
     {
@@ -1696,6 +2320,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-05-23T08:51:27.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/JWQAAeSwxYdqEWXz/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/H4YAAeSwwatqEWX3/s-l1600.jpg"
@@ -1712,6 +2343,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-09-27T01:50:00.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/3pkAAeSwWt1qsTms/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/7V8AAeSw6EJqsTmx/s-l1600.jpg",
@@ -1719,23 +2357,6 @@
         "https://i.ebayimg.com/images/g/iR0AAeSwJYxqsTm-/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/kMkAAeSw-0FqsTnE/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/vocAAeSwDTZqsTnN/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|860117036004|0",
-      "title": "Pokemon Lost Abyss Booster Pack S11 Japanese Sealed Giratina Lost Origin 2022",
-      "price": "$5.00",
-      "priceValue": "5.00",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/qn0AAeSw2hFq4L2c/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860117036004?hash=itemc842f86be4:g:qn0AAeSw2hFq4L2c",
-      "condition": "New/Factory Sealed",
-      "isNew": false,
-      "listedAt": "2026-11-05T22:03:11.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/qn0AAeSw2hFq4L2c/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/EukAAeSwiGdq4L2g/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/d4sAAeSwtgFq4L2m/s-l1600.jpg"
       ]
     },
     {
@@ -1749,6 +2370,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-15T05:23:44.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/a3YAAeSw7LFp3wxV/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/CjoAAeSwHpNp3wxZ/s-l1600.jpg"
@@ -1765,6 +2393,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-07-25T13:17:50.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/8EgAAeSwxMpqXD5i/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/RoAAAeSw0ttqXD5f/s-l1600.jpg",
@@ -1785,6 +2420,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-08-12T23:58:08.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/l1wAAeSwAzZqcwJW/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/kkkAAeSwzM5qcSZ8/s-l1600.jpg",
@@ -1805,6 +2447,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-08T02:14:24.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/l-QAAeSwhhBqNOxc/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/FEQAAeSwcddqNOxf/s-l1600.jpg",
@@ -1825,6 +2474,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-08-27T14:14:27.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/f2oAAeSwWhdqkDZc/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/ymQAAeSwmX1qkDZh/s-l1600.jpg"
@@ -1841,6 +2497,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-15T09:21:53.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/EXYAAeSw0Ulp3wwh/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/FjMAAeSw5ZZp3wwm/s-l1600.jpg"
@@ -1857,6 +2520,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-06-23T04:09:06.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/zUQAAeSwceFqKSCB/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/OYAAAeSwS05qKSB6/s-l1600.jpg",
@@ -1877,6 +2547,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-09-01T22:10:55.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/DmQAAeSwvSNqlszA/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/hyoAAeSwuxVqlszG/s-l1600.jpg",
@@ -1897,6 +2574,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-09-07T22:53:41.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/pXIAAeSw1clqgdk6/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/nV8AAeSwGbJqgdlB/s-l1600.jpg",
@@ -1917,6 +2601,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-10-01T22:47:50.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/xFQAAeSwsilque3Y/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/i54AAeSw9tNque3f/s-l1600.jpg",
@@ -1937,6 +2628,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-07-24T01:16:33.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/ndkAAeSwizZqYrwD/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/3SQAAeSwPFVqYrwH/s-l1600.jpg",
@@ -1957,6 +2655,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-10-05T23:20:36.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/EEAAAeSwHcxqu74Z/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/VpcAAeSwzN1qu74g/s-l1600.jpg",
@@ -1977,6 +2682,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-05-02T10:41:40.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/8j0AAeSwvb1p72R~/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/nUkAAeSwe5tp72SE/s-l1600.jpg",
@@ -1997,6 +2709,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-15T03:54:46.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/62MAAeSw--9p3wYW/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/w90AAeSw8P5p3wYa/s-l1600.jpg"
@@ -2013,6 +2732,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-08-08T01:41:55.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/uaEAAeSwAzZqdEzx/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/Gi0AAeSwC~ZqdEz4/s-l1600.jpg",
@@ -2033,6 +2759,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-08-14T00:30:38.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/v7AAAeSwJ2dqfD1d/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/WcoAAeSwrKZqfD1n/s-l1600.jpg",
@@ -2051,6 +2784,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-14T13:19:41.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/fZsAAeSwL~NqdJjH/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/3uIAAeSwbjtqdJjL/s-l1600.jpg",
@@ -2071,6 +2811,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-07-28T08:40:40.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/yQwAAeSw2AdqaGrs/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/N5cAAeSwPGtqaGKv/s-l1600.jpg",
@@ -2091,6 +2838,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-08-29T06:52:03.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/34gAAeSw5rdqkoFU/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/pW0AAeSw3B1qkoFZ/s-l1600.jpg",
@@ -2098,26 +2852,6 @@
         "https://i.ebayimg.com/images/g/TWgAAeSwDFZqkoFj/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/3uAAAeSwJ9tqkoFr/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/5cEAAeSwAnRqkoF2/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|860135815105|0",
-      "title": "Dragon Ball Super Solid Edge Works Golden Frieza Figure The Departure Banpresto",
-      "price": "$22.99",
-      "priceValue": "22.99",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/h-oAAeSw269qNOz~/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/860135815105?hash=itemc84416f7c1:g:h-oAAeSw269qNOz~",
-      "condition": "New",
-      "isNew": false,
-      "listedAt": "2026-11-12T01:44:00.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/h-oAAeSw269qNOz~/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/j6AAAeSwOUVqNO0D/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/lpsAAeSw9tRqNOh1/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/y4IAAeSwV0tqNO0M/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/sjwAAeSwt5tqNO0Q/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/bsQAAeSw1cZqNO0T/s-l1600.jpg"
       ]
     },
     {
@@ -2131,6 +2865,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-06-23T03:56:00.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/JwYAAeSwCrJp2KiI/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/FdcAAeSwpHBp2Kia/s-l1600.jpg",
@@ -2138,6 +2879,60 @@
         "https://i.ebayimg.com/images/g/BQEAAeSwjapp2KjO/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/I2YAAeSwIwpp2Kjk/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/KdcAAeSwrURp2KkC/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|860135815105|0",
+      "title": "Dragon Ball Super Solid Edge Works Golden Frieza Figure The Departure Banpresto",
+      "price": "$22.99",
+      "priceValue": "22.99",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/h-oAAeSw269qNOz~/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/860135815105?hash=itemc84416f7c1:g:h-oAAeSw269qNOz~",
+      "condition": "New",
+      "isNew": false,
+      "listedAt": "2026-11-12T01:44:00.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/h-oAAeSw269qNOz~/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/j6AAAeSwOUVqNO0D/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/lpsAAeSw9tRqNOh1/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/y4IAAeSwV0tqNO0M/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/sjwAAeSwt5tqNO0Q/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/bsQAAeSw1cZqNO0T/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|318784690502|0",
+      "title": "Pokemon Cards Schoolgirl SR 078/067 s7D Skyscraping Perfection Japanese Full Art",
+      "price": "$3.13",
+      "priceValue": "3.13",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/EIEAAeSwVhJqgp3v/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/318784690502?hash=item4a390c5946:g:EIEAAeSwVhJqgp3v",
+      "condition": "Ungraded",
+      "isNew": false,
+      "listedAt": "2026-08-27T01:56:54.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/EIEAAeSwVhJqgp3v/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/Sa8AAeSwvSNqgp30/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/SDQAAeSwRjVqgp38/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/VhsAAeSwqlBqgp4C/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/dfMAAeSwz0Jqgp4H/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/VjsAAeSwJmhqgp4N/s-l1600.jpg"
       ]
     },
     {
@@ -2151,6 +2946,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-03-29T00:14:26.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/I4IAAeSw0z9pyS14/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/F88AAeSwucRpyS18/s-l1600.jpg"
@@ -2167,6 +2969,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-07-19T00:36:52.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/b48AAeSwxMpqWkcQ/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/wa4AAeSw0ttqWkcW/s-l1600.jpg",
@@ -2174,26 +2983,6 @@
         "https://i.ebayimg.com/images/g/cKIAAeSwVDJqWkcs/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/eCkAAeSwBFtqWkc0/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/um0AAeSwlOZqWkc8/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|318784690502|0",
-      "title": "Pokemon Cards Schoolgirl SR 078/067 s7D Skyscraping Perfection Japanese Full Art",
-      "price": "$3.13",
-      "priceValue": "3.13",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/EIEAAeSwVhJqgp3v/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318784690502?hash=item4a390c5946:g:EIEAAeSwVhJqgp3v",
-      "condition": "Ungraded",
-      "isNew": false,
-      "listedAt": "2026-08-27T01:56:54.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/EIEAAeSwVhJqgp3v/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/Sa8AAeSwvSNqgp30/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/SDQAAeSwRjVqgp38/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/VhsAAeSwqlBqgp4C/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/dfMAAeSwz0Jqgp4H/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/VjsAAeSwJmhqgp4N/s-l1600.jpg"
       ]
     },
     {
@@ -2207,6 +2996,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-09-20T22:57:20.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/LHEAAeSw4UBqHDnT/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/oYYAAeSwhhBqHDnW/s-l1600.jpg",
@@ -2227,6 +3023,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-10-30T22:01:27.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/rjMAAeSwLHlq5Iwv/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/Y88AAeSwr0dq5Iw1/s-l1600.jpg",
@@ -2247,6 +3050,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-11-07T23:41:55.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/WLcAAeSwA6hq59us/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/5AwAAeSwJ4hq59vE/s-l1600.jpg",
@@ -2264,6 +3074,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-08-20T22:44:21.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/WDkAAeSwPdNqhw6O/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/OXwAAeSw3B1qhw6W/s-l1600.jpg",
@@ -2281,6 +3098,12 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-08-26T08:34:40.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/7s4AAeSw~8JqfHEl/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/OrkAAeSwNtZqfHEs/s-l1600.jpg",
@@ -2301,6 +3124,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-09-17T23:51:00.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/6TkAAeSwW2dqp~1U/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/yukAAeSwzkdqp~1b/s-l1600.jpg",
@@ -2321,6 +3151,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-09-23T23:39:30.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/frMAAeSwqmVqsTqA/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/Y7EAAeSwYWxqsTqG/s-l1600.jpg",
@@ -2341,6 +3178,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-06-06T06:20:48.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/mowAAeSwzyhqI7uI/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/2qMAAeSw9WJqI7uM/s-l1600.jpg",
@@ -2348,26 +3192,6 @@
         "https://i.ebayimg.com/images/g/vyQAAeSwwaBqI7uT/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/8coAAeSwQIFqI7uX/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/coUAAeSwkIlqI7kb/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|318648612993|0",
-      "title": "Goldeen AR 084/081 M5 Abyss Eye Pokemon Card Japanese Art Rare Holo",
-      "price": "$6.31",
-      "priceValue": "6.31",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/CSEAAeSw5oRqaUg3/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318648612993?hash=item4a30eff881:g:CSEAAeSw5oRqaUg3",
-      "condition": "Ungraded",
-      "isNew": false,
-      "listedAt": "2026-07-29T00:27:02.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/CSEAAeSw5oRqaUg3/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/KKkAAeSwROhqaUg7/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/nOIAAeSwihxqaUhD/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/HTUAAeSwgm9qaUhJ/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/KI0AAeSwN-lqaUiD/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/kncAAeSwf4JqaUhW/s-l1600.jpg"
       ]
     },
     {
@@ -2381,6 +3205,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-07-31T04:46:36.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/I5kAAeSw86VqbF~R/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/Ua8AAeSwrndqbF~W/s-l1600.jpg",
@@ -2401,6 +3232,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-10-22T23:26:59.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/kkgAAeSww45qkoqy/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/ZnAAAeSwy-Zqkoq4/s-l1600.jpg",
@@ -2421,6 +3259,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-03-22T05:02:25.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/ZRIAAeSwYghpyTep/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/YdMAAeSwEllpyTes/s-l1600.jpg",
@@ -2440,9 +3285,43 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-04-21T09:21:41.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/o3YAAeSwEpNp5xCE/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/aH4AAeSwM4Zp5xCI/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|318648612993|0",
+      "title": "Goldeen AR 084/081 M5 Abyss Eye Pokemon Card Japanese Art Rare Holo",
+      "price": "$6.31",
+      "priceValue": "6.31",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/CSEAAeSw5oRqaUg3/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/318648612993?hash=item4a30eff881:g:CSEAAeSw5oRqaUg3",
+      "condition": "Ungraded",
+      "isNew": false,
+      "listedAt": "2026-07-29T00:27:02.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/CSEAAeSw5oRqaUg3/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/KKkAAeSwROhqaUg7/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/nOIAAeSwihxqaUhD/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/HTUAAeSwgm9qaUhJ/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/KI0AAeSwN-lqaUiD/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/kncAAeSwf4JqaUhW/s-l1600.jpg"
       ]
     },
     {
@@ -2456,6 +3335,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-09-22T21:42:20.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/l5cAAeSw2DJqsTsc/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/O6cAAeSwsKFqsTsm/s-l1600.jpg",
@@ -2476,6 +3362,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-10-19T23:22:13.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/C10AAeSwChBq1GhG/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/hLcAAeSwDPBq1GhQ/s-l1600.jpg",
@@ -2496,6 +3389,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-10-28T22:00:01.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/-jYAAeSwcuJq4f6M/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/drIAAeSwLipq4f6U/s-l1600.jpg",
@@ -2516,6 +3416,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-06-10T02:50:03.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/WZwAAeSwRkdqKNB5/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/QOIAAeSwBB1qKNB9/s-l1600.jpg",
@@ -2536,6 +3443,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-06-26T02:11:52.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/oZYAAeSwZjlqPcrV/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/FgQAAeSw2UdqPcrX/s-l1600.jpg",
@@ -2556,6 +3470,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-09-30T22:46:08.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/vFcAAeSw5ahqvQou/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/qrAAAeSwlxpqvQo-/s-l1600.jpg",
@@ -2576,6 +3497,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-10-02T22:27:29.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/~1AAAeSwJOtqv77E/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/HwIAAeSwxCtqv77M/s-l1600.jpg",
@@ -2596,6 +3524,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-09-28T04:47:27.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/WLIAAeSwJVdp3PgF/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/WEAAAeSwDeVp3PgK/s-l1600.jpg",
@@ -2616,6 +3551,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-11-10T01:30:04.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/nbkAAeSwtuxqGqio/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/iF0AAeSwOrdqGqir/s-l1600.jpg",
@@ -2636,6 +3578,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-06-08T14:09:11.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/~9IAAeSwfjZqe7gs/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/ylsAAeSw3DNqe7g1/s-l1600.jpg",
@@ -2656,6 +3605,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-07-27T09:35:41.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/U00AAeSw4VVqZyXN/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/gz0AAeSwW0ZqZxn4/s-l1600.jpg",
@@ -2676,6 +3632,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-06-15T02:09:46.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/~vgAAeSwzvpqHYoe/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/FKAAAeSwCftqHYoh/s-l1600.jpg",
@@ -2696,6 +3659,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-06-23T03:53:25.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/HDMAAeSw8iBp2Kgz/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/~FcAAeSwm6Zp2Kg4/s-l1600.jpg",
@@ -2716,6 +3686,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-08-26T02:54:01.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/0ecAAeSwm6tqfG-o/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/DvEAAeSwn1JqfG-v/s-l1600.jpg",
@@ -2723,26 +3700,6 @@
         "https://i.ebayimg.com/images/g/F2cAAeSwoTxqfG-8/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/iXAAAeSwOjlqfG-9/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/ZgwAAeSwgYVqfG~C/s-l1600.jpg"
-      ]
-    },
-    {
-      "itemId": "v1|318831606087|0",
-      "title": "Clawitzer AR 068/063 M1S Mega Symphonia Pokemon Card Japanese Art Rare Holo",
-      "price": "$4.49",
-      "priceValue": "4.49",
-      "priceCurrency": "USD",
-      "image": "https://i.ebayimg.com/images/g/5X4AAeSwWIxqls19/s-l225.jpg",
-      "url": "https://www.ebay.com/itm/318831606087?hash=item4a3bd83947:g:5X4AAeSwWIxqls19",
-      "condition": "Ungraded",
-      "isNew": false,
-      "listedAt": "2026-09-05T23:34:21.000Z",
-      "images": [
-        "https://i.ebayimg.com/images/g/5X4AAeSwWIxqls19/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/tCAAAeSwHO1qls2C/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/wkkAAeSw0Bpqls2G/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/Yd8AAeSw9Idqls2N/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/eNcAAeSwWOBqls2S/s-l1600.jpg",
-        "https://i.ebayimg.com/images/g/FWMAAeSw4C1qls2X/s-l1600.jpg"
       ]
     },
     {
@@ -2756,6 +3713,13 @@
       "condition": "Used",
       "isNew": false,
       "listedAt": "2026-07-19T04:41:49.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/iCIAAeSwXM9qUi66/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/yMoAAeSw46RqUi7h/s-l1600.jpg",
@@ -2763,6 +3727,33 @@
         "https://i.ebayimg.com/images/g/mOgAAeSwEbBqUi7v/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/pY0AAeSw-jdqUi7z/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/je4AAeSwZl5qUi75/s-l1600.jpg"
+      ]
+    },
+    {
+      "itemId": "v1|318831606087|0",
+      "title": "Clawitzer AR 068/063 M1S Mega Symphonia Pokemon Card Japanese Art Rare Holo",
+      "price": "$4.49",
+      "priceValue": "4.49",
+      "priceCurrency": "USD",
+      "image": "https://i.ebayimg.com/images/g/5X4AAeSwWIxqls19/s-l225.jpg",
+      "url": "https://www.ebay.com/itm/318831606087?hash=item4a3bd83947:g:5X4AAeSwWIxqls19",
+      "condition": "Ungraded",
+      "isNew": false,
+      "listedAt": "2026-09-05T23:34:21.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
+      "images": [
+        "https://i.ebayimg.com/images/g/5X4AAeSwWIxqls19/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/tCAAAeSwHO1qls2C/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/wkkAAeSw0Bpqls2G/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/Yd8AAeSw9Idqls2N/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/eNcAAeSwWOBqls2S/s-l1600.jpg",
+        "https://i.ebayimg.com/images/g/FWMAAeSw4C1qls2X/s-l1600.jpg"
       ]
     },
     {
@@ -2776,6 +3767,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-07-22T03:18:30.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/HnYAAeSwARRqWkAq/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/0RIAAeSwFuJqWkAw/s-l1600.jpg",
@@ -2796,6 +3794,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-09-03T14:59:58.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/A9YAAeSwvW9qls0-/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/GD0AAeSwaONqls1E/s-l1600.jpg",
@@ -2816,6 +3821,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-10-03T22:54:23.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/Bv0AAeSw93hque2d/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/eLsAAeSweVVque2i/s-l1600.jpg",
@@ -2835,6 +3847,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-08-28T13:56:06.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/0~QAAeSwdK5qhw7J/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/HDsAAeSwGEZqhw7R/s-l1600.jpg",
@@ -2853,6 +3872,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-09-22T14:29:52.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/OPUAAeSw-8lqkZV4/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/d-QAAeSw0BpqkZWC/s-l1600.jpg",
@@ -2871,6 +3897,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-04-19T13:17:20.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/iv8AAeSwZB9qc8Vd/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/P~0AAeSwflRqc8Vm/s-l1600.jpg",
@@ -2891,6 +3924,13 @@
       "condition": "New/Factory Sealed",
       "isNew": false,
       "listedAt": "2026-07-01T04:22:44.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/rCIAAeSw4hZqIAxM/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/GtMAAeSwj3lqIAxP/s-l1600.jpg",
@@ -2911,6 +3951,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-08-19T00:01:28.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/myYAAeSw3C1qgdXA/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/logAAeSw87BqgdXK/s-l1600.jpg",
@@ -2931,6 +3978,13 @@
       "condition": "New",
       "isNew": false,
       "listedAt": "2026-06-24T02:10:21.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/rXAAAeSwaZBp4c9y/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/sgsAAeSwTpVp4c93/s-l1600.jpg",
@@ -2951,6 +4005,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-10-18T02:41:35.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/APMAAeSwimhqxafm/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/GoAAAeSwAOdqxafu/s-l1600.jpg",
@@ -2971,6 +4032,13 @@
       "condition": "Ungraded",
       "isNew": false,
       "listedAt": "2026-09-01T23:16:09.000Z",
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "currentBid": "",
+      "bidCount": null,
+      "endAt": "",
       "images": [
         "https://i.ebayimg.com/images/g/eJwAAeSwuTdqjD0h/s-l1600.jpg",
         "https://i.ebayimg.com/images/g/k8cAAeSwWaNqjD0p/s-l1600.jpg",
