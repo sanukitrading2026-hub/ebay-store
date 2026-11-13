@@ -177,6 +177,10 @@ try {
     condition: it.condition || "",
     isNew:  it.itemId ? !prevIds.has(it.itemId) : false,
     listedAt: it.itemCreationDate || "",
+    buyingOptions: it.buyingOptions || [],
+    currentBid: priceStr(it.currentBidPrice),
+    bidCount: (it.bidCount ?? null),
+    endAt: it.itemEndDate || "",
   }));
 
   const prevImg = await loadPreviousImages();
