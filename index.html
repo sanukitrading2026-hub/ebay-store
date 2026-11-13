@@ -109,6 +109,7 @@
     <a class="brand" href="#top"><span class="logo" id="brandEmoji">🛍️</span><span id="brandName">My Store</span></a>
     <div class="nav-links">
       <a href="#categories">Categories</a>
+      <a href="#auctions">Auctions</a>
       <a href="#featured">New</a>
       <a href="#recommended">Recommended</a>
       <a href="#owner">News</a>
@@ -142,6 +143,15 @@
     </div>
   </div>
 </header>
+
+<section id="auctions" style="display:none;padding-bottom:0">
+  <div class="wrap">
+    <p class="eyebrow st-add"><span class="st-en">Live auctions</span><span class="st-ja">開催中のオークション</span></p>
+    <h2 class="title st-add"><span class="st-en">Auctions ending soon</span><span class="st-ja">まもなく終了のオークション</span></h2>
+    <p class="sub st-add"><span class="st-en">Bid on eBay — every auction ships from Japan with tracking.</span><span class="st-ja">eBayで入札できます。どれも日本から追跡付きで発送します。</span></p>
+    <div class="items" id="aucGrid"></div>
+  </div>
+</section>
 
 <section id="categories" style="background:var(--panel2);padding:40px 0">
   <div class="wrap">
@@ -269,6 +279,32 @@
             <div class="view">View on eBay →</div>
           </div>
         </a>`;
+    // auctions (自動：data.json の buyingOptions に AUCTION がある出品を、終了の近い順に出す)
+    const auc = items.filter(it => (it.buyingOptions||[]).includes("AUCTION") && (!it.endAt || Date.parse(it.endAt) > Date.now()))
+      .sort((a,b) => (Date.parse(a.endAt||"")||9e15) - (Date.parse(b.endAt||"")||9e15));
+    if (auc.length) {
+      const endTxt = s => { const d = new Date(s); if (isNaN(d)) return ""; const jst = new Date(d.getTime()+9*3600*1000);
+        const p = n => String(n).padStart(2,"0");
+        return `Ends ${d.toLocaleString([], {month:"short", day:"numeric", hour:"numeric", minute:"2-digit"})} (JST ${jst.getUTCMonth()+1}/${jst.getUTCDate()} ${p(jst.getUTCHours())}:${p(jst.getUTCMinutes())})`; };
+      const aCard = it => {
+        const id = num(it);
+        const bid = it.currentBid || it.price || "";
+        const bids = (it.bidCount != null) ? ` · ${it.bidCount} bid${it.bidCount==1?"":"s"}` : "";
+        return `
+        <a class="item" href="${esc(it.url||store)}" target="_blank" rel="noopener" data-goatcounter-click="auction-${id}" data-goatcounter-title="Auction ${id}">
+          <div class="thumb" style="${it.image?`background-image:url('${esc(it.image)}')`:''}">
+            <span class="tag">AUCTION</span>
+          </div>
+          <div class="body">
+            <div class="name">${esc(it.title)}</div>
+            <div class="price">${esc(bid)}${esc(bids)}</div>
+            <div class="view">${esc(endTxt(it.endAt))}</div>
+            <div class="view">Bid on eBay →</div>
+          </div>
+        </a>`; };
+      $("#aucGrid").innerHTML = auc.map(aCard).join("");
+      $("#auctions").style.display = "";
+    }
     const fids = (cfg.featuredIds||[]).map(Number);
     const rec = fids.map(id => items.find(it => num(it) === id)).filter(Boolean).slice(0, cfg.featuredCount||8);
     const recSet = new Set(rec);

@@ -46,7 +46,7 @@
     "listings": "点 出品中", "Tracked": "追跡つき", "shipping": "発送", "Worldwide": "世界中へ", "delivery": "お届け",
     "30-day": "30日間", "returns": "返品",
     "Live from our store": "eBayのお店から", "New & featured items": "新着・おすすめ商品",
-    "New": "新着", "Recommended": "おすすめ", "News": "お知らせ", "New arrivals": "新着商品",
+    "New": "新着", "Auctions": "オークション", "Bid on eBay →": "eBayで入札 →", "Recommended": "おすすめ", "News": "お知らせ", "New arrivals": "新着商品",
     "Our latest listings, updated automatically from our eBay store — tap any item to view and buy on eBay.":
       "新しく出品した商品です。eBayのお店から毎日自動で更新しています。商品を押すと、eBayのページで見て買えます。",
     "Hand-picked": "当店のおすすめ",
