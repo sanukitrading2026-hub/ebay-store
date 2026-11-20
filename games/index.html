@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ゲーム | Games — Sanuki Trading</title>
+<meta name="description" content="Sanuki Trading の和風ホラーゲーム。『宵宮 ―ちょうちんは、ひとつ多い―』『九つめの部屋 ―へやは八つ―』。BOOTH・itch.io で販売中。">
+<meta property="og:title" content="Sanuki Trading のゲーム">
+<meta property="og:description" content="和風ホラーゲーム『宵宮』『九つめの部屋』。BOOTH・itch.io で販売中。">
+<meta property="og:type" content="website">
+<style>
+:root{--ink:#070605;--paper:#e2dacb;--dim:#8a8275;--lamp:#d9a84e;--blood:#b02a1f;--line:#2e2924;--panel:#120f0c}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ink);color:var(--paper)}
+body{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;line-height:1.8}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;font-family:sans-serif;font-size:14px}
+.top a.home{text-decoration:none;color:var(--dim)}
+.top a.home:hover{color:var(--paper)}
+.lang button{background:none;border:1px solid var(--line);color:var(--dim);padding:4px 10px;cursor:pointer;font-size:13px}
+.lang button.on{color:var(--paper);border-color:var(--lamp)}
+header{padding:48px 0 32px;text-align:center;background:radial-gradient(ellipse at 50% 70%,rgba(217,168,78,.10),transparent 60%)}
+header .eyebrow{font-family:sans-serif;font-size:13px;letter-spacing:.3em;color:var(--lamp);margin:0}
+header h1{font-size:clamp(30px,6vw,48px);letter-spacing:.12em;margin:10px 0 8px;font-weight:700}
+header p{color:var(--dim);margin:0;font-size:clamp(15px,2.4vw,17px)}
+.games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:24px 0 48px}
+.game{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.art{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;position:relative}
+.art .t{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:.14em;line-height:1.2}
+.art .s{font-size:14px;letter-spacing:.3em;color:var(--dim);margin-top:6px}
+.art.yoimiya{background:radial-gradient(circle at 50% 35%,rgba(232,120,40,.35),transparent 45%),linear-gradient(#0d0604,#1a0b06)}
+.art.yoimiya .t{color:#f3d9b0}
+.lanterns{display:flex;gap:10px;margin-bottom:12px}
+.lanterns i{width:16px;height:22px;border-radius:45%;background:#e8782a;box-shadow:0 0 14px #e8782a}
+.lanterns i:last-child{background:#c0392b;box-shadow:0 0 14px #c0392b}
+.art.kokonotsume{background:radial-gradient(ellipse at 50% 60%,rgba(217,168,78,.10),transparent 60%),linear-gradient(#000,#0b0907)}
+.art.kokonotsume .t em{font-style:normal;color:var(--blood)}
+.body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.new{display:inline-block;font-family:sans-serif;font-size:12px;font-weight:700;background:var(--blood);color:#fff;padding:2px 8px;border-radius:3px;margin-right:6px}
+.body h2{font-size:20px;margin:0;letter-spacing:.08em}
+.body p{margin:0;font-size:15px}
+.meta{font-family:sans-serif;font-size:13px;color:var(--dim)}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+.btn{display:inline-block;text-decoration:none;padding:11px 16px;border:1px solid var(--line);font-family:sans-serif;font-size:14px;border-radius:4px;text-align:center}
+.btn small{display:block;font-size:11px;opacity:.8}
+.btn.main{background:var(--blood);border-color:var(--blood);color:#fff}
+.btn.buy{border-color:var(--lamp);color:var(--lamp)}
+.btn:hover{filter:brightness(1.15)}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;font-family:sans-serif;font-size:13px;color:var(--dim);text-align:center}
+footer a{color:var(--paper)}
+@media(max-width:720px){.games{grid-template-columns:1fr}}
+</style>
+<script>window.goatcounter={path:function(p){return location.pathname}};</script>
+<script data-goatcounter="https://sanukitrading.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap top">
+  <a class="home" href="../" data-ja="← Sanuki Trading トップへ" data-en="← Sanuki Trading home">← Sanuki Trading トップへ</a>
+  <div class="lang"><button id="bJa" type="button">日本語</button> <button id="bEn" type="button">English</button></div>
+</div>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">SANUKI TRADING GAMES</p>
+    <h1 data-ja="ゲーム" data-en="Games">ゲーム</h1>
+    <p data-ja="香川の小さなお店がつくる、和風ホラーゲーム。" data-en="Japanese folk horror games, made by a small shop in Kagawa, Japan.">香川の小さなお店がつくる、和風ホラーゲーム。</p>
+  </div>
+</header>
+
+<main class="wrap games">
+  <article class="game">
+    <div class="art yoimiya">
+      <div class="lanterns"><i></i><i></i><i></i><i></i></div>
+      <div class="t">宵宮</div>
+      <div class="s" data-ja="ちょうちんは、ひとつ多い" data-en="ONE LANTERN TOO MANY">ちょうちんは、ひとつ多い</div>
+    </div>
+    <div class="body">
+      <h2><span class="new">NEW</span><span data-ja="宵宮 ―ちょうちんは、ひとつ多い―" data-en="YOIMIYA — One Lantern Too Many —">宵宮 ―ちょうちんは、ひとつ多い―</span></h2>
+      <p data-ja="夏祭りの夜の神社で、いつもと違う「異変」を探す、1人称の和風ホラー。" data-en="A first-person Japanese horror game: find what is different on a summer festival night at the shrine.">夏祭りの夜の神社で、いつもと違う「異変」を探す、1人称の和風ホラー。</p>
+      <p class="meta" data-ja="パソコン（Windows）向け・Chrome／Edge で動作確認・2026年11月発売" data-en="For PC (Windows) · tested on Chrome / Edge · released November 2026">パソコン（Windows）向け・Chrome／Edge で動作確認・2026年11月発売</p>
+      <div class="btns">
+        <a class="btn main" href="https://booth.pm/ja/items/9185774" target="_blank" rel="noopener" data-goatcounter-click="games-yoimiya-booth" data-ja="BOOTHで買う<small>1,200円・日本向け</small>" data-en="Buy on BOOTH<small>¥1,200 · Japan</small>">BOOTHで買う<small>1,200円・日本向け</small></a>
+        <a class="btn buy" href="https://sanukitrading.itch.io/yoimiya" target="_blank" rel="noopener" data-goatcounter-click="games-yoimiya-itch" data-ja="itch.ioで買う<small>$7.99・海外向け</small>" data-en="Buy on itch.io<small>$7.99 · worldwide</small>">itch.ioで買う<small>$7.99・海外向け</small></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="game">
+    <div class="art kokonotsume">
+      <div class="t">九つめの<em>部屋</em></div>
+      <div class="s" data-ja="へやは八つ" data-en="THE NINTH ROOM">へやは八つ</div>
+    </div>
+    <div class="body">
+      <h2 data-ja="九つめの部屋 ―へやは八つ―" data-en="The Ninth Room — eight rooms —">九つめの部屋 ―へやは八つ―</h2>
+      <p data-ja="祖母が遺した山あいの古い家。夜がくるたび、部屋がひとつ増える。3つの夜、5つのエンディング。" data-en="Grandmother's old house in the mountains. Every night, one more room appears. Three nights, five endings.">祖母が遺した山あいの古い家。夜がくるたび、部屋がひとつ増える。3つの夜、5つのエンディング。</p>
+      <p class="meta" data-ja="無料の体験版あり・2026年11月発売" data-en="Free demo available · released November 2026">無料の体験版あり・2026年11月発売</p>
+      <div class="btns">
+        <a class="btn main" href="../kokonotsume/" data-goatcounter-click="games-kokonotsume-page" data-ja="体験版・くわしく見る" data-en="Free demo &amp; details">体験版・くわしく見る</a>
+        <a class="btn buy" href="https://sanuki-trading.booth.pm/items/9148338" target="_blank" rel="noopener" data-goatcounter-click="games-kokonotsume-booth" data-ja="BOOTHで買う<small>800円・日本向け</small>" data-en="Buy on BOOTH<small>¥800 · Japan</small>">BOOTHで買う<small>800円・日本向け</small></a>
+        <a class="btn buy" href="https://sanukitrading.itch.io/the-ninth-room" target="_blank" rel="noopener" data-goatcounter-click="games-kokonotsume-itch" data-ja="itch.ioで買う<small>$5.99・海外向け</small>" data-en="Buy on itch.io<small>$5.99 · worldwide</small>">itch.ioで買う<small>$5.99・海外向け</small></a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p data-ja="BOOTH ショップ：" data-en="BOOTH shop: ">BOOTH ショップ：</p>
+    <p><a href="https://sanuki-trading.booth.pm/" target="_blank" rel="noopener">sanuki-trading.booth.pm</a> ・ <a href="https://sanukitrading.itch.io/" target="_blank" rel="noopener">sanukitrading.itch.io</a></p>
+    <p><a href="../" data-ja="Sanuki Trading トップへ戻る" data-en="Back to Sanuki Trading">Sanuki Trading トップへ戻る</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){var en=!/^ja/i.test(navigator.language||'ja');try{var s=localStorage.getItem('games_lang');if(s)en=s==='en'}catch(e){}
+function apply(){document.documentElement.lang=en?'en':'ja';document.querySelectorAll('[data-ja]').forEach(function(el){el.innerHTML=el.getAttribute(en?'data-en':'data-ja')});
+document.getElementById('bJa').className=en?'':'on';document.getElementById('bEn').className=en?'on':''}
+document.getElementById('bJa').onclick=function(){en=false;try{localStorage.setItem('games_lang','ja')}catch(e){}apply()};
+document.getElementById('bEn').onclick=function(){en=true;try{localStorage.setItem('games_lang','en')}catch(e){}apply()};apply()})();
+</script>
+</body>
+</html>
