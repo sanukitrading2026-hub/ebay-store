@@ -108,11 +108,10 @@
   <div class="wrap">
     <a class="brand" href="#top"><span class="logo" id="brandEmoji">🛍️</span><span id="brandName">My Store</span></a>
     <div class="nav-links">
-      <a href="#categories">Categories</a>
+      <a href="#categories" class="st-add"><span class="st-en">eBay</span><span class="st-ja">eBay（商品）</span></a>
+      <a href="games/" class="st-add" data-goatcounter-click="nav-games"><span class="st-en">Games</span><span class="st-ja">ゲーム</span></a>
+      <a href="#owner" class="st-add"><span class="st-en">note</span><span class="st-ja">note（記事）</span></a>
       <a href="#auctions">Auctions</a>
-      <a href="#featured">New</a>
-      <a href="#recommended">Recommended</a>
-      <a href="#owner">News</a>
       <a href="#about">About</a>
       <a class="btn" id="navCta" href="#" target="_blank" rel="noopener">Visit eBay Store →</a>
     </div>
@@ -127,8 +126,8 @@
 
 <!-- game-notice: 九つめの部屋 release 2026-11-15 -->
 <div id="gameNotice" class="st-add" style="background:#1b1410;color:#f3e6d0;text-align:center;padding:12px 16px;font-weight:700;line-height:1.5;border-bottom:1px solid #3a2a1e">
-  <span class="st-en">🕯️ New: our Japanese folk horror game "The Ninth Room — eight rooms —" is out (free demo · English &amp; Japanese).</span><span class="st-ja">🕯️ 新作ホラーゲーム『九つめの部屋 ―へやは八つ―』発売しました（無料体験版あり）。</span>
-  <a id="gameLink" href="https://sanukitrading2026-hub.github.io/ebay-store/kokonotsume/" data-goatcounter-click="game-notice-kokonotsume" style="color:#f5b301;text-decoration:underline;margin-left:8px;white-space:nowrap"><span class="st-en">Play the demo →</span><span class="st-ja">体験版・購入はこちら →</span></a>
+  <span class="st-en">🏮 New game: "YOIMIYA — One Lantern Too Many —" is out. Also "The Ninth Room" (free demo).</span><span class="st-ja">🏮 新作ホラーゲーム『宵宮 ―ちょうちんは、ひとつ多い―』発売。『九つめの部屋』（無料体験版あり）も。</span>
+  <a id="gameLink" href="games/" data-goatcounter-click="game-notice-games" style="color:#f5b301;text-decoration:underline;margin-left:8px;white-space:nowrap"><span class="st-en">See our games →</span><span class="st-ja">ゲームのページへ →</span></a>
 </div>
 
 <header class="hero" id="top">
@@ -149,6 +148,49 @@
     </div>
   </div>
 </header>
+
+
+<!-- divisions: eBay / Games / note 2026-11-20 -->
+<style>
+.div3{padding:36px 0 8px}
+.div3 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.div3 a.card{display:flex;flex-direction:column;gap:8px;padding:22px 20px;border-radius:var(--radius,16px);border:1.5px solid var(--line);background:var(--panel);text-decoration:none;color:var(--ink);transition:transform .15s,border-color .15s}
+.div3 a.card:hover{transform:translateY(-3px);border-color:var(--brand)}
+.div3 .ic{font-size:34px;line-height:1}
+.div3 h3{margin:0;font-size:21px}
+.div3 p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.div3 .go{margin-top:auto;padding-top:6px;font-weight:700;font-size:14px;color:var(--brand)}
+.div3 a.card.games{background:#14100c;border-color:#3a2a1e;color:#f3e6d0}
+.div3 a.card.games p{color:#c9b89c}
+.div3 a.card.games .go{color:#f5b301}
+@media(max-width:760px){.div3 .grid{grid-template-columns:1fr}}
+</style>
+<section class="div3 st-add" id="divisions">
+  <div class="wrap">
+    <p class="eyebrow"><span class="st-en">What we do</span><span class="st-ja">Sanuki Trading の3つのコーナー</span></p>
+    <h2 class="title" style="margin-bottom:18px"><span class="st-en">eBay · Games · note</span><span class="st-ja">eBay・ゲーム・note</span></h2>
+    <div class="grid">
+      <a class="card" href="#categories" data-goatcounter-click="div-ebay">
+        <div class="ic">🛒</div>
+        <h3><span class="st-en">eBay Store</span><span class="st-ja">eBay（商品）</span></h3>
+        <p><span class="st-en">Japanese Pokemon &amp; One Piece cards, anime figures. Shipped from Japan with tracking.</span><span class="st-ja">ポケモンカード・ワンピースカード・アニメフィギュア。日本から追跡付きで発送。</span></p>
+        <span class="go"><span class="st-en">Browse items →</span><span class="st-ja">商品を見る →</span></span>
+      </a>
+      <a class="card games" href="games/" data-goatcounter-click="div-games">
+        <div class="ic">🏮</div>
+        <h3><span class="st-en">Games</span><span class="st-ja">ゲーム</span></h3>
+        <p><span class="st-en">Japanese folk horror games: "YOIMIYA" and "The Ninth Room". On BOOTH and itch.io.</span><span class="st-ja">和風ホラーゲーム『宵宮』『九つめの部屋』。BOOTH・itch.io で販売中。</span></p>
+        <span class="go"><span class="st-en">Go to the games page →</span><span class="st-ja">ゲームのページへ →</span></span>
+      </a>
+      <a class="card" href="#owner" data-goatcounter-click="div-note">
+        <div class="ic">📝</div>
+        <h3><span class="st-en">note (articles)</span><span class="st-ja">note（記事）</span></h3>
+        <p><span class="st-en">The owner's stories on running the shop with AI (in Japanese), and a free family-procedures guide.</span><span class="st-ja">AIと一緒にお店を続ける店主の話と、無料の「もしも」手続きナビ。</span></p>
+        <span class="go"><span class="st-en">Read on note →</span><span class="st-ja">記事を見る →</span></span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <section id="auctions" style="display:none;padding-bottom:0">
   <div class="wrap">
