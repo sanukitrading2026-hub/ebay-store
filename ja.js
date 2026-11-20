@@ -150,7 +150,7 @@
     var h = document.getElementById("heroTitle");
     if (h && !h.querySelector(".st-en")) {
       h.innerHTML = bi('Authentic <span class="hl">Japanese</span> Collectibles', '日本の<span class="hl">本物</span>のコレクター商品を、<br>世界へ');
-      if (!document.querySelector(".st-kicker")) h.insertAdjacentHTML("beforebegin", '<p class="st-kicker">Sanuki Trading · Kagawa, Japan</p>');
+      if (!document.querySelector(".st-kicker")) h.insertAdjacentHTML("beforebegin", '<p class="st-kicker">Sanuki Trading · Japan</p>');
     }
     var l = document.getElementById("heroLead");
     if (l && !l.querySelector(".st-en")) l.innerHTML = bi("Pokémon Cards · One Piece Card Game · Anime Figures", "ポケモンカード・ワンピースカード・アニメフィギュア");
