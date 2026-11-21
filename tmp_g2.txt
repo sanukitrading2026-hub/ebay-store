@@ -368,14 +368,17 @@ function txWriteBook_(book){
     pdf:'https://docs.google.com/spreadsheets/d/'+id+'/export?format=pdf&portrait=false&fitw=true&gridlines=false' };
 }
 
-function txShowLinks_(res, extra){
-  var html = '<div style="font-family:sans-serif;font-size:14px;line-height:1.8">'+
-    '<b>税理士用のファイルを作りました。</b><br>'+(extra||'')+
-    '<br>・<a href="'+res.url+'" target="_blank">スプレッドシートで開く</a>'+
-    '<br>・<a href="'+res.xlsx+'" target="_blank">Excel（.xlsx）でダウンロード</a>'+
-    '<br>・<a href="'+res.pdf+'" target="_blank">PDF でダウンロード</a>'+
-    '<br><br>税理士さんには、Excel か PDF を送るか、スプレッドシートを共有してください。</div>';
-  SpreadsheetApp.getUi().showModalDialog(HtmlService.createHtmlOutput(html).setWidth(460).setHeight(260),'税理士用データ');
+function txShowLinks_(res, extra, dashName){
+  /* 新しい許可が要らないように、ダイアログではなく ダッシュボード にリンクを出す */
+  var db = SpreadsheetApp.getActive().getSheetByName(dashName);
+  var r0 = 17;
+  db.getRange(r0,1,5,2).clearContent();
+  db.getRange(r0,1).setValue('税理士用データ（最後に書き出した物）').setFontWeight('bold').setBackground(TX.HEAD).setFontColor('#ffffff');
+  db.getRange(r0,2).setValue(Utilities.formatDate(new Date(),'Asia/Tokyo','yyyy/MM/dd HH:mm')+'　'+(extra||'')).setBackground(TX.HEAD).setFontColor('#ffffff');
+  db.getRange(r0+1,1,3,1).setValues([['スプレッドシートで開く'],['Excel（.xlsx）でダウンロード'],['PDF でダウンロード']]);
+  db.getRange(r0+1,2,3,1).setFormulas([['=HYPERLINK("'+res.url+'","開く")'],['=HYPERLINK("'+res.xlsx+'","ダウンロード")'],['=HYPERLINK("'+res.pdf+'","ダウンロード")']]);
+  db.getRange(r0+4,1).setValue('税理士さんには Excel か PDF を送るか、スプレッドシートを共有してください。');
+  SpreadsheetApp.getUi().alert('税理士用のファイルを作りました（'+(extra||'')+'）。\n\nダッシュボードの '+r0+' 行目から「開く」「Excel でダウンロード」「PDF でダウンロード」を押してください。');
 }
 
 /* ===== ゲーム販売：税理士用データを書き出す v1 2026-11-21 ===== */
@@ -470,6 +473,6 @@ function exportTaxGameFor_(y, ui, incTest){
     {name:'⑥引き出し・入金', head:['日付','サイト','引き出した額（元の通貨）','通貨','振込・送金手数料（円）','Payoneer 実際の手数料（円）','銀行に入った額（円）'], rows:prows, money:[5,6,7], date:[1], sumCols:[5,6,7], widths:[100,80,150,60,150,170,150]}
   ]});
   ss.getSheetByName(SH.LOG).appendRow([new Date(),'','','税理士用 書き出し '+y+'年 → '+res.url]);
-  if(ui) txShowLinks_(res, y+' 年分・売上高 '+uri.toLocaleString()+' 円・差引 '+sashihiki.toLocaleString()+' 円');
+  if(ui) txShowLinks_(res, y+' 年分・売上高 '+uri.toLocaleString()+' 円・差引 '+sashihiki.toLocaleString()+' 円', SH.DASH);
   return res;
 }
