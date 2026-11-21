@@ -58,7 +58,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;font-family:sans-ser
 <header>
   <div class="wrap">
     <div class="lanterns"><i></i><i></i><i></i><i></i></div>
-    <h1>宵宮</h1>
+    <h1 data-ja="宵宮" data-en="YOIMIYA" data-zh="宵宫" data-ko="요이미야">宵宮</h1>
     <p class="tag" data-ja="―ちょうちんは、ひとつ多い―" data-en="ONE LANTERN TOO MANY" data-zh="灯笼多了一盏" data-ko="등롱이 하나 더 많다">―ちょうちんは、ひとつ多い―</p>
     <p class="catch" data-ja="十二年前の宵宮。かくれんぼの鬼は、わたしだった。" data-en="Twelve years ago, on the eve of the festival, I was &quot;it&quot; in hide-and-seek." data-zh="十二年前的宵宫之夜，玩捉迷藏时当鬼的人是我。" data-ko="12년 전 요이미야 밤, 숨바꼭질의 술래는 나였다.">十二年前の宵宮。かくれんぼの鬼は、わたしだった。</p>
     <div class="btns">
@@ -120,9 +120,9 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;font-family:sans-ser
 
 <script>
 (function(){var L='ja',nl=String(navigator.language||'ja').toLowerCase();L=/^ja/.test(nl)?'ja':/^zh/.test(nl)?'zh':/^ko/.test(nl)?'ko':'en';try{var s=localStorage.getItem('games_lang');if(s)L=s}catch(e){}
-var HL={ja:'ja',en:'en',zh:'zh-CN',ko:'ko'},B={ja:'bJa',en:'bEn',zh:'bZh',ko:'bKo'};
+var TT={ja:'宵宮 ―ちょうちんは、ひとつ多い― | YOIMIYA — Sanuki Trading',en:'YOIMIYA — One Lantern Too Many — | Sanuki Trading',zh:'宵宫 —— 灯笼多了一盏 | Sanuki Trading',ko:'요이미야 —등롱이 하나 더 많다— | Sanuki Trading'};var HL={ja:'ja',en:'en',zh:'zh-CN',ko:'ko'},B={ja:'bJa',en:'bEn',zh:'bZh',ko:'bKo'};
 function apply(){document.documentElement.lang=HL[L];document.querySelectorAll('[data-ja]').forEach(function(el){el.innerHTML=el.getAttribute('data-'+L)||el.getAttribute('data-en')});
-for(var k in B){var b=document.getElementById(B[k]);if(b)b.className=(k===L)?'on':''}}
+for(var k in B){var b=document.getElementById(B[k]);if(b)b.className=(k===L)?'on':''}document.title=TT[L]||TT.en}
 Object.keys(B).forEach(function(k){var b=document.getElementById(B[k]);if(b)b.onclick=function(){L=k;try{localStorage.setItem('games_lang',k)}catch(e){}apply()}});apply()})();
 </script>
 </body>

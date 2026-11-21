@@ -72,7 +72,7 @@ footer a{color:var(--paper)}
   <article class="game">
     <div class="art yoimiya">
       <div class="lanterns"><i></i><i></i><i></i><i></i></div>
-      <div class="t">宵宮</div>
+      <div class="t" data-ja="宵宮" data-en="YOIMIYA" data-zh="宵宫" data-ko="요이미야">宵宮</div>
       <div class="s" data-ja="ちょうちんは、ひとつ多い" data-en="ONE LANTERN TOO MANY" data-zh="灯笼多了一盏" data-ko="등롱이 하나 더 많다">ちょうちんは、ひとつ多い</div>
     </div>
     <div class="body">
@@ -90,7 +90,7 @@ footer a{color:var(--paper)}
 
   <article class="game">
     <div class="art kokonotsume">
-      <div class="t">九つめの<em>部屋</em></div>
+      <div class="t" data-ja="九つめの&lt;em&gt;部屋&lt;/em&gt;" data-en="The Ninth &lt;em&gt;Room&lt;/em&gt;" data-zh="第九个&lt;em&gt;房间&lt;/em&gt;" data-ko="아홉 번째 &lt;em&gt;방&lt;/em&gt;">九つめの<em>部屋</em></div>
       <div class="s" data-ja="へやは八つ" data-en="THE NINTH ROOM" data-zh="第九个房间" data-ko="아홉 번째 방">へやは八つ</div>
     </div>
     <div class="body">
@@ -116,9 +116,9 @@ footer a{color:var(--paper)}
 
 <script>
 (function(){var L='ja',nl=String(navigator.language||'ja').toLowerCase();L=/^ja/.test(nl)?'ja':/^zh/.test(nl)?'zh':/^ko/.test(nl)?'ko':'en';try{var s=localStorage.getItem('games_lang');if(s)L=s}catch(e){}
-var HL={ja:'ja',en:'en',zh:'zh-CN',ko:'ko'},B={ja:'bJa',en:'bEn',zh:'bZh',ko:'bKo'};
+var TT={ja:'ゲーム | Games — Sanuki Trading',en:'Games — Sanuki Trading',zh:'游戏 — Sanuki Trading',ko:'게임 — Sanuki Trading'};var HL={ja:'ja',en:'en',zh:'zh-CN',ko:'ko'},B={ja:'bJa',en:'bEn',zh:'bZh',ko:'bKo'};
 function apply(){document.documentElement.lang=HL[L];document.querySelectorAll('[data-ja]').forEach(function(el){el.innerHTML=el.getAttribute('data-'+L)||el.getAttribute('data-en')});
-for(var k in B){var b=document.getElementById(B[k]);if(b)b.className=(k===L)?'on':''}}
+for(var k in B){var b=document.getElementById(B[k]);if(b)b.className=(k===L)?'on':''}document.title=TT[L]||TT.en}
 Object.keys(B).forEach(function(k){var b=document.getElementById(B[k]);if(b)b.onclick=function(){L=k;try{localStorage.setItem('games_lang',k)}catch(e){}apply()}});apply()})();
 </script>
 </body>
