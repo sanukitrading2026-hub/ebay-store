@@ -3,7 +3,7 @@
 <body><script>
 /* Hands one of the store's own public product videos to the Sanuki Trading Facebook / TikTok / Instagram / YouTube tab (for posting). */
 (function(){
-  var ALLOWED = ["https://www.facebook.com", "https://business.facebook.com", "https://www.tiktok.com", "https://www.instagram.com", "https://studio.youtube.com", "https://www.youtube.com", "https://manage.booth.pm", "https://itch.io"];
+  var ALLOWED = ["https://www.facebook.com", "https://business.facebook.com", "https://www.tiktok.com", "https://www.instagram.com", "https://studio.youtube.com", "https://www.youtube.com", "https://manage.booth.pm", "https://itch.io", "https://x.com"];
   var f = new URLSearchParams(location.search).get("f") || "";
   function send(msg){ ALLOWED.forEach(function(o){ try{ if(parent!==window) parent.postMessage(msg, o); }catch(e){} try{ if(window.opener) window.opener.postMessage(msg, o); }catch(e){} }); }
   if (!/^videos\/(v1-\d+-0|store_intro|yoimiyaplay|game_[a-z0-9_]+)\.mp4$/.test(f)) { send({kind:"sanuki-hello"}); return; }
