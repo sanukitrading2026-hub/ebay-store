@@ -159,7 +159,7 @@
       var first = b.querySelector("span"); /* 出品数（自動で数が入る）は残す */
       b.innerHTML = "";
       if (first) b.appendChild(first);
-      [["Ships from Japan, tracked", "日本から追跡つきで発送"], ["US import duties prepaid", "アメリカは関税込み"], ["Packs never searched", "パックはサーチしません"]].forEach(function (c) {
+      [["Top Rated Seller on eBay · 100% positive feedback", "eBayの最高評価出品者（Top Rated Seller）・評価100%"], ["Ships from Japan, tracked", "日本から追跡つきで発送"], ["US import duties prepaid", "アメリカは関税込み"], ["Packs never searched", "パックはサーチしません"]].forEach(function (c) {
         b.insertAdjacentHTML("beforeend", '<span class="st-check"><i></i>' + bi(c[0], c[1]) + "</span>");
       });
     }
