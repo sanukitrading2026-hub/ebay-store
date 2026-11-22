@@ -34,12 +34,12 @@ function relatedHtml(list, SITE_BASE, from) {
     `<img src="${esc(big(r.image, 500))}" alt="${esc(r.title)}" loading="lazy"><span class="n">${esc(r.title)}</span><span class="p">${esc(r.price)}</span></a>`).join("") + `</div>`;
 }
 
-function shareHtml(url, text, id) {
+function shareHtml(url, text, id, img = "") {
   const u = encodeURIComponent(url), t = encodeURIComponent(text);
   return `<div class="share"><span>Share:</span>` +
     `<a href="https://twitter.com/intent/tweet?url=${u}&text=${t}" target="_blank" rel="noopener" data-goatcounter-click="share-x-${id}">X</a>` +
     `<a href="https://www.facebook.com/sharer/sharer.php?u=${u}" target="_blank" rel="noopener" data-goatcounter-click="share-fb-${id}">Facebook</a>` +
-    `<a href="https://www.pinterest.com/pin/create/button/?url=${u}&description=${t}" target="_blank" rel="noopener" data-goatcounter-click="share-pin-${id}">Pinterest</a>` +
+    `<a href="https://www.pinterest.com/pin/create/button/?url=${u}${img ? "&media=" + encodeURIComponent(img) : ""}&description=${t}" target="_blank" rel="noopener" data-goatcounter-click="share-pin-${id}">Pinterest</a>` +
     `<a href="https://social-plugins.line.me/lineit/share?url=${u}" target="_blank" rel="noopener" data-goatcounter-click="share-line-${id}">LINE</a>` +
     `<button type="button" onclick="(navigator.clipboard?navigator.clipboard.writeText(location.href):Promise.reject()).then(()=>{this.textContent='Copied'},()=>prompt('URL',location.href))" data-goatcounter-click="share-copy-${id}">Copy link</button>` +
     `</div>`;
@@ -118,7 +118,7 @@ ${STYLE}</head>
   ${PERKS}
   ${imgs.length ? `<div class="gal">${imgs.map((u, i) => `<img src="${esc(u)}" alt="${esc(it.title)}${i ? " photo " + (i + 1) : ""}"${i ? ' loading="lazy"' : ""}>`).join("")}</div>` : ""}
   <a class="btn" href="${esc(buy)}" target="_blank" rel="noopener" data-goatcounter-click="ebay-buy-bottom-${esc(id)}" data-goatcounter-title="Buy on eBay (bottom)">Buy now on eBay</a>
-  ${shareHtml(url, it.title + " — " + it.price + " from Japan", id)}
+  ${shareHtml(url, it.title + " — " + it.price + " from Japan", id, ogImg)}
   ${relatedHtml(related(it.title, all, it.itemId), SITE_BASE, id)}
   <p style="margin-top:24px"><a class="btn blue" href="${esc(storeUrl)}" target="_blank" rel="noopener" data-goatcounter-click="ebay-store" data-goatcounter-title="eBay store">See all items in our store</a></p>
   <div class="foot">© 2026 ${esc(brand)} · Independent seller on eBay. Not affiliated with or endorsed by eBay Inc.</div>
@@ -131,20 +131,20 @@ export function soldPage(old, all, { SITE_BASE, brand, storeUrl }) {
   const kw = words(old.title).filter(w => !STOP.has(w)).slice(0, 4).join(" ") || old.title;
   const search = `https://www.ebay.com/sch/i.html?_ssn=sanuki.japan&_nkw=${encodeURIComponent(kw)}`;
   const jsonld = { "@context": "https://schema.org", "@type": "Product", name: old.title, image: old.image || undefined,
-    offers: { "@type": "Offer", availability: "https://schema.org/SoldOut", priceCurrency: "USD", price: old.priceValue || undefined, url: storeUrl } };
+    offers: { "@type": "Offer", availability: "https://schema.org/OutOfStock", priceCurrency: "USD", price: old.priceValue || undefined, url: storeUrl } };
   return `<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>${esc(old.title)} (sold) | ${esc(brand)}</title>
-<meta name="description" content="${esc(old.title)} has sold. See similar authentic Japanese items from ${esc(brand)}, shipped worldwide with tracking.">
+<title>${esc(old.title)} (listing ended) | ${esc(brand)}</title>
+<meta name="description" content="${esc(old.title)} — this listing has ended. See the same or similar authentic Japanese items from ${esc(brand)}, shipped worldwide with tracking.">
 <link rel="canonical" href="${esc(url)}">
-<meta property="og:type" content="product"><meta property="og:title" content="${esc(old.title)} — sold, see similar"><meta property="og:url" content="${esc(url)}">
+<meta property="og:type" content="product"><meta property="og:title" content="${esc(old.title)} — see similar items"><meta property="og:url" content="${esc(url)}">
 ${old.image ? `<meta property="og:image" content="${esc(big(old.image))}">` : ""}<meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 <!-- sold-page -->
 ${STYLE}</head>
 <body><div class="wrap">
   <a class="top" href="${esc(SITE_BASE)}/"><span class="logo"></span>${esc(brand)}</a>
-  <div class="sold">This item has sold. Similar items from our store are below.</div>
+  <div class="sold">This listing has ended. It may be listed again — see the same or similar items from our store below.</div>
   <h1>${esc(old.title)}</h1>
   <a class="btn" href="${esc(search)}" target="_blank" rel="noopener" data-goatcounter-click="sold-search-${esc(old.slug)}">Find similar on eBay</a>
   ${PERKS}

@@ -86,7 +86,7 @@
   }
 
   function perks() {
-    d.querySelectorAll(".items .item .body").forEach(function (b) {
+    d.querySelectorAll('.items a.item[href*="ebay."] .body').forEach(function (b) {
       if (b.querySelector(".bst-perk")) return;
       var v = b.querySelector(".view:last-child") || b.lastElementChild;
       var p = el('<div class="bst-perk">' + bi("Ships from Japan · tracked · US import fees included", "日本から追跡つき・米国は関税込み") + "</div>");

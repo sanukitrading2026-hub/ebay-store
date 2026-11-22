@@ -10,40 +10,22 @@
   "aboutText": "We're a Japan-based seller passionate about sending quality items to buyers around the globe. Each order is checked, cleaned and packed with care. Every purchase goes through eBay's secure checkout — your payment and personal details stay protected by eBay and are never handled by us directly.",
   "categories": [
     {
-      "icon": "📷",
-      "name": "Cameras & Photo",
-      "desc": "Vintage & modern gear",
-      "url": ""
-    },
-    {
-      "icon": "👘",
-      "name": "Japanese Fashion",
-      "desc": "Streetwear & vintage",
-      "url": ""
-    },
-    {
-      "icon": "🎮",
-      "name": "Games & Toys",
-      "desc": "Retro consoles & figures",
-      "url": ""
-    },
-    {
-      "icon": "⌚",
-      "name": "Watches",
-      "desc": "Seiko, Citizen & more",
-      "url": ""
-    },
-    {
       "icon": "🎴",
-      "name": "Collectibles",
-      "desc": "Cards, coins & rare items",
-      "url": ""
+      "name": "Pokémon Cards",
+      "desc": "Japanese boosters, boxes & singles",
+      "url": "https://www.ebay.com/sch/i.html?_ssn=sanuki.japan&_nkw=pokemon"
     },
     {
-      "icon": "🎧",
-      "name": "Audio & Vinyl",
-      "desc": "Records & hi-fi",
-      "url": ""
+      "icon": "🏴‍☠️",
+      "name": "One Piece Card Game",
+      "desc": "Japanese boosters & boxes",
+      "url": "https://www.ebay.com/sch/i.html?_ssn=sanuki.japan&_nkw=one%20piece%20card"
+    },
+    {
+      "icon": "🗿",
+      "name": "Anime Figures",
+      "desc": "Ichiban Kuji, P.O.P & more",
+      "url": "https://www.ebay.com/sch/i.html?_ssn=sanuki.japan&_nkw=figure"
     }
   ],
   "socials": [
