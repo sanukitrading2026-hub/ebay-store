@@ -142,7 +142,10 @@
   var CATS = [
     ["🎴", "Pokémon Cards", "ポケモンカード", "Japanese boosters, boxes & singles", "日本語版のパック・BOX・シングル", "pokemon"],
     ["🏴‍☠️", "One Piece Card Game", "ワンピースカード", "Japanese boosters & boxes", "日本語版のパック・BOX", "one piece card"],
-    ["🗿", "Anime Figures", "アニメフィギュア", "Ichiban Kuji, P.O.P & more", "一番くじ・P.O.Pなど", "figure"]
+    ["🗿", "Anime Figures", "アニメフィギュア", "Ichiban Kuji, P.O.P & more", "一番くじ・P.O.Pなど", "figure"],
+    ["🐉", "Dragon Ball", "ドラゴンボール", "Figures, medals & collectibles", "フィギュア・メダルなど", "dragon ball"],
+    ["🚗", "Toys, RC & Hobby", "おもちゃ・ラジコン・ホビー", "RC cars, Beyblade & Japan-only toys", "ラジコン・ベイブレード・日本限定のおもちゃ", "(rc,beyblade,toy,medal)"],
+    ["🧸", "Plush & Goods", "ぬいぐるみ・グッズ", "Pokémon plush, sleeves & more", "ポケモンのぬいぐるみ・スリーブなど", "(plush,sleeves)"]
   ];
   function brand() {
     var e = document.getElementById("brandEmoji");

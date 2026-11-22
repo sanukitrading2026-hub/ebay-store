@@ -26,6 +26,24 @@
       "name": "Anime Figures",
       "desc": "Ichiban Kuji, P.O.P & more",
       "url": "https://www.ebay.com/sch/i.html?_ssn=sanuki.japan&_nkw=figure"
+    },
+    {
+      "icon": "🐉",
+      "name": "Dragon Ball",
+      "desc": "Figures, medals & collectibles",
+      "url": "https://www.ebay.com/sch/i.html?_ssn=sanuki.japan&_nkw=dragon%20ball"
+    },
+    {
+      "icon": "🚗",
+      "name": "Toys, RC & Hobby",
+      "desc": "RC cars, Beyblade & Japan-only toys",
+      "url": "https://www.ebay.com/sch/i.html?_ssn=sanuki.japan&_nkw=%28rc%2Cbeyblade%2Ctoy%2Cmedal%29"
+    },
+    {
+      "icon": "🧸",
+      "name": "Plush & Goods",
+      "desc": "Pokémon plush, sleeves & more",
+      "url": "https://www.ebay.com/sch/i.html?_ssn=sanuki.japan&_nkw=%28plush%2Csleeves%29"
     }
   ],
   "socials": [
