@@ -39,7 +39,6 @@ function shareHtml(url, text, id, img = "") {
   return `<div class="share"><span>Share:</span>` +
     `<a href="https://twitter.com/intent/tweet?url=${u}&text=${t}" target="_blank" rel="noopener" data-goatcounter-click="share-x-${id}">X</a>` +
     `<a href="https://www.facebook.com/sharer/sharer.php?u=${u}" target="_blank" rel="noopener" data-goatcounter-click="share-fb-${id}">Facebook</a>` +
-    `<a href="https://www.pinterest.com/pin/create/button/?url=${u}${img ? "&media=" + encodeURIComponent(img) : ""}&description=${t}" target="_blank" rel="noopener" data-goatcounter-click="share-pin-${id}">Pinterest</a>` +
     `<a href="https://social-plugins.line.me/lineit/share?url=${u}" target="_blank" rel="noopener" data-goatcounter-click="share-line-${id}">LINE</a>` +
     `<button type="button" onclick="(navigator.clipboard?navigator.clipboard.writeText(location.href):Promise.reject()).then(()=>{this.textContent='Copied'},()=>prompt('URL',location.href))" data-goatcounter-click="share-copy-${id}">Copy link</button>` +
     `</div>`;

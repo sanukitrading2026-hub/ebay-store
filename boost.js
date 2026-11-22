@@ -5,7 +5,7 @@
    3. スマホで商品を2列、オークション・新着・おすすめを最初の画面のすぐ下へ
    4. 商品カードに「追跡つき・米国は関税込み」
    5. 本物の eBay 評価（数字と3件）・eBay フォローの案内
-   6. 共有ボタン（X・Facebook・Pinterest・LINE・リンクのコピー・スマホの共有） */
+   6. 共有ボタン（X・Facebook・LINE・リンクのコピー・スマホの共有） */
 (function () {
   "use strict";
   var d = document;
@@ -68,7 +68,6 @@
     var w = '<div class="bst-share" data-where="' + where + '"><span class="lbl">' + bi("Share:", "共有：") + "</span>" +
       '<a href="https://twitter.com/intent/tweet?url=' + u + "&text=" + t + '" target="_blank" rel="noopener" data-goatcounter-click="share-x-' + where + '">X</a>' +
       '<a href="https://www.facebook.com/sharer/sharer.php?u=' + u + '" target="_blank" rel="noopener" data-goatcounter-click="share-fb-' + where + '">Facebook</a>' +
-      '<a href="https://www.pinterest.com/pin/create/button/?url=' + u + "&media=" + encodeURIComponent(SITE + "og.png") + "&description=" + t + '" target="_blank" rel="noopener" data-goatcounter-click="share-pin-' + where + '">Pinterest</a>' +
       '<a href="https://social-plugins.line.me/lineit/share?url=' + u + '" target="_blank" rel="noopener" data-goatcounter-click="share-line-' + where + '">LINE</a>' +
       '<button type="button" class="bst-copy" data-goatcounter-click="share-copy-' + where + '">' + bi("Copy link", "リンクをコピー") + "</button>" +
       (navigator.share ? '<button type="button" class="bst-native" data-goatcounter-click="share-native-' + where + '">' + bi("More…", "その他…") + "</button>" : "") +
