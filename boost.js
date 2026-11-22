@@ -106,14 +106,8 @@
     var sec = el('<section id="bst-proof"><div class="wrap bst-proof">' +
       '<p class="eyebrow">' + bi("From real buyers", "買った方の声") + "</p>" +
       '<h2 class="title">' + bi("Trusted by collectors worldwide", "世界のコレクターに選ばれています") + "</h2>" +
-      '<div class="bst-nums"><span><b>100%</b>' + bi("positive feedback (12 months)", "ポジティブ評価（過去12か月）") + "</span>" +
-      "<span><b>122</b>" + bi("positive ratings in 12 months", "件の良い評価（過去12か月）") + "</span>" +
-      "<span><b>Top Rated</b>" + bi("Seller on eBay", "eBayの最高評価出品者") + "</span></div>" +
-      '<p class="updated">' + bi("As shown on our eBay feedback profile, November 23, 2026.", "eBayの評価ページの表示（2026年11月23日時点）") + "</p>" +
-      '<div class="bst-revs">' +
-      rev("Great communication and service. Cards came pristinely wrapped and shipped faster than expected.", "s***1 · United States · Mega Rayquaza ex SAR") +
-      rev("An excellent seller! So pleased with the packaging and shipping! Thanks!", "y***4 · Pokemon 30th Promo Card Pack") +
-      rev("Fantastic seller. Fast delivery and continued communication. Packaged well, as described.", "n***2 · Godzilla Minus One figure") +
+      '<div class="bst-nums" id="bst-nums"></div><p class="updated" id="bst-asof"></p>' +
+      '<div class="bst-revs" id="bst-revs">' +
       "</div>" +
       '<p><a class="btn" href="' + FDBK + '" target="_blank" rel="noopener">' + bi("Read all feedback on eBay →", "eBayの評価をすべて見る →") + "</a></p>" +
       '<div class="bst-follow"><p>' + bi("Follow our eBay store to get new arrivals and our newsletter with follower-only coupons when we run them.", "eBayのお店をフォローすると、新着とお知らせ（フォロワー限定クーポンを出すときはその案内も）が届きます。") + "</p>" +
@@ -121,6 +115,24 @@
       "</div></section>");
     var anchor = d.getElementById("divisions") || d.getElementById("why");
     if (anchor) anchor.before(sec); else d.body.appendChild(sec);
+    fillFdbk(FB0);
+    fetch("feedback.json?t=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) { if (j && j.reviews && j.reviews.length) fillFdbk(j); }).catch(function () {});
+  }
+  var FB0 = { asOf: "2026-11-23", positivePercent: "100%", positive12m: 122, topRated: true, reviews: [
+    { text: "Great communication and service. Cards came pristinely wrapped and shipped faster than expected.", who: "s***1", item: "Mega Rayquaza ex SAR" },
+    { text: "An excellent seller! So pleased with the packaging and shipping! Thanks!", who: "y***4", item: "Pokemon 30th Promo Card Pack" },
+    { text: "Fantastic seller. Fast delivery and continued communication. Packaged well, as described.", who: "n***2", item: "Godzilla Minus One figure" }] };
+  function tx(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function fillFdbk(f) {
+    var n = d.getElementById("bst-nums"), a = d.getElementById("bst-asof"), r = d.getElementById("bst-revs");
+    if (!n || !r) return;
+    n.innerHTML = "<span><b>" + tx(f.positivePercent) + "</b>" + bi("positive feedback (12 months)", "ポジティブ評価（過去12か月）") + "</span>" +
+      "<span><b>" + tx(f.positive12m) + "</b>" + bi("positive ratings in 12 months", "件の良い評価（過去12か月）") + "</span>" +
+      (f.topRated ? "<span><b>Top Rated</b>" + bi("Seller on eBay", "eBayの最高評価出品者") + "</span>" : "");
+    var dt = String(f.asOf || ""), m = dt.match(/(\d{4})-(\d{2})-(\d{2})/);
+    var mon = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    a.innerHTML = m ? bi("As shown on our eBay feedback profile, " + mon[+m[2] - 1] + " " + (+m[3]) + ", " + m[1] + ".", "eBayの評価ページの表示（" + m[1] + "年" + (+m[2]) + "月" + (+m[3]) + "日時点）") : "";
+    r.innerHTML = (f.reviews || []).slice(0, 3).map(function (v) { return rev(tx(v.text), tx(v.who) + (v.item ? " · " + tx(v.item) : "")); }).join("");
   }
   function rev(q, who) {
     return '<div class="bst-rev"><span class="bst-stars" aria-label="Positive">★★★★★</span><q>' + q + "</q><small>" + who + " · " + bi("verified eBay purchase", "eBayで購入した方") + "</small></div>";
