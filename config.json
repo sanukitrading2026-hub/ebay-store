@@ -32,22 +32,27 @@
     {
       "icon": "📸",
       "label": "Instagram",
-      "url": ""
+      "url": "https://www.instagram.com/sanuki.trading/"
     },
     {
-      "icon": "📌",
-      "label": "Pinterest",
-      "url": ""
+      "icon": "🎵",
+      "label": "TikTok",
+      "url": "https://www.tiktok.com/@sanukitrading"
     },
     {
       "icon": "▶️",
       "label": "YouTube",
-      "url": ""
+      "url": "https://www.youtube.com/@SANUKITrading"
     },
     {
       "icon": "𝕏",
       "label": "X",
-      "url": ""
+      "url": "https://x.com/st21343919"
+    },
+    {
+      "icon": "f",
+      "label": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=61596054124895"
     }
   ],
   "_featured_comment": "おすすめ商品（ホームページの「おすすめ」欄）。itemIdの数字部分を、見せたい順に並べる。2026-11-02 社長指示で追加。",

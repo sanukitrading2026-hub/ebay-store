@@ -133,7 +133,15 @@
     if (band && !d.querySelector('.bst-share[data-where="band"]')) { var s = shareBar(SITE, "Sanuki Trading — Japanese cards, figures and horror games", "band"); s.style.justifyContent = "center"; band.after(s); }
   }
 
-  function run() { try { arrange(); proof(); shares(); perks(); } catch (e) { console.warn("boost", e); } }
+  var FOLLOW = [["Instagram", "https://www.instagram.com/sanuki.trading/"], ["TikTok", "https://www.tiktok.com/@sanukitrading"], ["YouTube", "https://www.youtube.com/@SANUKITrading"], ["X", "https://x.com/st21343919"], ["Facebook", "https://www.facebook.com/profile.php?id=61596054124895"]];
+  function follows() {
+    var sh = d.querySelector('.bst-share[data-where="hero"]');
+    if (!sh || d.querySelector(".bst-follow-row")) return;
+    var h = '<div class="bst-share bst-follow-row"><span class="lbl">' + bi("Follow us:", "フォロー：") + "</span>" +
+      FOLLOW.map(function (f) { return '<a href="' + f[1] + '" target="_blank" rel="noopener" data-goatcounter-click="follow-' + f[0].toLowerCase() + '">' + f[0] + "</a>"; }).join("") + "</div>";
+    var n = el(h); n.style.marginTop = "8px"; sh.after(n);
+  }
+  function run() { try { arrange(); proof(); shares(); follows(); perks(); } catch (e) { console.warn("boost", e); } }
   if (d.readyState === "loading") d.addEventListener("DOMContentLoaded", run); else run();
   new MutationObserver(function () { perks(); }).observe(d.body, { childList: true, subtree: true });
 })();
