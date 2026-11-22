@@ -1,5 +1,6 @@
 // fetch-ebay.mjs (SEO + Pinterest + Google feed + angle images)
 import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { buildPages, big } from "./pages.mjs";
 
 const CLIENT_ID     = process.env.EBAY_CLIENT_ID;
 const CLIENT_SECRET = process.env.EBAY_CLIENT_SECRET;
@@ -113,53 +114,7 @@ function priceStr(p) {
 }
 const slugify = id => String(id || "").replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "item";
 
-function itemPage(it) {
-  const slug  = slugify(it.itemId);
-  const url   = `${SITE_BASE}/items/${slug}.html`;
-  const title = `${it.title} | ${brand}`;
-  const desc  = `${it.title} — ${it.price}. Authentic Japanese item shipped worldwide with tracking. Buy now on eBay from ${brand}.`;
-  const jsonld = {
-    "@context": "https://schema.org", "@type": "Product",
-    name: it.title, image: it.image || undefined, description: desc,
-    offers: { "@type": "Offer", priceCurrency: it.priceCurrency || "USD",
-      price: it.priceValue || undefined, availability: "https://schema.org/InStock",
-      url: it.url || storeUrl },
-  };
-  return `<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(title)}</title>
-<meta name="description" content="${esc(desc)}">
-<link rel="canonical" href="${esc(url)}">
-<meta property="og:type" content="product"><meta property="og:title" content="${esc(it.title)}">
-<meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${esc(url)}">
-${it.image ? `<meta property="og:image" content="${esc(it.image)}">` : ""}
-<script type="application/ld+json">${JSON.stringify(jsonld)}</script>
-<style>
-  body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0b0e14;color:#eef1f6;line-height:1.6}
-  a{color:#60a5fa;text-decoration:none}
-  .wrap{max-width:760px;margin:0 auto;padding:24px 20px 60px}
-  .top{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;margin-bottom:24px}
-  .logo{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#f43f5e)}
-  .thumb{width:100%;max-width:520px;aspect-ratio:1/1;object-fit:cover;border-radius:16px;border:1px solid #28303f;background:#141924;display:block;margin:0 auto 22px}
-  h1{font-size:22px;line-height:1.35;margin:0 0 12px}
-  .price{font-size:28px;font-weight:800;color:#f5b301;margin:0 0 20px}
-  .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f5b301,#f97316);color:#111;font-weight:800;padding:15px 28px;border-radius:999px;font-size:17px}
-  .btn.blue{background:#3b82f6;color:#fff;font-weight:700}
-  .meta{color:#9aa6b8;font-size:14px;margin-top:18px}
-  .foot{margin-top:34px;border-top:1px solid #28303f;padding-top:16px;color:#9aa6b8;font-size:12.5px}
-</style><script data-goatcounter="https://sanukitrading.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script></head>
-<body><div class="wrap">
-  <a class="top" href="${esc(SITE_BASE)}/"><span class="logo"></span>${esc(brand)}</a>
-  <h1>${esc(it.title)}</h1>
-  <div class="price">${esc(it.price)}</div>
-  <a class="btn" href="${esc(it.url || storeUrl)}" target="_blank" rel="noopener" data-goatcounter-click="ebay-buy-top-${esc(String(it.itemId||"").split("|")[1]||"")}" data-goatcounter-title="Buy on eBay (top)">Buy now on eBay</a>
-  <p class="meta">Authentic Japanese item, shipped worldwide with tracking. Sold by ${esc(brand)} on eBay.</p>
-  ${it.image ? `<img class="thumb" src="${esc(it.image)}" alt="${esc(it.title)}">` : ""}
-  <a class="btn" href="${esc(it.url || storeUrl)}" target="_blank" rel="noopener" data-goatcounter-click="ebay-buy-bottom-${esc(String(it.itemId||"").split("|")[1]||"")}" data-goatcounter-title="Buy on eBay (bottom)">Buy now on eBay</a>
-  <p style="margin-top:20px"><a class="btn blue" href="${esc(storeUrl)}" target="_blank" rel="noopener" data-goatcounter-click="ebay-store" data-goatcounter-title="eBay store">See all items in our store</a></p>
-  <div class="foot">© 2026 ${esc(brand)} · Independent seller on eBay. Not affiliated with or endorsed by eBay Inc.</div>
-</div></body></html>`;
-}
+// 商品ページ・売り切れページ・サイトマップは pages.mjs（2026-11-23）
 
 try {
   const token     = await getToken();
@@ -194,19 +149,8 @@ try {
   const out = { updatedAt: new Date().toISOString(), seller, count: items.length, items };
   await writeFile(new URL("../data.json", import.meta.url), JSON.stringify(out, null, 2) + "\n", "utf8");
 
-  await mkdir(new URL("../items/", import.meta.url), { recursive: true });
-  const pageUrls = [];
-  for (const it of items) {
-    if (!it.itemId) continue;
-    const slug = slugify(it.itemId);
-    await writeFile(new URL(`../items/${slug}.html`, import.meta.url), itemPage(it), "utf8");
-    pageUrls.push(`${SITE_BASE}/items/${slug}.html`);
-  }
-
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-    `<url><loc>${SITE_BASE}/</loc></url>\n` +
-    pageUrls.map(u => `<url><loc>${u}</loc></url>`).join("\n") + `\n</urlset>\n`;
-  await writeFile(new URL("../sitemap.xml", import.meta.url), sitemap, "utf8");
+  const built = await buildPages(items, { SITE_BASE, brand, storeUrl }, import.meta.url);
+  console.log(`pages: live ${built.live}, sold ${built.sold}`);
   await writeFile(new URL("../robots.txt", import.meta.url),
     `User-agent: *\nAllow: /\nSitemap: ${SITE_BASE}/sitemap.xml\n`, "utf8");
 
@@ -219,7 +163,7 @@ try {
     const desc = `${it.title} — authentic Japanese item, shipped worldwide with tracking from ${brand}.`;
     rows.push([
       csvEsc(it.itemId), csvEsc(it.title.slice(0, 100)), csvEsc(desc.slice(0, 500)),
-      csvEsc(`${SITE_BASE}/items/${slugify(it.itemId)}.html`), csvEsc(it.image),
+      csvEsc(`${SITE_BASE}/items/${slugify(it.itemId)}.html`), csvEsc(big(it.image)),
       csvEsc(`${it.priceValue} ${it.priceCurrency}`), csvEsc("in stock"),
       csvEsc(cond(it.condition)), csvEsc(brand),
     ].join(","));
@@ -236,7 +180,7 @@ try {
     const gdesc = `${it.title} — authentic Japanese item, shipped worldwide with tracking from ${brand}.`;
     gRows.push([
       csvEsc(it.itemId), csvEsc(it.title.slice(0, 150)), csvEsc(gdesc.slice(0, 500)),
-      csvEsc(`${SITE_BASE}/items/${slugify(it.itemId)}.html`), csvEsc(it.image),
+      csvEsc(`${SITE_BASE}/items/${slugify(it.itemId)}.html`), csvEsc(big(it.image)),
       csvEsc(`${it.priceValue} ${it.priceCurrency}`), csvEsc("in stock"),
       csvEsc(cond(it.condition)), csvEsc(brand), csvEsc("no"), csvEsc(gtype(it.title)),
     ].join(","));

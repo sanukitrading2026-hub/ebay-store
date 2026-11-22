@@ -46,6 +46,18 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);font-family:sans-ser
 footer a{margin-right:16px}
 [data-en]{}
 </style>
+<style>
+.gx-top{display:grid;gap:14px;margin:0 0 28px}
+.gx-top video{width:100%;max-height:70vh;border-radius:12px;background:#000;display:block}
+.gx-cta{display:flex;flex-wrap:wrap;gap:10px}
+.gx-cta a{display:inline-flex;align-items:center;font-weight:800;padding:12px 20px;border-radius:999px;text-decoration:none;background:#f5b301;color:#14100c}
+.gx-cta a.ghost{background:transparent;color:#f5b301;border:2px solid #f5b301}
+.gx-share{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;opacity:.95;margin:8px 0}
+.gx-share a,.gx-share button{font:inherit;font-weight:700;padding:6px 12px;border-radius:999px;border:1px solid #3a2a1e;background:#1d1712;color:#f3e6d0;cursor:pointer;text-decoration:none}
+.gx-more{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.gx-more a{display:block;padding:14px 16px;border:1px solid #3a2a1e;border-radius:12px;background:#1d1712;color:#f3e6d0;text-decoration:none;font-weight:700}
+.gx-more a small{display:block;font-weight:400;opacity:.8;margin-top:4px}
+</style>
 </head>
 <body>
 <div class="lang"><button id="bJa" type="button">日本語</button> <button id="bEn" type="button">English</button></div>
@@ -61,6 +73,8 @@ footer a{margin-right:16px}
 </div></header>
 
 <main class="wrap">
+<div class="gx-top"><video src="../videos/game_kokonotsume_b.mp4" controls playsinline preload="none" aria-label="The Ninth Room gameplay"></video><div class="gx-share"><span data-ja="共有：" data-en="Share:" data-zh="分享：" data-ko="공유:">共有：</span><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsanukitrading2026-hub.github.io%2Febay-store%2Fkokonotsume%2F&amp;text=The%20Ninth%20Room%20%E2%80%94%20a%20Japanese%20horror%20game%20with%20a%20free%20demo" target="_blank" rel="noopener" data-goatcounter-click="share-x-kokonotsume">X</a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsanukitrading2026-hub.github.io%2Febay-store%2Fkokonotsume%2F" target="_blank" rel="noopener" data-goatcounter-click="share-fb-kokonotsume">Facebook</a><a href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fsanukitrading2026-hub.github.io%2Febay-store%2Fkokonotsume%2F&amp;description=The%20Ninth%20Room%20%E2%80%94%20a%20Japanese%20horror%20game%20with%20a%20free%20demo" target="_blank" rel="noopener" data-goatcounter-click="share-pin-kokonotsume">Pinterest</a><a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fsanukitrading2026-hub.github.io%2Febay-store%2Fkokonotsume%2F" target="_blank" rel="noopener" data-goatcounter-click="share-line-kokonotsume">LINE</a><button type="button" onclick="(navigator.clipboard?navigator.clipboard.writeText(location.href.split('#')[0]):Promise.reject()).then(()=>{this.textContent='OK'},()=>prompt('URL',location.href))" data-goatcounter-click="share-copy-kokonotsume" data-ja="リンクをコピー" data-en="Copy link" data-zh="复制链接" data-ko="링크 복사">リンクをコピー</button></div></div>
+
 
 
 <section>
@@ -93,6 +107,7 @@ footer a{margin-right:16px}
     <tr><th data-ja="音" data-en="Sound">音</th><td data-ja="ヘッドホン推奨。携帯で音が出ないときは、マナーモードを解除してください" data-en="Headphones recommended. On phones, turn off silent mode if you hear nothing">ヘッドホン推奨。携帯で音が出ないときは、マナーモードを解除してください</td></tr>
   </table>
 </section>
+<section class="gx-moresec"><h2 data-ja="ほかのゲーム" data-en="More games" data-zh="更多游戏" data-ko="다른 게임">ほかのゲーム</h2><div class="gx-more"><a href="../yoimiya/" data-goatcounter-click="more-yoimiya"><span data-ja="宵宮 ―ちょうちんは、ひとつ多い―" data-en="YOIMIYA — One Lantern Too Many —" data-zh="宵宫" data-ko="요이미야">宵宮 ―ちょうちんは、ひとつ多い―</span><small data-ja="新作の和風ホラー" data-en="Our newest Japanese horror game" data-zh="最新和风恐怖游戏" data-ko="최신 일본풍 호러">新作の和風ホラー</small></a><a href="../games/" data-goatcounter-click="more-games"><span data-ja="ゲームの一覧" data-en="All games" data-zh="全部游戏" data-ko="모든 게임">ゲームの一覧</span><small data-ja="次回作『朝刊』制作中" data-en="Next game in development" data-zh="新作制作中" data-ko="차기작 제작 중">次回作『朝刊』制作中</small></a></div></section>
 </main>
 
 <footer><div class="wrap">
