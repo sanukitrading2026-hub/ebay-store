@@ -1,12 +1,12 @@
 {
   "_note": "ホームページの「買った方の声」。eBay の評価ページ（出品者として受け取った評価）から本物だけを写す。名前は伏せ字（最初と最後の1字）。自動の「評価の更新」が新しくする。",
-  "asOf": "2026-11-23",
+  "asOf": "2026-11-27",
   "positivePercent": "100%",
-  "positive12m": 122,
+  "positive12m": 123,
   "topRated": true,
   "reviews": [
+    { "text": "Instant communication was easy to make a deal with me and when I received my package it was very secured with many wrappings and bubble wrap I will continue to shop here I pulled the chase SAR", "who": "a***e", "item": "Storm Emeralda Booster Box x2" },
     { "text": "Great communication and service. Cards came pristinely wrapped and shipped faster than expected.", "who": "s***1", "item": "Mega Rayquaza ex SAR" },
-    { "text": "An excellent seller! So pleased with the packaging and shipping! Thanks!", "who": "y***4", "item": "Pokemon 30th Promo Card Pack" },
     { "text": "Fantastic seller. Fast delivery and continued communication. Packaged well, as described.", "who": "n***2", "item": "Godzilla Minus One figure" }
   ]
 }
