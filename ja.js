@@ -144,6 +144,7 @@
     ["🏴‍☠️", "One Piece Card Game", "ワンピースカード", "Japanese boosters & boxes", "日本語版のパック・BOX", "one piece card"],
     ["🗿", "Anime Figures", "アニメフィギュア", "Ichiban Kuji, P.O.P & more", "一番くじ・P.O.Pなど", "figure"],
     ["🐉", "Dragon Ball", "ドラゴンボール", "Figures, medals & collectibles", "フィギュア・メダルなど", "dragon ball"],
+    ["🦖", "Godzilla Figures", "ゴジラフィギュア", "Monsters Roar Attack, Art Vignette & more", "怪獣咆哮撃・アートヴィネットなど", "godzilla"],
     ["🚗", "Toys, RC & Hobby", "おもちゃ・ラジコン・ホビー", "RC cars, Beyblade & Japan-only toys", "ラジコン・ベイブレード・日本限定のおもちゃ", "(rc,beyblade,toy,medal)"],
     ["🧸", "Plush & Goods", "ぬいぐるみ・グッズ", "Pokémon plush, sleeves & more", "ポケモンのぬいぐるみ・スリーブなど", "(plush,sleeves)"]
   ];
@@ -156,7 +157,7 @@
       if (!document.querySelector(".st-kicker")) h.insertAdjacentHTML("beforebegin", '<p class="st-kicker">Sanuki Trading · Japan</p>');
     }
     var l = document.getElementById("heroLead");
-    if (l && !l.querySelector(".st-en")) l.innerHTML = bi("Pokémon Cards · One Piece Card Game · Anime Figures", "ポケモンカード・ワンピースカード・アニメフィギュア");
+    if (l && !l.querySelector(".st-en")) l.innerHTML = bi("Pokémon Cards · One Piece Card Game · Anime & Godzilla Figures", "ポケモンカード・ワンピースカード・アニメ／ゴジラフィギュア");
     var b = document.querySelector(".hero .badges");
     if (b && !b.querySelector(".st-check")) {
       var first = b.querySelector("span"); /* 出品数（自動で数が入る）は残す */

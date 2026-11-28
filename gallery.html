@@ -87,6 +87,7 @@ function category(t){
   if(t.includes("one piece")&&(t.includes("card")||t.includes("op-")||t.includes("booster")))return "One Piece Cards";
   if(t.includes("one piece")&&t.includes("figure"))return "One Piece Figure";
   if(t.includes("dragon ball")||t.includes("dragonball"))return "Dragon Ball";
+  if(t.includes("godzilla")||t.includes("ghidorah")||t.includes("mothra"))return "Godzilla Figure";
   if(t.includes("pokemon")||t.includes("pikachu"))return "Pokémon";
   if(t.includes("figure")||t.includes("banpresto")||t.includes("megahouse")||t.includes("nendoroid"))return "Anime Figure";
   return "Japan Collectible";
@@ -96,6 +97,7 @@ const TAGS = {
   "One Piece Cards":"#onepiece #onepiececard #onepiececardgame #optcg #anime #tcg #japancards",
   "One Piece Figure":"#onepiece #onepiecefigure #anime #figurecollection #banpresto #japanimport #animefigure",
   "Dragon Ball":"#dragonball #dragonballz #dbz #figure #ichibankuji #anime #japanimport #collectibles",
+  "Godzilla Figure":"#godzilla #kaiju #godzillafigure #toho #banpresto #japanimport #figurecollection",
   "Pokémon":"#pokemon #pokemoncollector #pikachu #japanimport #anime #collectibles",
   "Anime Figure":"#animefigure #anime #figurecollection #japanimport #banpresto #otaku #collectibles",
   "Japan Collectible":"#japan #collectibles #anime #import #rare #madeinjapan"
@@ -106,6 +108,7 @@ function caption(title, cat){
     "One Piece Cards":"One Piece TCG from Japan 🇯🇵🏴‍☠️",
     "One Piece Figure":"One Piece figure — authentic Japan import 🏴‍☠️",
     "Dragon Ball":"Dragon Ball collectible from Japan 🐉🔥",
+    "Godzilla Figure":"Godzilla figure — authentic Japan import 🦖",
     "Pokémon":"Pokémon collectible from Japan 🇯🇵",
     "Anime Figure":"Anime figure — authentic Japan import ✨",
     "Japan Collectible":"Rare find, straight from Japan 🇯🇵"
@@ -223,7 +226,7 @@ async function pool(list, worker, size=8){
     // store intro card (only if it exists)
     if(await exists(`${BASE}/videos/store_intro.mp4`)){
       const iw=document.getElementById("introWrap");
-      const introCap=`Welcome to ${cfg.brandName||"our store"} 🇯🇵\nPokémon cards · One Piece cards & figures · Dragon Ball & more — authentic, straight from Japan.\n\n✅ 100% authentic  ✈️ worldwide tracked shipping\n🛒 Shop our full store — link in bio\n\n#pokemon #onepiece #dragonball #animefigure #japanimport #collectibles #tcg`;
+      const introCap=`Welcome to ${cfg.brandName||"our store"} 🇯🇵\nPokémon cards · One Piece cards & figures · Godzilla figures · Dragon Ball & more — authentic, straight from Japan.\n\n✅ 100% authentic  ✈️ worldwide tracked shipping\n🛒 Shop our full store — link in bio\n\n#pokemon #onepiece #godzilla #dragonball #animefigure #japanimport #collectibles #tcg`;
       iw.innerHTML=`<div class="grid"><div class="card intro">
         <video class="vid" preload="none" playsinline muted controls src="${BASE}/videos/store_intro.mp4"></video>
         <div class="body">
